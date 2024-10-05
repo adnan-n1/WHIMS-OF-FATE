@@ -1,0 +1,11 @@
+Version as of 13/01/23
+I'm surprised you actually opened this
+
+Added main menu
+ - Start battles, save the game, reset stats, earn free exp
+Added party menu
+ - Choose which party members to take into battle. Soon be able to customise weapons, charms, moves and fusions
+Many logic errors fixed
+Quality of life additions e.g View all stats by hovering over any party member, new character poses
+Way more characters added
+Added use of dynamic sound channels ("surround sound")

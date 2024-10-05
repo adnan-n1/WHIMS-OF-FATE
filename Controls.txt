@@ -1,0 +1,9 @@
+Land critical hits or enemy weaknesses to chain attacks between teammates and defeat strong enemies!!!!
+
+L Click - Select
+R Click - Back
+
+To challenge new enemy, close the Game window (ill fix this lol)
+To quit the game, close the Terminal window
+
+
