@@ -378,6 +378,32 @@ def battle_draw_health(person, healthbar, mouse_pos):
     elif person.stats["name"] == enemy.stats["name"]:
         battle_draw_equips(enemy.stats,player.stats,x,y+rect_height+screen_mult(screen_height,40))
 
+def battle_draw_enemyhealth(person, healthbar, mouse_pos):
+    x = (person.rect.x+(person.rect.width/2))-((screen_width/4)/2)
+    y = person.rect.y+person.rect.height+screen_mult(screen_height,10)
+    x,y = mouse_hovereffect(x,y,"circle")
+
+    rect_width, rect_height = (screen_width/4),screen_mult(screen_height,60)
+    myColour = "red"
+    hpColour = "red"
+
+    #Outline width makes box slightly wider to not cover text
+    outline_width = screen_mult(screen_diag,3)
+    box = pygame.Rect(x-outline_width-screen_mult(screen_width,5), y-outline_width, rect_width+outline_width+screen_mult(screen_width,55), rect_height+outline_width)
+    outline = pygame.Rect(x-outline_width-screen_mult(screen_width,5), y-outline_width, rect_width+outline_width+screen_mult(screen_width,55), rect_height+outline_width)
+    #Main box
+    pygame.draw.rect(display, colour["grey"], box)
+    #Outline
+    pygame.draw.rect(display, colour[myColour], outline, 3)
+
+    #Healthbars
+    draw_text(str(person.stats["name"]), fonts["small"], colour[myColour], x+screen_mult(screen_width,3), y+screen_mult(screen_height,3), False)
+    healthbar.draw(x+screen_mult(screen_width,3),y+screen_mult(screen_height,22),person.stats["HP"],person.stats["MHP"]+person.stats["bonuses"]["MHP"],mouse_pos,hpColour)
+
+    #Display stat bonuses
+    battle_draw_bonus(person.stats["bonuses"],x,y+rect_height+screen_mult(screen_height,5))
+
+
 def get_lines(text, char_limit):
     lines = []
     line = ""
@@ -1957,7 +1983,7 @@ def battle_system(player_party,enemy_stats):
     size_x, size_y = screen_mult(screen_width,100),screen_mult(screen_height,10)
     player_hp = ProgressBar(size_x,size_y)
     player_eg = ProgressBar(size_x,size_y)
-    enemy_hp = ProgressBar(size_x,size_y)
+    enemy_hp = ProgressBar(screen_width/4,screen_mult(screen_height,20))
     enemy_hp_old = ProgressBar(size_x,size_y)
 
     #Ability and Party buttons
@@ -2184,7 +2210,8 @@ def battle_system(player_party,enemy_stats):
 
         #Player and enemy health bars
         battle_draw_health(player,player_hp, mouse_pos)
-        battle_draw_health(enemy,enemy_hp, mouse_pos)
+        battle_draw_enemyhealth(enemy,enemy_hp, mouse_pos)
+
 
         #projectiles
         projectile_group.update()
@@ -3946,7 +3973,7 @@ def menu_main(message):
         player_inventory["Gold"] -= exp_cost
         myMixer("menu_text.wav",-0.5)
         pygame.mixer.music.fadeout(300)
-        exp = 10000
+        exp = 50000
         for member in player_party:
             menu_levelup(member, int(exp/len(player_party)),"+" + str(exp) + "EXP")
         myMixer("menu_back.wav",0)
