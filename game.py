@@ -1714,13 +1714,14 @@ def battle_createability(moves):
     #Creating buttons. Screen, width, height, image, size x, size y
     abilities = {}
     x_value = 0
+    size = 90
     for ability in moves:
         #Add the Button attribute to ability
         abilities[ability] = {
-            "button" : button.Button(display, player.rect.x + x_value, screen_height - (screen_height/4), pygame.image.load("img/Other/"+ str(battle_moveslookup(ability)["img"]) + ".png").convert_alpha(), screen_mult(screen_width,70),screen_mult(screen_height,70))}
+            "button" : button.Button(display, player.rect.x + x_value, screen_height - (screen_height/4), pygame.image.load("img/Other/"+ str(battle_moveslookup(ability)["img"]) + ".png").convert_alpha(), screen_mult(screen_width,size),screen_mult(screen_height,size))}
         #Used for spacing out abilities on screen
-        x_value += screen_mult(screen_width,80)
-    abilities["Skip"] = {"button" :button.Button(display, player.rect.x + x_value, screen_height - (screen_height/4), img_skip, screen_mult(screen_width,70),screen_mult(screen_height,70))}
+        x_value += screen_mult(screen_width,size+10)
+    abilities["Skip"] = {"button" :button.Button(display, player.rect.x + x_value, screen_height - (screen_height/4), img_skip, screen_mult(screen_width,size),screen_mult(screen_height,size))}
     
 
     return abilities
@@ -2013,6 +2014,16 @@ def battle_system(player_party,enemy_stats):
     hits = 0
     maxhits = 0
 
+    #player button transition
+    #point = current offset pixels, max = offset starting point pixels, spd = pixel offset reduction per frame
+    buttonshift_speed = int(framesrate*0.1)#0.1s
+    buttonshift_party = {"max" : screen_mult(screen_width,500)}
+    buttonshift_party["point"] = buttonshift_party["max"]
+    buttonshift_party["spd"] = int(buttonshift_party["max"]/buttonshift_speed)
+    buttonshift_moves = {"max" : screen_mult(screen_width,300)}
+    buttonshift_moves["point"] = buttonshift_moves["max"]
+    buttonshift_moves["spd"] = int(buttonshift_moves["max"]/buttonshift_speed)
+
     #actions. [move, target]
     action = ["",""]
 
@@ -2049,6 +2060,7 @@ def battle_system(player_party,enemy_stats):
 
         #gets mouse position
         mouse_pos = pygame.mouse.get_pos()
+        print(mouse_pos)
 
         #Update invis circle effect
         if (player.stats["HP"]/player.stats["MHP"])*100 <= 30:
@@ -2069,18 +2081,28 @@ def battle_system(player_party,enemy_stats):
         elif battle_action == "player" and selected != "" and action[0] == "":
             player.status = "ready"
         player.update()
-        x,y = mouse_hovereffect(screen_width/4, int(screen_height/2)-int(player.rect.height/5),"circle")
+        x,y = mouse_hovereffect(screen_width/3, int(screen_height/2)-int(player.rect.height/5),"circle")
         player.draw(x,y)
 
         #Add enemy shake
         if enemy_shake > 0:
             enemy_shake -= 1
-            shake_x, shake_y = image_shake(int((battle_turndata["totaldmg"]/2000)*40))
+            shake_x, shake_y = image_shake(15)
         else:   shake_x, shake_y = 0,0
         if enemy.stats["HP"] > 0:
             enemy.update()
             x,y = mouse_hovereffect(screen_width-(screen_width/4),int(screen_height/2)-int(enemy.rect.height/5),"circle")
             enemy.draw(x+shake_x,y+shake_y)
+
+
+        #Buttons transitions
+        if battle_action == "player":
+            if buttonshift_party["point"] >= 0 and buttonshift_party["point"] > buttonshift_party["spd"]:
+                buttonshift_party["point"] -= buttonshift_party["spd"]
+            else:   buttonshift_party["point"] = 0
+            if buttonshift_moves["point"] >= 0 and buttonshift_moves["point"] > buttonshift_moves["spd"]:
+                buttonshift_moves["point"] -= buttonshift_moves["spd"]
+            else:   buttonshift_moves["point"] = 0
 
         #Top and bottom borders for effect
             #Black
@@ -2121,26 +2143,43 @@ def battle_system(player_party,enemy_stats):
         #draw_text(str(battle_action).upper(), fonts["verylarge"], myColour, x, y-100, True)
         #display selected ability
         if selected != "":
-            x,y = (screen_width/3)-screen_mult(screen_width,70),screen_height - (screen_height/3)#same x coord as player rect
-            draw_text(str(selected).upper(), fonts["battlemove"], myColour, x, y + screen_mult(screen_height,142), False,100)
-            draw_text(str(battle_moveslookup(selected)["desc"]["s"]).upper(), fonts["dmgmed"], myColour, x+screen_mult(screen_width,150), y + screen_mult(screen_height,300), False)
+            x,y = (screen_width/2)-screen_mult(screen_width,60),screen_height - (screen_height/3)
+            #adjust size
+            if "SPECIAL" in selected:
+                text_output = selected[9:]
+            else: text_output = selected
+
+            #adjust x based on actor+text length
+            if action[0] != "" or battle_action=="neutral":#action being done aka battle_neutral
+                x -= screen_mult(screen_width,42*len(text_output))#default
+            elif battle_action == "player":
+                x -= screen_mult(screen_width,42*len(text_output))#towards player
+                x -= screen_mult(screen_width,200)
+            elif battle_action == "enemy":
+                x -= screen_mult(screen_width,42*len(text_output))#towards enemy
+                x += screen_mult(screen_width,200)
+
+            draw_text(str(text_output).upper(), fonts["battlemove"], myColour, x, y + screen_mult(screen_height,142), False,100)#Transparent
+            draw_text(str(battle_moveslookup(selected)["desc"]["s"]).upper(), fonts["dmgmed"], myColour, x+screen_mult(screen_width,40*len(selected)), y + screen_mult(screen_height,300), False)
         
             
         #Combo metre. Also shakes
-        if (combo["hits"] > 1 and player.status != "idle" and player.status != "hurt" and player.status != "dead") or (combo["hits"] > 1 and player.status == "idle" and battle_action == "player"):
+        if (combo["hits"] > 0 and player.status != "idle" and player.status != "hurt" and player.status != "dead") or (combo["hits"] > 0 and player.status == "idle" and battle_action == "player"):
             if combo_shake > 0:
                 myColour = colour["red"]
                 combo_shake -= 1
-                shake_x, shake_y = image_shake(8)
+                shake_x, shake_y = image_shake(10)
             elif combo["hits"] > 20:
                 myColour = colour["rainbowcycle"]
-                shake_x, shake_y = image_shake(1)
+                shake_x, shake_y = image_shake(2)
             else:
                 myColour = colour["white"]
                 shake_x, shake_y = 0,0
-            x, y = mouse_hovereffect(screen_width/3,screen_height/5,"circle")
-            draw_text(str(combo["hits"]) + " HITS!", fonts["large"], myColour, x+shake_x, y+shake_y, True)
-            draw_text(str(combo["dmg"]) + " TOTAL DMG", fonts["dmgsmall"], myColour, x-shake_x, y -shake_y+screen_mult(screen_height,90), True)
+            x, y = mouse_hovereffect(screen_mult(screen_width,200)+(screen_width/2),screen_height/4,"circle")
+            draw_text(str(combo["hits"]) + " HITS!", fonts["large"], colour["grey"], x-shake_x+2, y-shake_y+2, False)#Grey outline text
+            draw_text(str(combo["dmg"]) + " TOTAL DMG", fonts["dmgsmall"], colour["grey"], x+shake_x+2, y +shake_y+2+screen_mult(screen_height,80), False)#Grey outline text
+            draw_text(str(combo["hits"]) + " HITS!", fonts["large"], myColour, x+shake_x, y+shake_y, False)
+            draw_text(str(combo["dmg"]) + " TOTAL DMG", fonts["dmgsmall"], myColour, x-shake_x, y -shake_y+screen_mult(screen_height,80), False)
         
 
         #Player and enemy health bars
@@ -2157,7 +2196,7 @@ def battle_system(player_party,enemy_stats):
         if battle_action == "player" and action[0] == "":
             #ABILITY BUTTONS
             #For spacing between buttons
-            x_value = -screen_mult(screen_width,120)
+            x_value = screen_mult(screen_width,50)
             for move in player.stats["moves"]:
                 if "SPECIAL" in battle_moveslookup(move)["prop"]:
                     special = True
@@ -2170,9 +2209,9 @@ def battle_system(player_party,enemy_stats):
                 else:
                     myColour = player.stats["element"]
                 #Display the ability button
-                x,y = mouse_hovereffect(player.x + x_value, screen_height - (screen_height/4),"circle")
+                x,y = mouse_hovereffect(player.x + x_value, screen_height - (screen_height/4)+buttonshift_moves["point"],"circle")
                 ability_clicked = abilities[move]["button"].draw(x,y,"") #(Returns True if button is pressed)
-                x_value += screen_mult(screen_width,80)
+                x_value += screen_mult(screen_width,100)
                 #Display cooldown TRUE, otherwise display READY
                 if player.stats["moves"][move] == False:
                     pygame.draw.circle(display, colour["white"], (abilities[move]["button"].rect.center[0], abilities[move]["button"].rect.center[1]),abilities[move]["button"].rect.width/2, 5)
@@ -2236,10 +2275,11 @@ def battle_system(player_party,enemy_stats):
 
 
             #Display skip button at the end
-            x,y = mouse_hovereffect(player.x + x_value, screen_height - (screen_height/4),"circle")
+            x,y = mouse_hovereffect(player.x + x_value, screen_height - (screen_height/4)+buttonshift_moves["point"],"circle")
             skip_clicked = abilities["Skip"]["button"].draw(x,y,"")
             if skip_clicked:
-                myMixer("menu_back.wav",0)              
+                myMixer("menu_back.wav",0)
+                selected = "Skip"
                 action = ["Skip",player.stats]
             #Display desc if hovering over Skip button
             if abilities["Skip"]["button"].hover() and selected == "" and battle_action == "player":
@@ -2263,7 +2303,7 @@ def battle_system(player_party,enemy_stats):
                     highest_agg = member
             for member in player_party:
                 #Establish x and y
-                x,y = mouse_hovereffect(screen_mult(screen_width,50), y_value,"circle")
+                x,y = mouse_hovereffect(screen_mult(screen_width,200)-buttonshift_party["point"], y_value,"circle")
                 if member == player.stats["name"]:  x += screen_mult(screen_width,20)
                 elif party[member]["button"].hover() and battle_characters[member]["HP"] > 0:   x+= screen_mult(screen_width,20)
                 #Grey box background
@@ -2338,6 +2378,8 @@ def battle_system(player_party,enemy_stats):
             #SWITCH FUNCTION. Hits = 1 so that it performs the move
             if selected in player_party:
                 action = [selected,battle_characters[selected]]
+                buttonshift_party["point"] = buttonshift_party["max"]
+                buttonshift_moves["point"] = buttonshift_moves["max"]
                 maxhits = 1
 
         elif battle_action == "enemy":
@@ -2364,15 +2406,12 @@ def battle_system(player_party,enemy_stats):
         #cooldown makes turns not instant/1 frame long
         cooldown -= 1
         if cooldown <= 0:
-            print(selected)
-            print(action)
             #Allows combatents to perform actions
             if battle_action == "player" and player.stats["HP"] > 0 and action[0] != "":
                 #Set variables
                 player.status = "move"
 
                 #Perform move
-                print(hits)
                 if hits > 0 or action[0] == "Skip" or action[0] in player_party:
                     if action[1]["name"] == enemy.stats["name"]:
                         battle_turndata,enemy.stats = player.move(action[0], action[1],player_party)
@@ -2402,7 +2441,7 @@ def battle_system(player_party,enemy_stats):
                         enemy_shake = framesrate/10
                         if int((battle_turndata["totaldmg"]/battle_turndata["target"]["MHP"])*100) >= 5:
                             enemy.status = "hurt"
-                        combo_shake = framesrate/10
+                        combo_shake = framesrate/5
                         combo["hits"] += battle_turndata["hit"]
                         combo["dmg"] += battle_turndata["totaldmg"]
 
@@ -2581,6 +2620,8 @@ def battle_system(player_party,enemy_stats):
                     player.status = "idle"
                     enemy.status = "turn"
                     battle_action = "enemy"
+                    buttonshift_party["point"] = buttonshift_party["max"]
+                    buttonshift_moves["point"] = buttonshift_moves["max"]
                     combo = {"hits" : 0, "dmg" : 0}
                     
                 selected = ""
@@ -3705,7 +3746,7 @@ def screen_mult(screen_value, value):
     global screen_width
     global screen_height
     global screen_diag
-    base_res = [1920,1080]
+    base_res = [1920,1080]#standard
     
     if screen_value == screen_width:
         return int((value/base_res[0])*screen_value)
