@@ -1,4 +1,20 @@
-name,LVL,EXP,HP,charms
-Byleth,5,1,1000,[]
-Claude,3,1,1000,[]
-Morgan,1,1,1000,[]
+name,weapon,element,LVL,MEXP,EXP,MHP,HP,STR,RES,CRIT,CRIT DMG,ER,EG,MEG,Physical DMG,Fire DMG,Water DMG,Wind DMG,All DMG,buff,debuff,charms,fusion,moves,weakness,AGG,DEF
+Alm,Wind Bow,Wind,1,500,0,1000,1000,0,0,5,50,100,0,100,0,0,0,0,0,{},{},[],Wind Type 08,['Attack'],Fire,100,0
+Dimitri,Hyper Blade,Water,1,500,0,1000,1000,0,0,5,50,100,0,100,0,0,0,0,0,{},{},[],Water Type 08,['Attack'],Wind,100,0
+Lilina,Catalyst,Fire,1,500,0,1000,1000,0,0,5,50,100,0,100,0,0,0,0,0,{},{},[],Fire Type 08,['Attack'],Water,100,0
+Byleth,Catalyst,Wind,1,500,0,1000,1000,0,0,5,50,100,0,100,0,0,0,0,0,{},{},[],Wind Type 09,['Attack'],Fire,100,0
+Hilda,Blade,Fire,1,500,0,1000,1000,0,0,5,50,100,0,100,0,0,0,0,0,{},{},[],Fire Type 09,['Attack'],Water,100,0
+Lucina,Blade,Water,1,500,0,1000,1000,0,0,5,50,100,0,100,0,0,0,0,0,{},{},[],Water Type 09,['Attack'],Wind,100,0
+Morgan,Resistance Blade,Water,1,500,0,1000,1000,0,0,5,50,100,0,100,0,0,0,0,0,{},{},[],Prototype: AQUA,['Attack'],Wind,100,0
+Claude,Bow,Fire,1,500,0,1000,1000,0,0,5,50,100,0,100,0,0,0,0,0,{},{},[],Fire Type 07,['Attack'],Water,100,0
+Ninian,Focus Catalyst,Wind,1,500,0,1000,1000,0,0,5,50,100,0,100,0,0,0,0,0,{},{},[],Prototype: GALE,['Attack'],Fire,100,0
+Shez,Health Blade,Fire,1,500,0,1000,1000,0,0,5,50,100,0,100,0,0,0,0,0,{},{},[],Prototype: BLZE,['Attack'],Water,100,0
+Anna,Bow,Fire,1,500,0,1000,1000,0,0,5,50,100,0,100,0,0,0,0,0,{},{},[],Fire Type 06,['Attack'],Water,100,0
+Knight,Blade,Water,1,500,0,1000,1000,0,0,5,50,100,0,100,0,0,0,0,0,{},{},[],Water Type 07,['Attack'],Wind,100,0
+Kris,Blade,Water,1,500,0,1000,1000,0,0,5,50,100,0,100,0,0,0,0,0,{},{},[],Water Type 06,['Attack'],Wind,100,0
+Lyn,Blade,Wind,1,500,0,1000,1000,0,0,5,50,100,0,100,0,0,0,0,0,{},{},[],Wind Type 07,['Attack'],Fire,100,0
+Mia,Blade,Fire,1,500,0,1000,1000,0,0,5,50,100,0,100,0,0,0,0,0,{},{},[],Fire Type 05,['Attack'],Water,100,0
+Reginn,Blade,Wind,1,500,0,1000,1000,0,0,5,50,100,0,100,0,0,0,0,0,{},{},[],Wind Type 06,['Attack'],Fire,100,0
+Seliph,Blade,Water,1,500,0,1000,1000,0,0,5,50,100,0,100,0,0,0,0,0,{},{},[],Water Type 05,['Attack'],Wind,100,0
+Sothe,Blade,Wind,1,500,0,1000,1000,0,0,5,50,100,0,100,0,0,0,0,0,{},{},[],Wind Type 05,['Attack'],Fire,100,0
+Alear,Star Blade,Singularity,1,500,0,1000,1000,0,0,5,50,100,0,100,0,0,0,0,0,{},{},[],Prototype: STAR,['Attack'],None,100,0

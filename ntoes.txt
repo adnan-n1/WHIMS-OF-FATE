@@ -1,6 +1,14 @@
-BASE STATS
- - HP 250-230-210
- - STR 125-115-105
- - RES 6-4-2
- - CRIT 14-9-4
- - CRIT DMG 30-22-14
+VIGOUR - Player "SP"
+	-MAX 100
+	-Basic moves consumes 20
+	-Skill moves consumes 40
+	-SPECIAL moves do not cost vigour
+	-Half the cost is refunded if the attack hits a weakness
+
+	-Ends player turn when vigour is 0
+
+GIRT - Enemy "toughness"
+	-Multiple stacks
+	-Reduces GRIT when weakness hit
+	-Losing a stack deals additional damage
+	-Losing all stacks gives the party max vigour

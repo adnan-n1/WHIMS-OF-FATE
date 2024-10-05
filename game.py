@@ -48,38 +48,55 @@ for member in player_characters:
 
 print(player_characters)
 
+#List of all the playable characters and their base stats. Needs reworking. First 3 already done
 characters = {
-    'Byleth': {'name': 'Byleth', 'weapon': 'Catalyst', 'element': 'Wind', 'MHP': 230, 'STR': 125, 'RES': 2, 'CRIT': 9, 'CRIT DMG': 30, 'MEG': 100, 'fusion': 'Wind Type 09', 'moves': ['Garudyne',"Cyclone", "Eye of the Storm"], 'weakness': 'Fire', 'AGG': 100},
-    'Morgan': {'name': 'Morgan', 'weapon': 'Resistance Blade', 'element': 'Water', 'MHP': 250, 'STR': 115, 'RES': 6, 'CRIT': 4, 'CRIT DMG': 14, 'MEG': 100, 'fusion': 'Prototype: AQUA', 'moves': ['Bufudyne',"Striking Tide", "Thalassic Calamity"], 'weakness': 'Wind', 'AGG': 120},
-    'Claude': {'name': 'Claude', 'weapon': 'Bow', 'element': 'Fire', 'MHP': 210, 'STR': 115, 'RES': 4, 'CRIT': 14, 'CRIT DMG': 22, 'MEG': 100, 'fusion': 'Fire Type 07', 'moves': ['Agidyne', "Fire Dance", "Burning Hell"], 'weakness': 'Water', 'AGG': 100},
-    'Alm': {'name': 'Alm', 'weapon': 'Wind Bow', 'element': 'Wind', 'MHP': 1000, 'STR': 100, 'RES': 2, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Wind Type 08', 'moves': ['Attack'], 'weakness': 'Fire', 'AGG': 100},
-    'Dimitri': {'name': 'Dimitri', 'weapon': 'Hyper Blade', 'element': 'Water', 'MHP': 1000, 'STR': 100, 'RES': 2, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Water Type 08', 'moves': ['Attack'], 'weakness': 'Wind', 'AGG': 100},
-    'Lilina': {'name': 'Lilina', 'weapon': 'Catalyst', 'element': 'Fire', 'MHP': 1000, 'STR': 0, 'RES': 0, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Fire Type 08', 'moves': ['Attack'], 'weakness': 'Water', 'AGG': 100},
-    'Hilda': {'name': 'Hilda', 'weapon': 'Blade', 'element': 'Fire', 'MHP': 1000, 'STR': 0, 'RES': 0, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Fire Type 09', 'moves': ['Attack'], 'weakness': 'Water', 'AGG': 100},
-    'Lucina': {'name': 'Lucina', 'weapon': 'Blade', 'element': 'Water', 'MHP': 1000, 'STR': 0, 'RES': 0, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Water Type 09', 'moves': ['Attack'], 'weakness': 'Wind', 'AGG': 100},
-    'Ninian': {'name': 'Ninian', 'weapon': 'Focus Catalyst', 'element': 'Wind', 'MHP': 1000, 'STR': 0, 'RES': 0, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Prototype: GALE', 'moves': ['Attack'], 'weakness': 'Fire', 'AGG': 100},
-    'Shez': {'name': 'Shez', 'weapon': 'Health Blade', 'element': 'Fire', 'MHP': 1000, 'STR': 0, 'RES': 0, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Prototype: BLZE', 'moves': ['Attack'], 'weakness': 'Water', 'AGG': 100},
-    'Anna': {'name': 'Anna', 'weapon': 'Bow', 'element': 'Fire', 'MHP': 1000, 'STR': 0, 'RES': 0, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Fire Type 06', 'moves': ['Attack'], 'weakness': 'Water', 'AGG': 100},
-    'Knight': {'name': 'Knight', 'weapon': 'Blade', 'element': 'Water', 'MHP': 1000, 'STR': 0, 'RES': 0, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Water Type 07', 'moves': ['Attack'], 'weakness': 'Wind', 'AGG': 100},
-    'Kris': {'name': 'Kris', 'weapon': 'Blade', 'element': 'Water', 'MHP': 1000, 'STR': 0, 'RES': 0, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Water Type 06', 'moves': ['Attack'], 'weakness': 'Wind', 'AGG': 100},
-    'Lyn': {'name': 'Lyn', 'weapon': 'Blade', 'element': 'Wind', 'MHP': 1000, 'STR': 0, 'RES': 0, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Wind Type 07', 'moves': ['Attack'], 'weakness': 'Fire', 'AGG': 100},
-    'Mia': {'name': 'Mia', 'weapon': 'Blade', 'element': 'Fire', 'MHP': 1000, 'STR': 0, 'RES': 0, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Fire Type 05', 'moves': ['Attack'], 'weakness': 'Water', 'AGG': 100},
-    'Reginn': {'name': 'Reginn', 'weapon': 'Blade', 'element': 'Wind', 'MHP': 1000, 'STR': 0, 'RES': 0, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Wind Type 06', 'moves': ['Attack'], 'weakness': 'Fire', 'AGG': 100},
-    'Seliph': {'name': 'Seliph', 'weapon': 'Blade', 'element': 'Water', 'MHP': 1000, 'STR': 0, 'RES': 0, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Water Type 05', 'moves': ['Attack'], 'weakness': 'Wind', 'AGG': 100},
-    'Sothe': {'name': 'Sothe', 'weapon': 'Blade', 'element': 'Wind', 'MHP': 1000, 'STR': 0, 'RES': 0, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Wind Type 05', 'moves': ['Attack'], 'weakness': 'Fire', 'AGG': 100},
-    'Alear': {'name': 'Alear', 'weapon': 'Star Blade', 'element': 'Singularity', 'MHP': 1000, 'STR': 0, 'RES': 0, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Prototype: STAR', 'moves': ['Attack'], 'weakness': 'None', 'AGG': 100,}
+    'Byleth': {'name': 'Byleth', 'weapon': 'Catalyst', 'element': 'Wind', 'MHP': 500, 'STR': 100, 'RES': 5, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Wind Type 09', 'moves': ['Garudyne',"Cyclone", "SPECIAL: Eye of the Storm"], 'weakness': 'Fire', 'AGG': 100},
+    'Morgan': {'name': 'Morgan', 'weapon': 'Resistance Blade', 'element': 'Water', 'MHP': 500, 'STR': 100, 'RES': 5, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Prototype: AQUA', 'moves': ['Bufudyne',"Striking Tide", "SPECIAL: Thalassic Calamity"], 'weakness': 'Wind', 'AGG': 100},
+    'Claude': {'name': 'Claude', 'weapon': 'Bow', 'element': 'Fire', 'MHP': 500, 'STR': 100, 'RES': 5, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Fire Type 07', 'moves': ['Agidyne', "Fire Dance", "SPECIAL: Burning Hell"], 'weakness': 'Water', 'AGG': 100},
+
+    'Alm': {'name': 'Alm', 'weapon': 'Wind Bow', 'element': 'Wind', 'MHP': 500, 'STR': 100, 'RES': 5, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Wind Type 08', 'moves': ['Garudyne',"Cyclone", "SPECIAL: Eye of the Storm"], 'weakness': 'Fire', 'AGG': 100},
+    'Dimitri': {'name': 'Dimitri', 'weapon': 'Hyper Blade', 'element': 'Water', 'MHP': 500, 'STR': 100, 'RES': 5, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Water Type 08', 'moves': ['Bufudyne',"Striking Tide", "SPECIAL: Thalassic Calamity"], 'weakness': 'Wind', 'AGG': 100},
+    'Lilina': {'name': 'Lilina', 'weapon': 'Catalyst', 'element': 'Fire', 'MHP': 500, 'STR': 100, 'RES': 5, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Fire Type 08', 'moves': ['Agidyne', "Fire Dance", "SPECIAL: Burning Hell"], 'weakness': 'Water', 'AGG': 100},
+    'Hilda': {'name': 'Hilda', 'weapon': 'Blade', 'element': 'Fire', 'MHP': 500, 'STR': 100, 'RES': 5, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Fire Type 09', 'moves': ['Agidyne', "Fire Dance", "SPECIAL: Burning Hell"], 'weakness': 'Water', 'AGG': 100},
+    'Lucina': {'name': 'Lucina', 'weapon': 'Blade', 'element': 'Water', 'MHP': 500, 'STR': 100, 'RES': 5, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Water Type 09', 'moves': ['Bufudyne',"Striking Tide", "SPECIAL: Thalassic Calamity"], 'weakness': 'Wind', 'AGG': 100},
+    'Ninian': {'name': 'Ninian', 'weapon': 'Focus Catalyst', 'element': 'Wind', 'MHP': 500, 'STR': 100, 'RES': 5, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Prototype: GALE', 'moves': ['Garudyne',"Cyclone", "SPECIAL: Eye of the Storm"], 'weakness': 'Fire', 'AGG': 100},
+    'Shez': {'name': 'Shez', 'weapon': 'Health Blade', 'element': 'Fire', 'MHP': 500, 'STR': 100, 'RES': 5, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Prototype: BLZE', 'moves': ['Agidyne', "Fire Dance", "SPECIAL: Burning Hell"], 'weakness': 'Water', 'AGG': 100},
+    'Anna': {'name': 'Anna', 'weapon': 'Bow', 'element': 'Fire', 'MHP': 500, 'STR': 100, 'RES': 5, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Fire Type 06', 'moves': ['Agidyne', "Fire Dance", "SPECIAL: Burning Hell"], 'weakness': 'Water', 'AGG': 100},
+    'Knight': {'name': 'Knight', 'weapon': 'Blade', 'element': 'Water', 'MHP': 500, 'STR': 100, 'RES': 5, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Water Type 07', 'moves': ['Bufudyne',"Striking Tide", "SPECIAL: Thalassic Calamity"], 'weakness': 'Wind', 'AGG': 100},
+    'Kris': {'name': 'Kris', 'weapon': 'Blade', 'element': 'Water', 'MHP': 500, 'STR': 100, 'RES': 5, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Water Type 06', 'moves': ['Bufudyne',"Striking Tide", "SPECIAL: Thalassic Calamity"], 'weakness': 'Wind', 'AGG': 100},
+    'Lyn': {'name': 'Lyn', 'weapon': 'Blade', 'element': 'Wind', 'MHP': 500, 'STR': 100, 'RES': 5, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Wind Type 07', 'moves': ['Garudyne',"Cyclone", "SPECIAL: Eye of the Storm"], 'weakness': 'Fire', 'AGG': 100},
+    'Mia': {'name': 'Mia', 'weapon': 'Blade', 'element': 'Fire', 'MHP': 500, 'STR': 100, 'RES': 5, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Fire Type 05', 'moves': ['Agidyne', "Fire Dance", "SPECIAL: Burning Hell"], 'weakness': 'Water', 'AGG': 100},
+    'Reginn': {'name': 'Reginn', 'weapon': 'Blade', 'element': 'Wind', 'MHP': 500, 'STR': 100, 'RES': 5, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Wind Type 06', 'moves': ['Garudyne',"Cyclone", "SPECIAL: Eye of the Storm"], 'weakness': 'Fire', 'AGG': 100},
+    'Seliph': {'name': 'Seliph', 'weapon': 'Blade', 'element': 'Water', 'MHP': 500, 'STR': 100, 'RES': 5, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Water Type 05', 'moves': ['Bufudyne',"Striking Tide", "SPECIAL: Thalassic Calamity"], 'weakness': 'Wind', 'AGG': 100},
+    'Sothe': {'name': 'Sothe', 'weapon': 'Blade', 'element': 'Wind', 'MHP': 500, 'STR': 100, 'RES': 5, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Wind Type 05', 'moves': ['Garudyne',"Cyclone", "SPECIAL: Eye of the Storm"], 'weakness': 'Fire', 'AGG': 100},
+    'Alear': {'name': 'Alear', 'weapon': 'Star Blade', 'element': 'Singularity', 'MHP': 500, 'STR': 100, 'RES': 5, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Prototype: STAR', 'moves': ['Garudyne',"Cyclone", "SPECIAL: Eye of the Storm"], 'weakness': 'None', 'AGG': 100,}
 }
 
 player_characters = {
-    "Byleth" : {"name" : "Byleth", "LVL" : 5, "EXP" : 1,"HP" : 1000, "charms" : []},
-    "Claude" : {"name" : "Claude", "LVL" : 3, "EXP" : 1,"HP" : 1000, "charms" : []},
-    "Morgan" : {"name" : "Morgan", "LVL" : 1, "EXP" : 1,"HP" : 1000, "charms" : []}
+    "Byleth" : {"name" : "Byleth", "LVL" : 1, "EXP" : 1,"HP" : 500, "charms" : []},
+    "Claude" : {"name" : "Claude", "LVL" : 1, "EXP" : 1,"HP" : 500, "charms" : []},
+    "Dimitri" : {"name" : "Claude", "LVL" : 1, "EXP" : 1,"HP" : 500, "charms" : []},
+    "Lilina" : {"name" : "Claude", "LVL" : 1, "EXP" : 1,"HP" : 500, "charms" : []},
+    "Hilda" : {"name" : "Claude", "LVL" : 1, "EXP" : 1,"HP" : 500, "charms" : []},
+    "Lucina" : {"name" : "Claude", "LVL" : 1, "EXP" : 1,"HP" : 500, "charms" : []},
+    "Ninian" : {"name" : "Claude", "LVL" : 1, "EXP" : 1,"HP" : 500, "charms" : []},
+    "Shez" : {"name" : "Claude", "LVL" : 1, "EXP" : 1,"HP" : 500, "charms" : []},
+    "Anna" : {"name" : "Claude", "LVL" : 1, "EXP" : 1,"HP" : 500, "charms" : []},
+    "Knight" : {"name" : "Claude", "LVL" : 1, "EXP" : 1,"HP" : 500, "charms" : []},
+    "Kris" : {"name" : "Claude", "LVL" : 1, "EXP" : 1,"HP" : 500, "charms" : []},
+    "Lyn" : {"name" : "Claude", "LVL" : 1, "EXP" : 1,"HP" : 500, "charms" : []},
+    "Mia" : {"name" : "Claude", "LVL" : 1, "EXP" : 1,"HP" : 500, "charms" : []},
+    "Reginn" : {"name" : "Claude", "LVL" : 1, "EXP" : 1,"HP" : 500, "charms" : []},
+    "Seliph" : {"name" : "Claude", "LVL" : 1, "EXP" : 1,"HP" : 500, "charms" : []},
+    "Sothe" : {"name" : "Claude", "LVL" : 1, "EXP" : 1,"HP" : 500, "charms" : []},
+    "Alear" : {"name" : "Claude", "LVL" : 1, "EXP" : 1,"HP" : 500, "charms" : []},
+    "Morgan" : {"name" : "Morgan", "LVL" : 1, "EXP" : 1,"HP" : 500, "charms" : []}
 }
-
 BASE_MEXP = 500
 
 battle_characters = {}
 
+#OLD
 ##player_characters = {'Alm': {'name': 'Alm', 'weapon': {'type': 'Bow', 'str': 100, 'stat': 'Wind DMG', 'amount': 15, 'name': 'Wind Bow', 'desc': 'STR: 100. Increases Wind DMG by 15.'}, 'element': 'Wind', 'LVL': 1, 'MEXP': 500, 'EXP': 0, 'MHP': 500, 'HP': 500, 'STR': 0, 'RES': 0, 'CRIT': 5, 'CRIT DMG': 50, 'ER': 100, 'EG': 0, 'MEG': 100, 'Physical DMG': 0, 'Fire DMG': 0, 'Water DMG': 0, 'Wind DMG': 0, 'All DMG': 0, 'buff': {}, 'debuff': {}, 'charms': {'CRIT DMG Charm I': {'stat': 'CRIT DMG', 'amount': 25, 'name': 'CRIT DMG Charm I', 'desc': 'Increases CRIT DMG by 25.'}}, 'fusion': ['Wind Type 08', "CRIT DMG increased by 35. # When HP is higher than opponent's, CRIT DMG increased by 35. # "], 'moves': {'Attack': 0, 'Cyclone': 0, 'Garudyne': 0, 'SPECIAL: Eye of the Storm': 0, 'Focus': 0, 'Dia': 0}, 'weakness': 'Fire', 'weapontype': 'Bow'},
 ##                  'Dimitri': {'name': 'Dimitri', 'weapon': {'type': 'Blade', 'str': 100, 'stat': 'CRIT DMG', 'amount': 20, 'name': 'Hyper Blade', 'desc': 'STR: 100. Increases CRIT DMG by 20.'}, 'element': 'Water', 'LVL': 1, 'MEXP': 500, 'EXP': 0, 'MHP': 500, 'HP': 500, 'STR': 0, 'RES': 0, 'CRIT': 5, 'CRIT DMG': 50, 'ER': 100, 'EG': 0, 'MEG': 100, 'Physical DMG': 0, 'Fire DMG': 0, 'Water DMG': 0, 'Wind DMG': 0, 'All DMG': 0, 'buff': {}, 'debuff': {}, 'charms': {'STR Charm I': {'stat': 'STR', 'amount': 30, 'name': 'STR Charm I', 'desc': 'Increases STR by 30%.'}, 'CRIT Charm I': {'stat': 'CRIT', 'amount': 5, 'name': 'CRIT Charm I', 'desc': 'Increases CRIT by 5.'}}, 'fusion': ['Water Type 08', "Physical DMG increased by 80%. # When HP is higher than opponent's, Physical DMG increased by 40%. # "], 'moves': {'Attack': 0, 'Overgrow': 0, 'Awaken II': 0, 'Charge': 0, 'Dia': 0, 'Diarama': 0}, 'weakness': 'Wind', 'weapontype': 'Blade'},
 ##                  'Lilina': {'name': 'Lilina', 'weapon': {'type': 'Catalyst', 'str': 100, 'stat': '', 'amount': 0, 'name': 'Catalyst', 'desc': 'STR: 100.'}, 'element': 'Fire', 'LVL': 1, 'MEXP': 500, 'EXP': 0, 'MHP': 500, 'HP': 500, 'STR': 0, 'RES': 0, 'CRIT': 5, 'CRIT DMG': 50, 'ER': 100, 'EG': 0, 'MEG': 100, 'Physical DMG': 0, 'Fire DMG': 0, 'Water DMG': 0, 'Wind DMG': 0, 'All DMG': 0, 'buff': {}, 'debuff': {}, 'charms': {'STR Charm I': {'stat': 'STR', 'amount': 30, 'name': 'STR Charm I', 'desc': 'Increases STR by 30%.'}, 'CRIT Charm I': {'stat': 'CRIT', 'amount': 5, 'name': 'CRIT Charm I', 'desc': 'Increases CRIT by 5.'}}, 'fusion': ['Fire Type 08', "STR increased by 60%. # When hit by an attack, Gain the 'Concentrate' buff and Apply the 'Vulnerable' debuff on opponent. # "], 'moves': {'Attack': 0, 'Agidyne': 0, 'Fire Dance': 0, 'SPECIAL: Cataclysm': 0, 'Concentrate': 0, 'Dia': 0}, 'weakness': 'Water', 'weapontype': 'Catalyst'},
@@ -110,8 +127,8 @@ framesrate = 60
 #game window
 global screen_width
 global screen_height
-screen_width = 1280
-screen_height = 720
+screen_width = 1920
+screen_height = 1080
 global screen
 screen = pygame.display.set_mode((screen_width,screen_height))
 pygame.display.set_caption("Whims of Fate")
@@ -134,6 +151,7 @@ def init_font(diag):
            "medium":pygame.font.SysFont("Franklin Gothic Medium Cond", screen_mult(diag,58)),
            "large":pygame.font.SysFont("Franklin Gothic Medium Cond", screen_mult(diag,84)),
            "verylarge":pygame.font.SysFont("Franklin Gothic Medium Cond", screen_mult(diag,110)),
+           "battlemove":pygame.font.SysFont("Franklin Gothic Medium Cond", screen_mult(diag,230)),
            "title":pygame.font.SysFont("Aharoni", screen_mult(diag,200))}
     return output
 
@@ -360,6 +378,32 @@ def battle_draw_health(person, healthbar, mouse_pos):
     elif person.stats["name"] == enemy.stats["name"]:
         battle_draw_equips(enemy.stats,player.stats,x,y+rect_height+screen_mult(screen_height,40))
 
+def battle_draw_enemyhealth(person, healthbar, mouse_pos):
+    x = (person.rect.x+(person.rect.width/2))-((screen_width/4)/2)
+    y = person.rect.y+person.rect.height+screen_mult(screen_height,10)
+    x,y = mouse_hovereffect(x,y,"circle")
+
+    rect_width, rect_height = (screen_width/4),screen_mult(screen_height,60)
+    myColour = "red"
+    hpColour = "red"
+
+    #Outline width makes box slightly wider to not cover text
+    outline_width = screen_mult(screen_diag,3)
+    box = pygame.Rect(x-outline_width-screen_mult(screen_width,5), y-outline_width, rect_width+outline_width+screen_mult(screen_width,55), rect_height+outline_width)
+    outline = pygame.Rect(x-outline_width-screen_mult(screen_width,5), y-outline_width, rect_width+outline_width+screen_mult(screen_width,55), rect_height+outline_width)
+    #Main box
+    pygame.draw.rect(display, colour["grey"], box)
+    #Outline
+    pygame.draw.rect(display, colour[myColour], outline, 3)
+
+    #Healthbars
+    draw_text(str(person.stats["name"]), fonts["small"], colour[myColour], x+screen_mult(screen_width,3), y+screen_mult(screen_height,3), False)
+    healthbar.draw(x+screen_mult(screen_width,3),y+screen_mult(screen_height,22),person.stats["HP"],person.stats["MHP"]+person.stats["bonuses"]["MHP"],mouse_pos,hpColour)
+
+    #Display stat bonuses
+    battle_draw_bonus(person.stats["bonuses"],x,y+rect_height+screen_mult(screen_height,5))
+
+
 def get_lines(text, char_limit):
     lines = []
     line = ""
@@ -375,7 +419,7 @@ def get_lines(text, char_limit):
     lines.append(line)
     return lines
 
-def draw_text(text,font,textcolour,x,y, includebox):
+def draw_text(text,font,textcolour,x,y, includebox,alpha=255):
     if text == "":
         return
 
@@ -406,6 +450,7 @@ def draw_text(text,font,textcolour,x,y, includebox):
     line_y = 0
     for line in lines:
         text_surface = font.render(line, True, textcolour)
+        text_surface.set_alpha(alpha)
         display.blit(text_surface, (x, line_y + y))
         line_y += text_surface.get_height()
         
@@ -497,33 +542,35 @@ class Fighter():
     def move(self, action, target,player_party):
         global damage_text_group
         
-        #Damage text reset
-        damage_text_group = pygame.sprite.Group()
+
         #Functions acts as "Battle neutral"
         self.status = "move"
         message = ""
         message_colour = colour["white"]
         
-
+        action_name = action
         action = battle_moveslookup(action)
 
-        the_elements = ["Fire", "Water", "Wind", "Physical","Singularity","Buff","Debuff","Heal"]
-        actionelement = "Physical"
+        the_elements = ["Fire", "Water", "Wind","Singularity","Buff","Debuff","Heal"]
+        actionelement = "None"
         for e in the_elements:
-            if e in action:
+            if e in action["prop"]:
                 actionelement = e
                 break
-        if actionelement == "Buff" or actionelement == "Heal":
-            actiontype = "Defence"
-        else:
-            actiontype = "Offence"
+        the_types = ["Offence", "Defence"]
+        actiontype = "None"
+        for t in the_types:
+            if t in action["prop"]:
+                actiontype = t
+                break
+
 
         #Contains all data of the current Turn
         battle_turndata = {
-                     "action" : str(action),
+                     "action" : action,
                      "actionelement" : actionelement,
                      "actiontype" : actiontype,
-                     "actioninflict" : "",
+                     "actioninflict" : "None",
                      "actor" : self,#this is a class
                      "target" : target,#not a class, only stats
                      "turn" : self.stats["name"],
@@ -537,7 +584,7 @@ class Fighter():
                      "actorcondition" : "",
                      "targetcondition" : ""}
 
-        if action[0] not in player_party:
+        if action_name not in player_party:
             #Stat bonuses to self and target
             self.stats["bonuses"] = battle_updatestats(self.stats,target,battle_turndata)
             target["bonuses"] = battle_updatestats(target,self.stats,battle_turndata)
@@ -560,11 +607,11 @@ class Fighter():
 
         #Calculate dmg/healing/etc
         hits = 1
-        if battle_turndata["action"] == "Skip":
+        if action_name == "Skip":
             message_colour = colour["white"]
-            battle_damagetext(random.randint(self.rect.x,self.rect.x+self.rect.width), random.randint(self.rect.y,self.rect.y+self.rect.height), str(action[0]), message_colour,"medium")
-        elif battle_turndata["action"] in player_party:
-            self.switch(player_party[player_party.index(battle_turndata["action"])],player_party)
+            battle_damagetext(random.randint(self.rect.x,self.rect.x+self.rect.width), random.randint(self.rect.y,self.rect.y+self.rect.height), action_name, message_colour,"medium")
+        elif action_name in player_party:
+            self.switch(player_party[player_party.index(action_name)],player_party)
             myMixer("partyswitch.wav",-0.5)
             return battle_turndata,target
         elif battle_turndata["actiontype"] == "Offence":
@@ -592,6 +639,8 @@ class Fighter():
             else:
                 basedmg = 0
                 hits = 0
+
+            hits = 1#TEMPORARY
 
             #default text size
             size = "small"
@@ -696,7 +745,7 @@ class Fighter():
                 
         elif battle_turndata["actiontype"] == "Defence":
             #Healing
-            if action["dmg"] != 0:
+            if "dmg" in action:
                 amount = int((action["dmg"] * ((self.stats["STR"]+self.stats["bonuses"]["STR"])/100)) * 4)
                 if self.stats["name"] == target["name"]:
                     battle_damagetext(self.rect.x+(self.rect.width/2), self.rect.y,str(amount), colour[battle_turndata["actionelement"]],"medium")
@@ -734,17 +783,6 @@ class Fighter():
                         battle_characters[member] = battle_applybuffs(battle_turndata["actioninflict"], 2, "Buff", x,y,battle_characters[member])
             
 
-        #Energy charge. Player exclusive
-        #Player acts hit, party gets energy
-        if "EG" in self.stats and "SPECIAL" not in battle_turndata["action"]:
-            #Base regen rate
-            energy = 3
-            if battle_turndata["weak"] or battle_turndata["action"] == "Skip": energy = energy * 2
-            
-            battle_characters[self.stats["name"]]["EG"] = battle_energy(energy,self.stats["ER"]+self.stats["bonuses"]["ER"],self.stats["EG"],self.stats["MEG"])
-            for member in player_party:
-                battle_characters[member]["EG"] = battle_energy(energy,battle_characters[member]["ER"]+battle_characters[member]["bonuses"]["ER"],battle_characters[member]["EG"],battle_characters[member]["MEG"])
-        
         return battle_turndata,target
             
 
@@ -1368,11 +1406,13 @@ def charms_eq_check(ID):
     return result
 
 def move_stats(multiplier, lvl):
-    return int(multiplier+((multiplier*0.15)*lvl))
+    #Increases move strength based on level
+    return int(multiplier+((multiplier*0.15)*(lvl-1)))
 
 def battle_moveslookup(move, lvl=1):
-  #Light, Weak, Medium, Heavy, Severe, Colossal
   #"Name : [BaseDMG, Range of hits, Type Offence/Defence/Heal, Buff/Debuff infliction, Element, Unique attribute]"
+
+  #THESE NEED TO BE REWORKED
   all_moves = {
                   #Healing
                   "Diarama" : [20, [0,0], "Defence", "None","Heal",""]
@@ -1442,135 +1482,48 @@ def battle_moveslookup(move, lvl=1):
                   ,"Molotov" : [90, [1,0], "Offence", "None","Fire",""]
                   ,"Flashbang" : [90, [1,0], "Offence", "None","Wind",""]
                   }
-
+  #THIS IS THE NEW FORMAT. Properties, img, dmg, description
+  #Minor, Medium, Major, Massive
   all_moves = {
-      "Garudyne" : {"prop" : ["Wind", "Basic"], "img" : "wind_1s", "dmg" : 100},
-      "Cyclone": {"prop" : ["Wind", "Skill"], "img" : "wind_mg", "dmg" : 240, "hits" : 8},
-      "Eye of the Storm": {"prop" : ["Wind", "SPECIAL"], "img" : "special", "dmg" : 432, "hits" : 8},
-      "Bufudyne": {"prop" : ["Water", "Basic"], "img" : "water_1s", "dmg" : 100},
-      "Striking Tide": {"prop" : ["Water", "Skill"], "img" : "water_mg", "dmg" : 24, "hits" : 10},
-      "Thalassic Calamity": {"prop" : ["Water", "SPECIAL"], "img" : "special", "dmg" : 43, "hits" : 10},
-      "Agidyne": {"prop" : ["Fire", "Basic"], "img" : "fire_1s", "dmg" : 100},
-      "Fire Dance": {"prop" : ["Fire", "Skill"], "img" : "fire_mg", "dmg" : 80, "hits" : 3},
-      "Burning Hell": {"prop" : ["Fire", "SPECIAL"], "img" : "special", "dmg" : 420}
+      "Skip" : {"prop" : ["Defence"], "img" : "skip"},
+
+      "Garudyne" : {"prop" : ["Offence", "Wind", "Basic"], "img" : "wind_1s", "dmg" : 100},
+      "Cyclone": {"prop" : ["Offence", "Wind", "Skill"], "img" : "wind_mg", "dmg" : 30, "hits" : 8},
+      "SPECIAL: Eye of the Storm": {"prop" : ["Offence", "Wind", "SPECIAL"], "img" : "special", "dmg" : 50, "hits" : 8},
+      "Bufudyne": {"prop" : ["Offence", "Water", "Basic"], "img" : "water_1s", "dmg" : 100},
+      "Striking Tide": {"prop" : ["Offence", "Water", "Skill"], "img" : "water_mg", "dmg" : 24, "hits" : 10},
+      "SPECIAL: Thalassic Calamity": {"prop" : ["Offence", "Water", "SPECIAL"], "img" : "special", "dmg" : 40, "hits" : 10},
+      "Agidyne": {"prop" : ["Offence", "Fire", "Basic"], "img" : "fire_1s", "dmg" : 100},
+      "Fire Dance": {"prop" : ["Offence", "Fire", "Skill"], "img" : "fire_mg", "dmg" : 80, "hits" : 3},
+      "SPECIAL: Burning Hell": {"prop" : ["Offence", "Fire", "SPECIAL"], "img" : "special", "dmg" : 400}
   }
   all_moves_desc = { #s = Small desc. b = Big desc0
+      "Skip" : {"s" : "End this turn", "b" : "End this turn"},
+
       "Garudyne" : {"s":"Deals medium Wind DMG", "b" : "Deals " + str(move_stats(all_moves["Garudyne"]["dmg"],lvl)) + "% Wind DMG to a single target enemy"},
-      "Cyclone" : {"s":"Deals strong Wind DMG", "b" : "Deals " + str(move_stats(all_moves["Cyclone"]["dmg"],lvl)) + "% Wind DMG to a single target enemy across multiple hits"},
-      "Eye of the Storm" : {"s":"Deals extreme Wind DMG", "b" : "Deals " + str(move_stats(all_moves["Eye of the Storm"]["dmg"],lvl)) + "% Wind DMG to a single target enemy across multiple hits"},
+      "Cyclone" : {"s":"Deals minor Wind DMG x8", "b" : "Deals " + str(move_stats(all_moves["Cyclone"]["dmg"],lvl)) + "% Wind DMG to a single target enemy across multiple hits"},
+      "SPECIAL: Eye of the Storm" : {"s":"Deals medium Wind DMG x8", "b" : "Deals " + str(move_stats(all_moves["SPECIAL: Eye of the Storm"]["dmg"],lvl)) + "% Wind DMG to a single target enemy across multiple hits"},
 
       "Bufudyne" : {"s":"Deals medium Water DMG", "b" : "Deals " + str(move_stats(all_moves["Bufudyne"]["dmg"],lvl)) + "% Water DMG to a single target enemy"},
-      "Striking Tide" : {"s":"Deals strong Water DMG", "b" : "Deals " + str(move_stats(all_moves["Striking Tide"]["dmg"],lvl)) + "% Water DMG to a single target enemy across multiple hits"},
-      "Thalassic Calamity" : {"s":"Deals extreme Water DMG", "b" : "Deals " + str(move_stats(all_moves["Thalassic Calamity"]["dmg"],lvl)) + "% Water DMG to a single target enemy across multiple hits"},
+      "Striking Tide" : {"s":"Deals minor Water DMG x10", "b" : "Deals " + str(move_stats(all_moves["Striking Tide"]["dmg"],lvl)) + "% Water DMG to a single target enemy across multiple hits"},
+      "SPECIAL: Thalassic Calamity" : {"s":"Deals medium Water DMG x10", "b" : "Deals " + str(move_stats(all_moves["SPECIAL: Thalassic Calamity"]["dmg"],lvl)) + "% Water DMG to a single target enemy across multiple hits"},
 
       "Agidyne" : {"s":"Deals medium Fire DMG", "b" : "Deals " + str(move_stats(all_moves["Agidyne"]["dmg"],lvl)) + "% Fire DMG to a single target enemy"},
-      "Fire Dance" : {"s":"Deals strong Fire DMG", "b" : "Deals " + str(move_stats(all_moves["Fire Dance"]["dmg"],lvl)) + "% Fire DMG to a single target enemy across multiple hits"},
-      "Burning Hell" : {"s":"Deals extreme Fire DMG", "b" : "Deals " + str(move_stats(all_moves["Burning Hell"]["dmg"],lvl)) + "% Fire DMG to a single target enemy"},
+      "Fire Dance" : {"s":"Deals medium Fire DMG x3", "b" : "Deals " + str(move_stats(all_moves["Fire Dance"]["dmg"],lvl)) + "% Fire DMG to a single target enemy across multiple hits"},
+      "SPECIAL: Burning Hell" : {"s":"Deals massive Fire DMG", "b" : "Deals " + str(move_stats(all_moves["SPECIAL: Burning Hell"]["dmg"],lvl)) + "% Fire DMG to a single target enemy"},
   }
 
+  #Finds move and adds the desc to output
   output = {}
   if move in all_moves:
       output = all_moves[move]
       output["desc"] = all_moves_desc[move]
       return output
-
-  if move in all_moves:
-    #Decides if amount of hits is fixed or in a random range
-    if all_moves[move][1][0] >= all_moves[move][1][1]: hits = all_moves[move][1][0]
-    else: hits = random.randint(all_moves[move][1][0],all_moves[move][1][1])
-    
-    move = {
-      "name" : move,
-      "basedmg" : all_moves[move][0],
-      "hits" : hits,
-      "type" : all_moves[move][2],
-      "affliction" : all_moves[move][3],
-      "element" : all_moves[move][4],
-      "unique" : all_moves[move][5],
-      "description" : "",
-      "image" : ""}
   elif move == "all":
       return all_moves
   else:
-    return [move,0,0,"Other","None",0,"",""]
-
-  #Generating description
-
-  #Amount of hits
-  if move["hits"] != 0:
-    if all_moves[move["name"]][1][1] > all_moves[move["name"]][1][0]: move["description"] += str(all_moves[move["name"]][1][0]) + "-" + str(all_moves[move["name"]][1][1]) + " "
-    else: move["description"] += str(move["hits"]) + " "
-
-  #Base dmg
-  if move["basedmg"] == 0:  move["description"] += ""  
-  elif move["basedmg"] < 20: move["description"] += "Light "
-  elif move["basedmg"] < 40: move["description"] += "Light-Weak "
-  elif move["basedmg"] < 60: move["description"] += "Weak "
-  elif move["basedmg"] < 80: move["description"] += "Weak-Medium "
-  elif move["basedmg"] < 100: move["description"] += "Medium "
-  elif move["basedmg"] < 120:  move["description"] += "Medium-Heavy "
-  elif move["basedmg"] < 140:  move["description"] += "Heavy "
-  elif move["basedmg"] < 160:  move["description"] += "Heavy-Severe "
-  elif move["basedmg"] < 180:  move["description"] += "Severe "
-  elif move["basedmg"] < 200:  move["description"] += "Severe-Colossal "
-  elif move["basedmg"] >= 200: move["description"] += "Colossal "
-
-
-  #Element
-  if move["element"] != "" and move["element"] != "Heal" and move["basedmg"] != 0:
-    move["description"] += move["element"] + " DMG "
-    if move["hits"] > 1:  move["description"] += "hits. "
-    else: move["description"] += "hit. "
-  elif move["element"] == "Heal":
-      move["description"] += move["element"]
-      if move["type"] == "Party":
-          move["description"] += " on all allies."
-
-  #Buff/Debuff infliction
-  if move["affliction"] != "None":
-    move["description"] += "Inflicts " + str(move["affliction"]) + " on"
-    #Inflicted on opponent/self
-    if move["type"] == "Offence": move["description"] += " opponent. "
-    elif move["type"] == "Defence" or move["type"] == "Heal": move["description"] += " self. "
-    elif move["type"] == "Party": move["description"] += " all allies. "
-
-  #Unique attribute
-  if move["unique"] != "":  move["description"] += str(move["unique"]) + ". "
-      
-  #Healing numbers
-  if move["element"] == "Heal": move["basedmg"] * 2
-
-  #Move image Icon. WIP
-  icon = ""
-  if "SPECIAL" in move["name"]:
-      icon = "special"
-  elif move["element"] == "Fire" or move["element"] == "Physical" or move["element"] == "Wind" or move["element"] == "Water" or move["element"] == "Singularity":
-    rating = int(move["basedmg"] * hits)
-    
-    if move["affliction"] != "None":
-        rating += int(rating*0.33)
-    if rating <= 80:
-        rating = "b"
-    elif rating <= 120:
-        rating = "s"
-    else:
-        rating = "g"
-        
-    if hits > 1:
-        multi_hit = "m"
-    else:
-        multi_hit = "1"
-
-    icon = str(move["element"].lower()) + "_" + str(multi_hit) + str(rating)
-  else:
-    icon = move["element"].lower()
-    
-
-  #Final Output
-  output = [move["name"],move["basedmg"], hits, move["type"],move["affliction"],move["element"],move["unique"],move["description"], icon]
-
-    
-  return output
+      #Either move not found OR switching to another character
+    return {"prop" : [],"img":"","desc":{"s" : "Switch character","b":"Switch character"},"dmg" : 0}
 
 def battle_applybuffs(buff, buffamount, bufftype, x,y,target):
     global battle_characters
@@ -1719,7 +1672,6 @@ def battle_bonuscheck(actor,target,data,bonus_values):
     for stat in bonus_values:
         bonus_values[stat] = int(bonus_values[stat])
 
-    print(bonus_values)
     return bonus_values
         
 def get_buff(actor, target, buff):
@@ -1788,14 +1740,14 @@ def battle_createability(moves):
     #Creating buttons. Screen, width, height, image, size x, size y
     abilities = {}
     x_value = 0
+    size = 90
     for ability in moves:
-        print(ability)
         #Add the Button attribute to ability
         abilities[ability] = {
-            "button" : button.Button(display, player.rect.x + x_value, screen_height - (screen_height/4), pygame.image.load("img/Other/"+ str(battle_moveslookup(ability)["img"]) + ".png").convert_alpha(), screen_mult(screen_width,70),screen_mult(screen_height,70))}
+            "button" : button.Button(display, player.rect.x + x_value, screen_height - (screen_height/4), pygame.image.load("img/Other/"+ str(battle_moveslookup(ability)["img"]) + ".png").convert_alpha(), screen_mult(screen_width,size),screen_mult(screen_height,size))}
         #Used for spacing out abilities on screen
-        x_value += screen_mult(screen_width,80)
-    abilities["Skip"] = {"button" :button.Button(display, player.rect.x + x_value, screen_height - (screen_height/4), img_skip, screen_mult(screen_width,70),screen_mult(screen_height,70))}
+        x_value += screen_mult(screen_width,size+10)
+    abilities["Skip"] = {"button" :button.Button(display, player.rect.x + x_value, screen_height - (screen_height/4), img_skip, screen_mult(screen_width,size),screen_mult(screen_height,size))}
     
 
     return abilities
@@ -1921,7 +1873,7 @@ def battle_viewmember(member,background):
         pygame.display.update()
         
 def char_stats(stat,lvl):
-    return int(stat+((stat*0.1)*lvl))
+    return int(stat+(((stat*0.1)*lvl)-stat*0.1))
 
 def battle_system(player_party,enemy_stats):
     global player
@@ -2031,7 +1983,7 @@ def battle_system(player_party,enemy_stats):
     size_x, size_y = screen_mult(screen_width,100),screen_mult(screen_height,10)
     player_hp = ProgressBar(size_x,size_y)
     player_eg = ProgressBar(size_x,size_y)
-    enemy_hp = ProgressBar(size_x,size_y)
+    enemy_hp = ProgressBar(screen_width/4,screen_mult(screen_height,20))
     enemy_hp_old = ProgressBar(size_x,size_y)
 
     #Ability and Party buttons
@@ -2085,6 +2037,21 @@ def battle_system(player_party,enemy_stats):
     enemy_shake = 0
     combo_shake = 0
     combo = {"hits" : 0, "dmg" : 0}
+    hits = 0
+    maxhits = 0
+
+    #player button transition
+    #point = current offset pixels, max = offset starting point pixels, spd = pixel offset reduction per frame
+    buttonshift_speed = int(framesrate*0.1)#0.1s
+    buttonshift_party = {"max" : screen_mult(screen_width,500)}
+    buttonshift_party["point"] = buttonshift_party["max"]
+    buttonshift_party["spd"] = int(buttonshift_party["max"]/buttonshift_speed)
+    buttonshift_moves = {"max" : screen_mult(screen_width,300)}
+    buttonshift_moves["point"] = buttonshift_moves["max"]
+    buttonshift_moves["spd"] = int(buttonshift_moves["max"]/buttonshift_speed)
+
+    #actions. [move, target]
+    action = ["",""]
 
     #Determines rating for after battle
     battle_data = {
@@ -2119,6 +2086,7 @@ def battle_system(player_party,enemy_stats):
 
         #gets mouse position
         mouse_pos = pygame.mouse.get_pos()
+        print(mouse_pos)
 
         #Update invis circle effect
         if (player.stats["HP"]/player.stats["MHP"])*100 <= 30:
@@ -2136,21 +2104,31 @@ def battle_system(player_party,enemy_stats):
         #Display players
         if battle_action == "player" and selected == "":
             player.status = "idle"
-        elif battle_action == "player" and selected != "":
+        elif battle_action == "player" and selected != "" and action[0] == "":
             player.status = "ready"
         player.update()
-        x,y = mouse_hovereffect(screen_width/4, int(screen_height/2)-int(player.rect.height/5),"circle")
+        x,y = mouse_hovereffect(screen_width/3, int(screen_height/2)-int(player.rect.height/5),"circle")
         player.draw(x,y)
 
         #Add enemy shake
         if enemy_shake > 0:
             enemy_shake -= 1
-            shake_x, shake_y = image_shake(int((battle_turndata["totaldmg"]/2000)*40))
+            shake_x, shake_y = image_shake(15)
         else:   shake_x, shake_y = 0,0
         if enemy.stats["HP"] > 0:
             enemy.update()
             x,y = mouse_hovereffect(screen_width-(screen_width/4),int(screen_height/2)-int(enemy.rect.height/5),"circle")
             enemy.draw(x+shake_x,y+shake_y)
+
+
+        #Buttons transitions
+        if battle_action == "player":
+            if buttonshift_party["point"] >= 0 and buttonshift_party["point"] > buttonshift_party["spd"]:
+                buttonshift_party["point"] -= buttonshift_party["spd"]
+            else:   buttonshift_party["point"] = 0
+            if buttonshift_moves["point"] >= 0 and buttonshift_moves["point"] > buttonshift_moves["spd"]:
+                buttonshift_moves["point"] -= buttonshift_moves["spd"]
+            else:   buttonshift_moves["point"] = 0
 
         #Top and bottom borders for effect
             #Black
@@ -2161,7 +2139,7 @@ def battle_system(player_party,enemy_stats):
         pygame.draw.rect(display, colour["black"], box4)
         
         #Update coords for battle status display and main colours
-        if battle_action == "player" or battle_action == "Victory!":
+        if (battle_action == "player" and action[0] == "") or battle_action == "Victory!":
             x = player.rect.x
             y = player.rect.y
             if "SPECIAL" in selected:   myColour = colour["rainbowcycle"]
@@ -2170,7 +2148,7 @@ def battle_system(player_party,enemy_stats):
             x = enemy.rect.x
             y = enemy.rect.y
             myColour = colour["red"]
-        elif battle_action == "neutral":
+        elif action[0] != "":#Action being done
             x = (screen_width/2.5)
             y = screen_height/4
             if "SPECIAL" in battle_turndata["action"]:   myColour = colour["rainbowcycle"]
@@ -2188,65 +2166,84 @@ def battle_system(player_party,enemy_stats):
         pygame.draw.rect(display, myColour, box2)
 
         #display battle status
-        x,y = mouse_hovereffect(x,y,"circle")
         #draw_text(str(battle_action).upper(), fonts["verylarge"], myColour, x, y-100, True)
         #display selected ability
         if selected != "":
-            x,y = mouse_hovereffect(x,screen_height - (screen_height/4),"circle")
-            draw_text(str(selected).upper(), fonts["large"], myColour, x, y + screen_mult(screen_height,80), True)
-            draw_text(str(battle_moveslookup(selected)["desc"]["s"]).upper(), fonts["dmgsmall"], myColour, x, y + screen_mult(screen_height,170), True)
+            x,y = (screen_width/2)-screen_mult(screen_width,60),screen_height - (screen_height/3)
+            #adjust size
+            if "SPECIAL" in selected:
+                text_output = selected[9:]
+            else: text_output = selected
+
+            #adjust x based on actor+text length
+            if action[0] != "" or battle_action=="neutral":#action being done aka battle_neutral
+                x -= screen_mult(screen_width,42*len(text_output))#default
+            elif battle_action == "player":
+                x -= screen_mult(screen_width,42*len(text_output))#towards player
+                x -= screen_mult(screen_width,200)
+            elif battle_action == "enemy":
+                x -= screen_mult(screen_width,42*len(text_output))#towards enemy
+                x += screen_mult(screen_width,200)
+
+            draw_text(str(text_output).upper(), fonts["battlemove"], myColour, x, y + screen_mult(screen_height,142), False,100)#Transparent
+            draw_text(str(battle_moveslookup(selected)["desc"]["s"]).upper(), fonts["dmgmed"], myColour, x+screen_mult(screen_width,40*len(selected)), y + screen_mult(screen_height,300), False)
         
             
         #Combo metre. Also shakes
-        if (combo["hits"] > 1 and player.status != "idle" and player.status != "hurt" and player.status != "dead") or (combo["hits"] > 1 and player.status == "idle" and battle_action == "player"):
+        if (combo["hits"] > 0 and player.status != "idle" and player.status != "hurt" and player.status != "dead") or (combo["hits"] > 0 and player.status == "idle" and battle_action == "player"):
             if combo_shake > 0:
                 myColour = colour["red"]
                 combo_shake -= 1
-                shake_x, shake_y = image_shake(8)
+                shake_x, shake_y = image_shake(10)
             elif combo["hits"] > 20:
                 myColour = colour["rainbowcycle"]
-                shake_x, shake_y = image_shake(1)
+                shake_x, shake_y = image_shake(2)
             else:
                 myColour = colour["white"]
                 shake_x, shake_y = 0,0
-            x, y = mouse_hovereffect(screen_width/4,screen_height/5,"circle")
-            draw_text(str(combo["hits"]) + " HITS!", fonts["large"], myColour, x+shake_x, y+shake_y, True)
-            draw_text(str(combo["dmg"]) + " TOTAL DMG", fonts["dmgsmall"], myColour, x-shake_x, y -shake_y+screen_mult(screen_height,90), True)
+            x, y = mouse_hovereffect(screen_mult(screen_width,200)+(screen_width/2),screen_height/4,"circle")
+            draw_text(str(combo["hits"]) + " HITS!", fonts["large"], colour["grey"], x-shake_x+2, y-shake_y+2, False)#Grey outline text
+            draw_text(str(combo["dmg"]) + " TOTAL DMG", fonts["dmgsmall"], colour["grey"], x+shake_x+2, y +shake_y+2+screen_mult(screen_height,80), False)#Grey outline text
+            draw_text(str(combo["hits"]) + " HITS!", fonts["large"], myColour, x+shake_x, y+shake_y, False)
+            draw_text(str(combo["dmg"]) + " TOTAL DMG", fonts["dmgsmall"], myColour, x-shake_x, y -shake_y+screen_mult(screen_height,80), False)
         
 
         #Player and enemy health bars
         battle_draw_health(player,player_hp, mouse_pos)
-        battle_draw_health(enemy,enemy_hp, mouse_pos)
+        battle_draw_enemyhealth(enemy,enemy_hp, mouse_pos)
+
 
         #projectiles
         projectile_group.update()
         projectile_group.draw(display)
 
-        #actions. [move, target]
-        action = ["",""]
         
         
 
-        if battle_action == "player":
+        if battle_action == "player" and action[0] == "":
             #ABILITY BUTTONS
             #For spacing between buttons
-            x_value = -screen_mult(screen_width,120)
+            x_value = screen_mult(screen_width,50)
             for move in player.stats["moves"]:
-                if "SPECIAL" in move and player.stats["EG"] != player.stats["MEG"]:
+                if "SPECIAL" in battle_moveslookup(move)["prop"]:
+                    special = True
+                else:
+                    special = False
+                if special and player.stats["EG"] != player.stats["MEG"]:
                     continue
-                elif "SPECIAL" in move and player.stats["EG"] == player.stats["MEG"]:
+                elif special and player.stats["EG"] == player.stats["MEG"]:
                     myColour = "rainbowcycle"
                 else:
                     myColour = player.stats["element"]
                 #Display the ability button
-                x,y = mouse_hovereffect(player.x + x_value, screen_height - (screen_height/4),"circle")
+                x,y = mouse_hovereffect(player.x + x_value, screen_height - (screen_height/4)+buttonshift_moves["point"],"circle")
                 ability_clicked = abilities[move]["button"].draw(x,y,"") #(Returns True if button is pressed)
-                x_value += screen_mult(screen_width,80)
+                x_value += screen_mult(screen_width,100)
                 #Display cooldown TRUE, otherwise display READY
                 if player.stats["moves"][move] == False:
                     pygame.draw.circle(display, colour["white"], (abilities[move]["button"].rect.center[0], abilities[move]["button"].rect.center[1]),abilities[move]["button"].rect.width/2, 5)
                     draw_text("X", fonts["dmgsmall"], colour["white"], abilities[move]["button"].rect.center[0]-screen_mult(screen_width,10), abilities[move]["button"].rect.center[1]-screen_mult(screen_height,22), False)
-                elif "SPECIAL" in move:
+                elif special:
                     pygame.draw.circle(display, colour["rainbowcycle"], (abilities[move]["button"].rect.center[0], abilities[move]["button"].rect.center[1]),abilities[move]["button"].rect.width/2, 5)
                                  
                 #Display ability descriptionif mouse hovering over ability button
@@ -2267,7 +2264,7 @@ def battle_system(player_party,enemy_stats):
                     else:
                         myMixer("menu_invalid.wav",0)
                         screen_shake = framesrate/10
-                #If ability already selected and they click button again, perform ability on self/enemy
+                #If ability already selected and they click button again, perform ability on self/enemy. DOES NOT INCLUDE SWITCH AND SKIP
                 elif ability_clicked and selected == move:
                     if player.stats["moves"][move] == True:
                         myMixer("menu_enter.wav",0)
@@ -2279,10 +2276,17 @@ def battle_system(player_party,enemy_stats):
                                 actiontype = e
                                 break
 
-                        if "Fire" in battle_moveslookup(selected) or "Fire" in battle_moveslookup(selected) or "Water" in battle_moveslookup(selected) or "Wind" in battle_moveslookup(selected) or "Singularity" in battle_moveslookup(selected) or "debuff" in battle_moveslookup(selected):
+                        if "Fire" in battle_moveslookup(selected)["prop"] or "Water" in battle_moveslookup(selected)["prop"] or "Wind" in battle_moveslookup(selected)["prop"] or "Singularity" in battle_moveslookup(selected)["prop"] or "debuff" in battle_moveslookup(selected)["prop"]:
                             action = [selected,enemy.stats]
-                        elif "Heal" in battle_moveslookup(selected) or "Buff" in battle_moveslookup(selected):
+                        elif "Heal" in battle_moveslookup(selected)["prop"] or "Buff" in battle_moveslookup(selected)["prop"]:
                             action = [selected,player.stats]
+
+                        #Check if move has multiple hits
+                        hits = battle_moveslookup(action[0])
+                        if "hits" in hits:
+                            hits = hits["hits"]
+                        else: hits = 1
+                        maxhits = hits
                         break
                     else:
                         myMixer("menu_invalid.wav",0)
@@ -2290,7 +2294,7 @@ def battle_system(player_party,enemy_stats):
 
                 #Draw outline over selected ability
                 if move == selected and battle_action == "player":
-                    if "SPECIAL" in selected:   myColour = colour["rainbowcycle"]
+                    if special:   myColour = colour["rainbowcycle"]
                     else:   myColour = colour[player.stats["element"]]
                     pygame.draw.circle(display, myColour, (abilities[move]["button"].rect.center[0]-1, abilities[move]["button"].rect.center[1]-1),abilities[move]["button"].rect.width/2, 5)
                     draw_text("READY", fonts["small"], colour["grey"], abilities[move]["button"].rect.topleft[0]+screen_mult(screen_width,3), abilities[move]["button"].rect.center[1]-screen_mult(screen_height,10)+2, False)
@@ -2298,11 +2302,12 @@ def battle_system(player_party,enemy_stats):
 
 
             #Display skip button at the end
-            x,y = mouse_hovereffect(player.x + x_value, screen_height - (screen_height/4),"circle")
+            x,y = mouse_hovereffect(player.x + x_value, screen_height - (screen_height/4)+buttonshift_moves["point"],"circle")
             skip_clicked = abilities["Skip"]["button"].draw(x,y,"")
             if skip_clicked:
-                myMixer("menu_back.wav",0)              
+                myMixer("menu_back.wav",0)
                 selected = "Skip"
+                action = ["Skip",player.stats]
             #Display desc if hovering over Skip button
             if abilities["Skip"]["button"].hover() and selected == "" and battle_action == "player":
                     draw_text("Skip turn", fonts["small"], colour["green"], abilities["Skip"]["button"].rect.x, abilities["Skip"]["button"].rect.y + abilities["Skip"]["button"].rect.width, True)
@@ -2325,7 +2330,7 @@ def battle_system(player_party,enemy_stats):
                     highest_agg = member
             for member in player_party:
                 #Establish x and y
-                x,y = mouse_hovereffect(screen_mult(screen_width,50), y_value,"circle")
+                x,y = mouse_hovereffect(screen_mult(screen_width,200)-buttonshift_party["point"], y_value,"circle")
                 if member == player.stats["name"]:  x += screen_mult(screen_width,20)
                 elif party[member]["button"].hover() and battle_characters[member]["HP"] > 0:   x+= screen_mult(screen_width,20)
                 #Grey box background
@@ -2369,6 +2374,7 @@ def battle_system(player_party,enemy_stats):
                 #Draw outline over the icon
                 pygame.draw.rect(display, myColour, (party[member]["button"].rect.x-1, party[member]["button"].rect.y-1, party[member]["button"].rect.width+1, party[member]["button"].rect.height+1), 4)
 
+                #UNUSED
                 #battle_viewmember(battle_characters[player_party[0]],display)
 
                 if member_clicked and selected == "":
@@ -2396,11 +2402,13 @@ def battle_system(player_party,enemy_stats):
             else:
                pygame.mouse.set_visible(True)
                 
-            #Conditions to perform action (mouse on enemy, its your turn, ability selected, etc. Some conditions to not apply to some moves.)
-            if selected == "Skip":
-                action = [selected,player.stats]
-            elif selected in player_party:
+            #SWITCH FUNCTION. Hits = 1 so that it performs the move
+            if selected in player_party:
                 action = [selected,battle_characters[selected]]
+                buttonshift_party["point"] = buttonshift_party["max"]
+                buttonshift_moves["point"] = buttonshift_moves["max"]
+                maxhits = 1
+
         elif battle_action == "enemy":
             if selected == "":
                 #Enemy AI
@@ -2413,6 +2421,13 @@ def battle_system(player_party,enemy_stats):
                         enemy_moves.append(move)
                 if len(enemy_moves) > 0:
                         selected = random.choice(enemy_moves)
+                        #Check if move has multiple hits
+
+                        hits = battle_moveslookup(selected)
+                        if "hits" in hits:
+                            hits = hits["hits"]
+                        else: hits = 1
+                        maxhits = hits
 
 
         #cooldown makes turns not instant/1 frame long
@@ -2421,55 +2436,85 @@ def battle_system(player_party,enemy_stats):
             #Allows combatents to perform actions
             if battle_action == "player" and player.stats["HP"] > 0 and action[0] != "":
                 #Set variables
-                battle_action = "neutral"
                 player.status = "move"
 
                 #Perform move
-                if action[1]["name"] == enemy.stats["name"]:
-                    battle_turndata,enemy.stats = player.move(action[0], action[1],player_party)
-                elif action[1]["name"] == player.stats["name"]:
-                    battle_turndata,player.stats = player.move(action[0], action[1],player_party)
-                elif action[1]["name"] in player_party:
-                    battle_turndata,battle_characters[action[1]["name"]] = player.move(action[0], action[1],player_party)
+                if hits > 0 or action[0] == "Skip" or action[0] in player_party:
+                    if action[1]["name"] == enemy.stats["name"]:
+                        battle_turndata,enemy.stats = player.move(action[0], action[1],player_party)
+                    elif action[1]["name"] == player.stats["name"]:
+                        battle_turndata,player.stats = player.move(action[0], action[1],player_party)
+                    elif action[1]["name"] in player_party:
+                        battle_turndata,battle_characters[action[1]["name"]] = player.move(action[0], action[1],player_party)
 
-                #Changing combatent condition based on HP
-                if enemy.stats["HP"] <= 0:
-                    enemy.condition = "Defeated"
-                    enemy.status = "dead"
-                elif enemy.stats["HP"]/enemy.stats["MHP"] <= 30:
-                    enemy.condition = "Critical"
-                else:
-                    enemy.condition = "Normal"
-                if player.stats["HP"] <= 0:
-                    player.condition = "Defeated"
-                    player.status = "dead"
-                elif player.stats["HP"]/player.stats["MHP"] <= 30:
-                    player.condition = "Critical"
-                else:
-                    player.condition = "Normal"
-                
-                #Increases cooldown if action completed
-                if "SPECIAL" not in action[0] and action[0] not in player_party:
-                    if action[0] in player.stats["moves"]:
-                        player.stats["moves"][action[0]] = False
-                    if battle_turndata["weakamount"] > 0:
-                        player_turn = battle_playerturn(player_turn,"weak")
-                    elif action[0] == "Skip":
-                        player_turn = ["turn0","turn0","turn0","turn0"]
+                    #Changing combatent condition based on HP
+                    if enemy.stats["HP"] <= 0:
+                        enemy.condition = "Defeated"
+                        enemy.status = "dead"
+                    elif enemy.stats["HP"]/enemy.stats["MHP"] <= 30:
+                        enemy.condition = "Critical"
                     else:
-                        player_turn = battle_playerturn(player_turn,"move")
-                
-                #Hitting opponent changes their pose + starts/adds to combo
-                if battle_turndata["hit"] > 0:
-                    enemy_shake = framesrate/10
-                    if int((battle_turndata["totaldmg"]/battle_turndata["target"]["MHP"])*100) >= 5:
-                        enemy.status = "hurt"
-                    combo_shake = framesrate/10
-                    combo["hits"] += battle_turndata["hit"]
-                    combo["dmg"] += battle_turndata["totaldmg"]
+                        enemy.condition = "Normal"
+                    if player.stats["HP"] <= 0:
+                        player.condition = "Defeated"
+                        player.status = "dead"
+                    elif player.stats["HP"]/player.stats["MHP"] <= 30:
+                        player.condition = "Critical"
+                    else:
+                        player.condition = "Normal"
 
-                #Neutral cooldown
-                cooldown = framesrate
+                    #Hitting opponent changes their pose + starts/adds to combo
+                    if battle_turndata["hit"] > 0:
+                        enemy_shake = framesrate/10
+                        if int((battle_turndata["totaldmg"]/battle_turndata["target"]["MHP"])*100) >= 5:
+                            enemy.status = "hurt"
+                        combo_shake = framesrate/5
+                        combo["hits"] += battle_turndata["hit"]
+                        combo["dmg"] += battle_turndata["totaldmg"]
+
+                    #Neutral cooldown
+                    if maxhits == 1:
+                        cooldown = (framesrate*2)
+                    elif maxhits != 0:
+                        cooldown = int((framesrate*2)/maxhits)
+
+                    hits -= 1
+
+                if hits <= 0:
+                    #Changes battle state when hits are finished
+                    battle_action = "neutral"
+
+                    #Energy charge. Player exclusive
+                    #Player acts, party gets energy
+                    if "EG" in player.stats and "SPECIAL" not in battle_turndata["action"]:
+                        #Base regen rate
+                        energy = 0
+                        if "Basic" in battle_turndata["action"]["prop"]:
+                            energy = 5
+                        elif "Skill" in battle_turndata["action"]["prop"]:
+                            energy = 15
+
+                        battle_characters[player.stats["name"]]["EG"] = battle_energy(energy,player.stats["ER"]+player.stats["bonuses"]["ER"],player.stats["EG"],player.stats["MEG"])
+                        for member in player_party:
+                            battle_characters[member]["EG"] = battle_energy(energy,battle_characters[member]["ER"]+battle_characters[member]["bonuses"]["ER"],battle_characters[member]["EG"],battle_characters[member]["MEG"])
+
+                    #Increases cooldown
+                    if "SPECIAL" not in action[0] and action[0] not in player_party:
+                        if action[0] in player.stats["moves"]:
+                            player.stats["moves"][action[0]] = False
+                        if battle_turndata["weakamount"] > 0:
+                            player_turn = battle_playerturn(player_turn,"weak")
+                        elif action[0] == "Skip":
+                            player_turn = ["turn0","turn0","turn0","turn0"]
+                        else:
+                            player_turn = battle_playerturn(player_turn,"move")
+                    elif "SPECIAL" in action[0]:
+                        player.stats["EG"] = 0
+                    action = ["",""]
+                    player.status = "turn"
+
+                    #Neutral cooldown
+                    cooldown = int(framesrate*2)
                 
             elif battle_action == "enemy" and enemy.stats["HP"] > 0:
                 #Increases cooldown if action completed
@@ -2478,8 +2523,7 @@ def battle_system(player_party,enemy_stats):
                 enemy.status = "move"
                 battle_action = "neutral"
 
-                myinfo = battle_moveslookup(selected)
-                if "Fire" in myinfo or "Water" in myinfo or "Wind" in myinfo or "Physical" in myinfo or "Singularity" in myinfo or "Debuff" in myinfo:
+                if "Offence" in battle_moveslookup(selected)["prop"]:
                     #Targets random alive party member
                     action[0] = selected
                     while True:
@@ -2533,11 +2577,14 @@ def battle_system(player_party,enemy_stats):
                 #Restores player turns
                 if battle_turndata["weakamount"] <= 0:
                     player_turn = battle_playerturn(player_turn,"default")
-                    
-                cooldown = framesrate
+
+
+                cooldown = int(framesrate*2)
             
                 
             elif battle_action == "neutral":
+                hits = 0
+                maxhits = 0
                 #Determines what happens after action completed
                 
                 #End of battle
@@ -2578,7 +2625,7 @@ def battle_system(player_party,enemy_stats):
                         player.stats["buff"] = battle_removebuffs(player.stats["buff"])
                         player.stats["debuff"] = battle_removebuffs(player.stats["debuff"])
                         
-                    if battle_turndata["critamount"] > 0:
+                    if battle_turndata["critamount"] > 0 or battle_turndata["weakamount"] > 0:
                         myMixer("menu_1more.wav",0)
                     else:
                         myMixer("menu_turn.wav",0)
@@ -2600,10 +2647,13 @@ def battle_system(player_party,enemy_stats):
                     player.status = "idle"
                     enemy.status = "turn"
                     battle_action = "enemy"
+                    buttonshift_party["point"] = buttonshift_party["max"]
+                    buttonshift_moves["point"] = buttonshift_moves["max"]
                     combo = {"hits" : 0, "dmg" : 0}
                     
                 selected = ""
-                cooldown = framesrate
+                action=["",""]
+                cooldown = (framesrate*2)#This stops combatents from acting immediately, after being able to
      
 
 
@@ -2704,7 +2754,7 @@ def menu_levelup(name, exp,message):
   shake = 0
   skip = False
   #spd is the % of exp to add per frame
-  spd = 0.04
+  spd = 0.03
 
   running = ""
   cooldown = 0
@@ -2779,16 +2829,6 @@ def menu_levelup(name, exp,message):
             if player_characters[name]["LVL"] >= 40:
                 player_characters[name]["EXP"] = char_stats(BASE_MEXP,40)
                 exp = 0
-
-            #bonuses["MHP"] += 25
-            #for i in range(int(len(rates)/2)):
-            #    rng = random.randint(1,100)
-            #    for stat in rates:
-            #        if rng > rates[stat]:
-            #            rng = stat
-            #            break
-                    
-            #    bonuses[rng] += 2
             
             player_characters[name]["HP"] = char_stats(characters[name]["MHP"],player_characters[name]["LVL"])
 
@@ -2905,6 +2945,9 @@ def menu_party_character(member):
     for stat in characters[member]:
         #Base value
         value = characters[member][stat]
+        if type(value) == int:
+            value = char_stats(value,player_characters[member]["LVL"])
+        print(characters[member][stat])
         if stat == "STR":   value += battle_weaponslookup(characters[member]["weapon"])["str"]
         bonus = 0
 
@@ -2980,7 +3023,6 @@ def menu_party_buttons():
 def menu_party_equipment(character,option):
     global player_characters
     global player_weapons
-    global player_moves
     global player_charms
     
     button_width, button_height = screen_mult(screen_width,100),screen_mult(screen_height,100)
@@ -2993,26 +3035,6 @@ def menu_party_equipment(character,option):
             "stats" : weapon_stats,
             "desc" : str(characters[character]["weapon"]).upper() + " # # " + str(weapon_stats["desc"])}
         button_wp_all = {}
-
-        #All weapon buttons
-        button_width, button_height = screen_mult(screen_width,70),screen_mult(screen_height,70)
-        x_value = x+button_width+x
-        basecount = 8 #Weapons per row
-        y_value = screen_mult(screen_height,80)
-        count = basecount+1
-        for weapon in player_weapons:
-            weapon_stats = battle_weaponslookup(weapon)
-            if count > basecount:
-                count = 1
-                x_value = x+button_width+x+x
-                y_value += button_height + screen_mult(screen_height,30)
-            button_wp_all[weapon] = {
-                "button" : button.Button(display,x_value,y_value,img_weapon[weapon_stats["type"]][weapon_stats["rarity"]],button_width,button_height),
-                "stats" : weapon_stats,
-                "desc" : str(weapon).upper() + " # # " + str(weapon_stats["desc"])}
-
-            x_value += button_width+screen_mult(screen_width,30)
-            count += 1
 
         return button_wp_eq, button_wp_all
     
@@ -3027,34 +3049,11 @@ def menu_party_equipment(character,option):
         for move in characters[character]["moves"]:
             move_stats = battle_moveslookup(move)
             button_mv_eq[move] = {
-                "button" : button.Button(display,x,y_value,pygame.image.load("img/Other/" + str(move_stats[-1]) + ".png").convert_alpha(),button_width,button_height),
+                "button" : button.Button(display,x,y_value,pygame.image.load("img/Other/" + str(move_stats["img"]) + ".png").convert_alpha(),button_width,button_height),
                 "stats" : move_stats}
 
             y_value += (screen_height/(moves_allowed+1)) - button_height/2
-            
-        #All move buttons
-        button_width, button_height = screen_mult(screen_width,70),screen_mult(screen_height,70)
-        x_value = x+button_width+x
-        basecount = 8 #Moves per row
-        y_value = screen_mult(screen_height,80)
-        count = basecount+1
-        for move in player_moves:
-            move_stats = battle_moveslookup(move)
-            #Must have matching element
-            if move_stats[5] != characters[character]["element"] and characters[character]["element"] != "Singularity" and move_stats[5] != "Buff" and move_stats[5] != "Debuff" and move_stats[5] != "Heal" and move_stats[5] != "Physical":
-                continue
-            if move in characters[character]["moves"]:
-                continue
-            if count > basecount:
-                count = 1
-                x_value = x+button_width+x+x
-                y_value += button_height + screen_mult(screen_height,30)
-            button_mv_all[move] = {
-                "button" : button.Button(display,x_value,y_value,pygame.image.load("img/Other/" + str(move_stats[-1]) + ".png").convert_alpha(),button_width,button_height),
-                "stats" : move_stats}
 
-            x_value += button_width+screen_mult(screen_width,30)
-            count += 1
 
         return button_mv_eq, button_mv_all
 
@@ -3107,7 +3106,6 @@ def menu_party(message):
     global player_characters
     global player_party
     global player_weapons
-    global player_moves
     global inviscircle
 
     base_message = message
@@ -3298,71 +3296,12 @@ def menu_party(message):
                 elif button_equipment[move]["button"].hover():
                     pygame.draw.circle(display, colour["green"], (button_equipment[move]["button"].rect.center[0]-2, button_equipment[move]["button"].rect.center[1]-2), button_equipment[move]["button"].rect.width/2,7)
                     #Move name
-                    if selected_eq != move and selected_eq != "":
-                        draw_text("SWAP", fonts["small"], colour["menu"], button_equipment[move]["button"].rect.x+screen_mult(screen_width,15), button_equipment[move]["button"].rect.y+button_equipment[move]["button"].rect.height+5, False)
-                    text_hover = str(move) + " # # " + str(button_equipment[move]["stats"][7] + " # ")
- 
-                #Swap moves
-                if clicked and selected_eq != "" and selected_eq in button_equipment_all and controls["left_click"]:
-                    message = "Equipped '" + str(selected_eq) + "'!"
-                    #Swap moves, if less than max moves equipped then add to equipped moves instead of swap.
-                    #Same logic used 3 more times for move and charms
-                    if len(player_characters[selected]["moves"]) >= 4:
-                        player_characters[selected]["moves"][player_characters[selected]["moves"].index(move)] = selected_eq
-                    else:
-                        player_characters[selected]["moves"].append(selected_eq)
-                        
-                    if move in player_moves:
-                        player_moves[move] += 1
-                    else:
-                        player_moves[move] = 1
-                    player_moves[selected_eq] -= 1
-                    if player_moves[selected_eq] <= 0:
-                        player_moves.pop(selected_eq)
-                    selected_eq = ""
-                    switch = True
-                    button_equipment, button_equipment_all = menu_party_equipment(selected,menu)
-                    myMixer("equip_move.wav",-0.5)
+                    text_hover = str(move) + " # # " + str(button_equipment[move]["stats"]["desc"]["b"] + " # ")
+
                 #Select move
                 if clicked and controls["left_click"] and switch == False:
                     selected_eq = move
-                    message = button_equipment[move]["stats"][7]
-                    myMixer("menu_text.wav",-0.5)
-
-            #ALL MOVES
-            for move in button_equipment_all:
-                clicked = button_equipment_all[move]["button"].draw("","","")
-                
-                #Outline if seleted
-                if move == selected_eq:
-                    pygame.draw.circle(display, colour["white"], (button_equipment_all[move]["button"].rect.center[0]-2, button_equipment_all[move]["button"].rect.center[1]-2), button_equipment_all[move]["button"].rect.width/2,5)
-                elif button_equipment_all[move]["button"].hover():
-                    pygame.draw.circle(display, colour["green"], (button_equipment_all[move]["button"].rect.center[0]-2, button_equipment_all[move]["button"].rect.center[1]-2), button_equipment_all[move]["button"].rect.width/2,5)
-                    if selected_eq not in button_equipment_all and selected_eq != "":
-                        draw_text("SWAP", fonts["small"], colour["menu"], button_equipment_all[move]["button"].rect.x+screen_mult(screen_width,15), button_equipment_all[move]["button"].rect.y+button_equipment_all[move]["button"].rect.height+5, False)
-                    text_hover = str(move) + " # # " + str(button_equipment_all[move]["stats"][7] + " # ")
- 
-                #Swap moves
-                if clicked and switch == False and selected_eq != "" and selected_eq in button_equipment and controls["left_click"]:
-                    message = "Equipped '" + str(move) + "'!"
-                    if len(player_characters[selected]["moves"]) <= 5:  
-                        player_characters[selected]["moves"][player_characters[selected]["moves"].index(selected_eq)] = move
-                    else:
-                        player_characters[selected]["moves"].append(move)
-                    if selected_eq in player_moves:
-                        player_moves[selected_eq] += 1
-                    else:
-                        player_moves[selected_eq] = 1
-                    player_moves[move] -= 1
-                    if player_moves[move] <= 0:
-                        player_moves.pop(move)
-                    selected_eq = ""
-                    button_equipment, button_equipment_all = menu_party_equipment(selected,menu)
-                    myMixer("equip_move.wav",-0.5)
-                #Select move
-                elif clicked and controls["left_click"] and switch == False:
-                    selected_eq = move
-                    message = "Selected: " + str(move)
+                    message = button_equipment[move]["stats"]["desc"]["b"]
                     myMixer("menu_text.wav",-0.5)
 
             draw_text(text_hover, fonts["small"], colour["menu"], mouse_pos[0], mouse_pos[1], True)
@@ -3378,65 +3317,11 @@ def menu_party(message):
             elif button_equipment["button"].hover():
                 pygame.draw.rect(display, colour["green"], (button_equipment["button"].rect.x-2, button_equipment["button"].rect.y-2, button_equipment["button"].rect.width+2, button_equipment["button"].rect.height+2), 5)
                 text_hover = button_equipment["desc"]
-                if selected_eq != button_equipment["stats"]["name"] and selected_eq != "":
-                    draw_text("SWAP", fonts["small"], colour["menu"], button_equipment["button"].rect.x+screen_mult(screen_width,15), button_equipment["button"].rect.y+button_equipment["button"].rect.height+5, False)
 
-            #Swap weapons
-            if clicked and selected_eq != "" and selected_eq in button_equipment_all and controls["left_click"]:
-                message = "Equipped '" + str(selected_eq) + "'!"
-                player_characters[selected]["weapon"] = selected_eq
-                if button_equipment["stats"]["name"] in player_weapons:
-                    player_weapons[button_equipment["stats"]["name"]] += 1
-                else:
-                    player_weapons[button_equipment["stats"]["name"]] = 1               
-                player_weapons[selected_eq] -= 1
-                if player_weapons[selected_eq] <= 0:
-                    player_weapons.pop(selected_eq)
-                selected_eq = ""
-                switch = True
-                button_equipment, button_equipment_all = menu_party_equipment(selected,menu)
-                char_stats = menu_party_character(selected)[1]
-                myMixer("equip_weapon.wav",-0.5)
-            #Select weapon
-            elif clicked and controls["left_click"]:
+            if clicked and controls["left_click"]:
                 selected_eq = button_equipment["stats"]["name"]
                 message = "Selected: " + str(selected_eq)
                 myMixer("menu_text.wav",-0.5)
-
-            #ALL WEAPONS
-            for weapon in button_equipment_all:
-                clicked = button_equipment_all[weapon]["button"].draw("","","")
-                #Outline if seleted
-                if button_equipment_all[weapon]["stats"]["name"] == selected_eq:
-                    pygame.draw.rect(display, colour["white"], (button_equipment_all[weapon]["button"].rect.x-2, button_equipment_all[weapon]["button"].rect.y-2, button_equipment_all[weapon]["button"].rect.width+2, button_equipment_all[weapon]["button"].rect.height+2), 5)
-                elif button_equipment_all[weapon]["button"].hover():
-                    pygame.draw.rect(display, colour["green"], (button_equipment_all[weapon]["button"].rect.x-2, button_equipment_all[weapon]["button"].rect.y-2, button_equipment_all[weapon]["button"].rect.width+2, button_equipment_all[weapon]["button"].rect.height+2), 5)
-                    text_hover = button_equipment_all[weapon]["desc"]
-                    if selected_eq not in button_equipment_all and selected_eq != "":
-                        draw_text("SWAP", fonts["small"], colour["menu"], button_equipment_all[weapon]["button"].rect.x+screen_mult(screen_width,15), button_equipment_all[weapon]["button"].rect.y+button_equipment_all[weapon]["button"].rect.height+5, False)
-                
-
-                #Swap weapons
-                if clicked and switch == False and selected_eq != "" and selected_eq == button_equipment["stats"]["name"] and controls["left_click"]:
-                    message = "Equipped '" + str(weapon) + "'!"
-                    player_characters[selected]["weapon"] = weapon
-                    if selected_eq in player_weapons:
-                        player_weapons[selected_eq] += 1
-                    else:
-                        player_weapons[selected_eq] = 1
-                    player_weapons[weapon] -= 1
-                    if player_weapons[weapon] <= 0:
-                        player_weapons.pop(weapon)
-                    selected_eq = ""
-                    switch = True
-                    button_equipment, button_equipment_all = menu_party_equipment(selected,menu)
-                    char_stats = menu_party_character(selected)[1]
-                    myMixer("equip_weapon.wav",-0.5)
-                #Select weapon
-                elif clicked and controls["left_click"] and switch == False:
-                    selected_eq = button_equipment_all[weapon]["stats"]["name"]
-                    message = "Selected: " + str(selected_eq)
-                    myMixer("menu_text.wav",-0.5)
 
             draw_text(text_hover, fonts["small"], colour["menu"], mouse_pos[0], mouse_pos[1], True)
         elif menu == "charms":
@@ -3565,9 +3450,7 @@ def menu_party(message):
                     message = "Removed: " + str(player_charms[charm]["set"])
 
             draw_text(str(text_hover), fonts["small"], colour["menu"], mouse_pos[0], mouse_pos[1], True)
-            
-        elif menu == "fusion":
-            print("")
+
 
         if text_hover != "":
             pygame.mouse.set_visible(False)
@@ -3809,7 +3692,7 @@ def menu_options(message):
     myMixer("menu_text.wav",-0.5)
 
 
-    #NOT IN USE
+    #NOT IN USE because i must rework stats dictionaries
     if running == "Reset":
         #player_characters={'Alm': {'name': 'Alm', 'weapon': 'Wind Bow', 'element': 'Wind', 'LVL': 1, 'MEXP': 500, 'EXP': 0, 'MHP': 500, 'HP': 500, 'STR': 0, 'RES': 0, 'CRIT': 5, 'CRIT DMG': 50, 'ER': 100, 'EG': 0, 'MEG': 100, 'Physical DMG': 0, 'Fire DMG': 0, 'Water DMG': 0, 'Wind DMG': 0, 'All DMG': 0, 'buff': {}, 'debuff': {}, 'charms': [], 'fusion': 'Wind Type 08', 'moves': ['Attack', 'Cyclone', 'Garudyne', 'SPECIAL: Eye of the Storm', 'Focus', 'Dia'], 'weakness': 'Fire'}, 'Dimitri': {'name': 'Dimitri', 'weapon': 'Hyper Blade', 'element': 'Water', 'LVL': 1, 'MEXP': 500, 'EXP': 0, 'MHP': 500, 'HP': 500, 'STR': 0, 'RES': 0, 'CRIT': 5, 'CRIT DMG': 50, 'ER': 100, 'EG': 0, 'MEG': 100, 'Physical DMG': 0, 'Fire DMG': 0, 'Water DMG': 0, 'Wind DMG': 0, 'All DMG': 0, 'buff': {}, 'debuff': {}, 'charms': [], 'fusion': 'Water Type 08', 'moves': ['Attack', 'Overgrow', 'Awaken II', 'Charge', 'Dia', 'Diarama'], 'weakness': 'Wind'}, 'Lilina': {'name': 'Lilina', 'weapon': 'Catalyst', 'element': 'Fire', 'LVL': 1, 'MEXP': 500, 'EXP': 0, 'MHP': 500, 'HP': 500, 'STR': 0, 'RES': 0, 'CRIT': 5, 'CRIT DMG': 50, 'ER': 100, 'EG': 0, 'MEG': 100, 'Physical DMG': 0, 'Fire DMG': 0, 'Water DMG': 0, 'Wind DMG': 0, 'All DMG': 0, 'buff': {}, 'debuff': {}, 'charms': [], 'fusion': 'Fire Type 08', 'moves': ['Attack', 'Agidyne', 'Fire Dance', 'SPECIAL: Cataclysm', 'Concentrate', 'Dia'], 'weakness': 'Water'}, 'Byleth': {'name': 'Byleth', 'weapon': 'Catalyst', 'element': 'Wind', 'LVL': 1, 'MEXP': 500, 'EXP': 0, 'MHP': 500, 'HP': 500, 'STR': 0, 'RES': 0, 'CRIT': 5, 'CRIT DMG': 50, 'ER': 100, 'EG': 0, 'MEG': 100, 'Physical DMG': 0, 'Fire DMG': 0, 'Water DMG': 0, 'Wind DMG': 0, 'All DMG': 0, 'buff': {}, 'debuff': {}, 'charms': [], 'fusion': 'Wind Type 09', 'moves': ['Attack', 'Cyclone', 'Garubarion', 'SPECIAL: Eye of the Storm', 'Overhype', 'Dia'], 'weakness': 'Fire'}, 'Hilda': {'name': 'Hilda', 'weapon': 'Blade', 'element': 'Fire', 'LVL': 1, 'MEXP': 500, 'EXP': 0, 'MHP': 500, 'HP': 500, 'STR': 0, 'RES': 0, 'CRIT': 5, 'CRIT DMG': 50, 'ER': 100, 'EG': 0, 'MEG': 100, 'Physical DMG': 0, 'Fire DMG': 0, 'Water DMG': 0, 'Wind DMG': 0, 'All DMG': 0, 'buff': {}, 'debuff': {}, 'charms': [], 'fusion': 'Fire Type 09', 'moves': ['Attack', 'Fire Dance', 'Agibarion', 'SPECIAL: Cataclysm', 'Dia'], 'weakness': 'Water'}, 'Lucina': {'name': 'Lucina', 'weapon': 'Blade', 'element': 'Water', 'LVL': 1, 'MEXP': 500, 'EXP': 0, 'MHP': 500, 'HP': 500, 'STR': 0, 'RES': 0, 'CRIT': 5, 'CRIT DMG': 50, 'ER': 100, 'EG': 0, 'MEG': 100, 'Physical DMG': 0, 'Fire DMG': 0, 'Water DMG': 0, 'Wind DMG': 0, 'All DMG': 0, 'buff': {}, 'debuff': {}, 'charms': [], 'fusion': 'Water Type 09', 'moves': ['Attack', 'Striking Tide', 'Bufubarion', 'SPECIAL: Hyperflood Abrasion', 'Debilitate', 'Dia'], 'weakness': 'Wind'}, 'Morgan': {'name': 'Morgan', 'weapon': 'Resistance Blade', 'element': 'Water', 'LVL': 1, 'MEXP': 500, 'EXP': 0, 'MHP': 500, 'HP': 500, 'STR': 0, 'RES': 0, 'CRIT': 5, 'CRIT DMG': 50, 'ER': 100, 'EG': 0, 'MEG': 100, 'Physical DMG': 0, 'Fire DMG': 0, 'Water DMG': 0, 'Wind DMG': 0, 'All DMG': 0, 'buff': {}, 'debuff': {}, 'charms': [], 'fusion': 'Prototype: AQUA', 'moves': ['Attack', 'Thalassic Calamity', 'Striking Tide', 'SPECIAL: Hyperflood Abrasion', 'Water Boost', 'Dia'], 'weakness': 'Wind'}, 'Claude': {'name': 'Claude', 'weapon': 'Bow', 'element': 'Fire', 'LVL': 1, 'MEXP': 500, 'EXP': 0, 'MHP': 500, 'HP': 500, 'STR': 0, 'RES': 0, 'CRIT': 5, 'CRIT DMG': 50, 'ER': 100, 'EG': 0, 'MEG': 100, 'Physical DMG': 0, 'Fire DMG': 0, 'Water DMG': 0, 'Wind DMG': 0, 'All DMG': 0, 'buff': {}, 'debuff': {}, 'charms': [], 'fusion': 'Fire Type 07', 'moves': ['Attack', 'Agibarion', 'Fire Dance', 'SPECIAL: Cataclysm', 'Fire Boost', 'Dia'], 'weakness': 'Water'}, 'Ninian': {'name': 'Ninian', 'weapon': 'Focus Catalyst', 'element': 'Wind', 'LVL': 1, 'MEXP': 500, 'EXP': 0, 'MHP': 500, 'HP': 500, 'STR': 0, 'RES': 0, 'CRIT': 5, 'CRIT DMG': 50, 'ER': 100, 'EG': 0, 'MEG': 100, 'Physical DMG': 0, 'Fire DMG': 0, 'Water DMG': 0, 'Wind DMG': 0, 'All DMG': 0, 'buff': {}, 'debuff': {}, 'charms': [], 'fusion': 'Prototype: GALE', 'moves': ['Attack', 'Garubarion', 'Wrath Tempest', 'SPECIAL: Eye of the Storm', 'Concentrate', 'Wind Boost', 'Dia'], 'weakness': 'Fire'}, 'Shez': {'name': 'Shez', 'weapon': 'Health Blade', 'element': 'Fire', 'LVL': 1, 'MEXP': 500, 'EXP': 0, 'MHP': 500, 'HP': 500, 'STR': 0, 'RES': 0, 'CRIT': 5, 'CRIT DMG': 50, 'ER': 100, 'EG': 0, 'MEG': 100, 'Physical DMG': 0, 'Fire DMG': 0, 'Water DMG': 0, 'Wind DMG': 0, 'All DMG': 0, 'buff': {}, 'debuff': {}, 'charms': [], 'fusion': 'Prototype: BLZE', 'moves': ['Attack', 'Burning Hell', 'Fire Dance', 'SPECIAL: Cataclysm', 'Dia', 'Pyroclastic Charge'], 'weakness': 'Water'}, 'Anna': {'name': 'Anna', 'weapon': 'Bow', 'element': 'Fire', 'LVL': 1, 'MEXP': 500, 'EXP': 0, 'MHP': 500, 'HP': 500, 'STR': 0, 'RES': 0, 'CRIT': 5, 'CRIT DMG': 50, 'ER': 100, 'EG': 0, 'MEG': 100, 'Physical DMG': 0, 'Fire DMG': 0, 'Water DMG': 0, 'Wind DMG': 0, 'All DMG': 0, 'buff': {}, 'debuff': {}, 'charms': [], 'fusion': 'Fire Type 06', 'moves': ['Attack', 'Agidyne', 'Concentrate', 'SPECIAL: Cataclysm'], 'weakness': 'Water'}, 'Knight': {'name': 'Knight', 'weapon': 'Blade', 'element': 'Water', 'LVL': 1, 'MEXP': 500, 'EXP': 0, 'MHP': 500, 'HP': 500, 'STR': 0, 'RES': 0, 'CRIT': 5, 'CRIT DMG': 50, 'ER': 100, 'EG': 0, 'MEG': 100, 'Physical DMG': 0, 'Fire DMG': 0, 'Water DMG': 0, 'Wind DMG': 0, 'All DMG': 0, 'buff': {}, 'debuff': {}, 'charms': [], 'fusion': 'Water Type 07', 'moves': ['Attack', 'Bufudyne', 'SPECIAL: Hyperflood Abrasion'], 'weakness': 'Wind'}, 'Kris': {'name': 'Kris', 'weapon': 'Blade', 'element': 'Water', 'LVL': 1, 'MEXP': 500, 'EXP': 0, 'MHP': 500, 'HP': 500, 'STR': 0, 'RES': 0, 'CRIT': 5, 'CRIT DMG': 50, 'ER': 100, 'EG': 0, 'MEG': 100, 'Physical DMG': 0, 'Fire DMG': 0, 'Water DMG': 0, 'Wind DMG': 0, 'All DMG': 0, 'buff': {}, 'debuff': {}, 'charms': [], 'fusion': 'Water Type 06', 'moves': ['Attack', 'Bufudyne', 'Rush', 'SPECIAL: Hyperflood Abrasion', 'Water Boost'], 'weakness': 'Wind'}, 'Lyn': {'name': 'Lyn', 'weapon': 'Blade', 'element': 'Wind', 'LVL': 1, 'MEXP': 500, 'EXP': 0, 'MHP': 500, 'HP': 500, 'STR': 0, 'RES': 0, 'CRIT': 5, 'CRIT DMG': 50, 'ER': 100, 'EG': 0, 'MEG': 100, 'Physical DMG': 0, 'Fire DMG': 0, 'Water DMG': 0, 'Wind DMG': 0, 'All DMG': 0, 'buff': {}, 'debuff': {}, 'charms': [], 'fusion': 'Wind Type 07', 'moves': ['Attack', 'Garudyne', 'Wrath Tempest', 'SPECIAL: Eye of the Storm', 'Overhype'], 'weakness': 'Fire'}, 'Mia': {'name': 'Mia', 'weapon': 'Blade', 'element': 'Fire', 'LVL': 1, 'MEXP': 500, 'EXP': 0, 'MHP': 500, 'HP': 500, 'STR': 0, 'RES': 0, 'CRIT': 5, 'CRIT DMG': 50, 'ER': 100, 'EG': 0, 'MEG': 100, 'Physical DMG': 0, 'Fire DMG': 0, 'Water DMG': 0, 'Wind DMG': 0, 'All DMG': 0, 'buff': {}, 'debuff': {}, 'charms': [], 'fusion': 'Fire Type 05', 'moves': ['Attack', 'Agilao', 'Agi', 'SPECIAL: Cataclysm', 'Fire Boost', 'Concentrate'], 'weakness': 'Water'}, 'Reginn': {'name': 'Reginn', 'weapon': 'Blade', 'element': 'Wind', 'LVL': 1, 'MEXP': 500, 'EXP': 0, 'MHP': 500, 'HP': 500, 'STR': 0, 'RES': 0, 'CRIT': 5, 'CRIT DMG': 50, 'ER': 100, 'EG': 0, 'MEG': 100, 'Physical DMG': 0, 'Fire DMG': 0, 'Water DMG': 0, 'Wind DMG': 0, 'All DMG': 0, 'buff': {}, 'debuff': {}, 'charms': [], 'fusion': 'Wind Type 06', 'moves': ['Attack', 'Garudyne', 'Cyclone', 'SPECIAL: Eye of the Storm', 'Wind Boost', 'Concentrate'], 'weakness': 'Fire'}, 'Seliph': {'name': 'Seliph', 'weapon': 'Blade', 'element': 'Water', 'LVL': 1, 'MEXP': 500, 'EXP': 0, 'MHP': 500, 'HP': 500, 'STR': 0, 'RES': 0, 'CRIT': 5, 'CRIT DMG': 50, 'ER': 100, 'EG': 0, 'MEG': 100, 'Physical DMG': 0, 'Fire DMG': 0, 'Water DMG': 0, 'Wind DMG': 0, 'All DMG': 0, 'buff': {}, 'debuff': {}, 'charms': [], 'fusion': 'Water Type 05', 'moves': ['Attack', 'Megido', 'Thousand Slaps', 'SPECIAL: Shining Arrows', 'Charge', 'Debilitate'], 'weakness': 'Wind'}, 'Sothe': {'name': 'Sothe', 'weapon': 'Blade', 'element': 'Wind', 'LVL': 1, 'MEXP': 500, 'EXP': 0, 'MHP': 500, 'HP': 500, 'STR': 0, 'RES': 0, 'CRIT': 5, 'CRIT DMG': 50, 'ER': 100, 'EG': 0, 'MEG': 100, 'Physical DMG': 0, 'Fire DMG': 0, 'Water DMG': 0, 'Wind DMG': 0, 'All DMG': 0, 'buff': {}, 'debuff': {}, 'charms': [], 'fusion': 'Wind Type 05', 'moves': ['Attack', 'Garula', 'Garu', 'SPECIAL: Eye of the Storm', 'Wind Boost', 'Concentrate'], 'weakness': 'Fire'}, 'Alear': {'name': 'Alear', 'weapon': 'Star Blade', 'element': 'Singularity', 'LVL': 1, 'MEXP': 500, 'EXP': 0, 'MHP': 500, 'HP': 500, 'STR': 0, 'RES': 0, 'CRIT': 5, 'CRIT DMG': 50, 'ER': 100, 'EG': 0, 'MEG': 100, 'Physical DMG': 0, 'Fire DMG': 0, 'Water DMG': 0, 'Wind DMG': 0, 'All DMG': 0, 'buff': {}, 'debuff': {}, 'charms': [], 'fusion': 'Prototype: STAR', 'moves': ['Attack', 'Cyclone', 'Burning Hell', 'Striking Tide', 'SPECIAL: Tenman Crescent Moon', 'Concentrate'], 'weakness': 'None'}}
         
@@ -3890,7 +3773,7 @@ def screen_mult(screen_value, value):
     global screen_width
     global screen_height
     global screen_diag
-    base_res = [1920,1080]
+    base_res = [1920,1080]#standard
     
     if screen_value == screen_width:
         return int((value/base_res[0])*screen_value)
@@ -4090,7 +3973,7 @@ def menu_main(message):
         player_inventory["Gold"] -= exp_cost
         myMixer("menu_text.wav",-0.5)
         pygame.mixer.music.fadeout(300)
-        exp = 10000
+        exp = 50000
         for member in player_party:
             menu_levelup(member, int(exp/len(player_party)),"+" + str(exp) + "EXP")
         myMixer("menu_back.wav",0)
@@ -4183,8 +4066,6 @@ for weapon in battle_weaponslookup("all"):
     else:
         player_weapons[weapon] = 1
 
-global player_moves
-player_moves = {}
 
 global player_charms
 player_charms = {}
