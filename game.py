@@ -127,8 +127,8 @@ framesrate = 60
 #game window
 global screen_width
 global screen_height
-screen_width = 1280
-screen_height = 720
+screen_width = 1920
+screen_height = 1080
 global screen
 screen = pygame.display.set_mode((screen_width,screen_height))
 pygame.display.set_caption("Whims of Fate")
@@ -151,6 +151,7 @@ def init_font(diag):
            "medium":pygame.font.SysFont("Franklin Gothic Medium Cond", screen_mult(diag,58)),
            "large":pygame.font.SysFont("Franklin Gothic Medium Cond", screen_mult(diag,84)),
            "verylarge":pygame.font.SysFont("Franklin Gothic Medium Cond", screen_mult(diag,110)),
+           "battlemove":pygame.font.SysFont("Franklin Gothic Medium Cond", screen_mult(diag,230)),
            "title":pygame.font.SysFont("Aharoni", screen_mult(diag,200))}
     return output
 
@@ -392,7 +393,7 @@ def get_lines(text, char_limit):
     lines.append(line)
     return lines
 
-def draw_text(text,font,textcolour,x,y, includebox):
+def draw_text(text,font,textcolour,x,y, includebox,alpha=255):
     if text == "":
         return
 
@@ -423,6 +424,7 @@ def draw_text(text,font,textcolour,x,y, includebox):
     line_y = 0
     for line in lines:
         text_surface = font.render(line, True, textcolour)
+        text_surface.set_alpha(alpha)
         display.blit(text_surface, (x, line_y + y))
         line_y += text_surface.get_height()
         
@@ -2116,13 +2118,12 @@ def battle_system(player_party,enemy_stats):
         pygame.draw.rect(display, myColour, box2)
 
         #display battle status
-        x,y = mouse_hovereffect(x,y,"circle")
         #draw_text(str(battle_action).upper(), fonts["verylarge"], myColour, x, y-100, True)
         #display selected ability
         if selected != "":
-            x,y = mouse_hovereffect(x,screen_height - (screen_height/4),"circle")
-            draw_text(str(selected).upper(), fonts["large"], myColour, x, y + screen_mult(screen_height,80), True)
-            draw_text(str(battle_moveslookup(selected)["desc"]["s"]).upper(), fonts["dmgsmall"], myColour, x, y + screen_mult(screen_height,170), True)
+            x,y = (screen_width/3)-screen_mult(screen_width,70),screen_height - (screen_height/3)#same x coord as player rect
+            draw_text(str(selected).upper(), fonts["battlemove"], myColour, x, y + screen_mult(screen_height,142), False,100)
+            draw_text(str(battle_moveslookup(selected)["desc"]["s"]).upper(), fonts["dmgmed"], myColour, x+screen_mult(screen_width,150), y + screen_mult(screen_height,300), False)
         
             
         #Combo metre. Also shakes
@@ -2406,7 +2407,11 @@ def battle_system(player_party,enemy_stats):
                         combo["dmg"] += battle_turndata["totaldmg"]
 
                     #Neutral cooldown
-                    cooldown = int(framesrate/5)
+                    if maxhits == 1:
+                        cooldown = (framesrate*2)
+                    elif maxhits != 0:
+                        cooldown = int((framesrate*2)/maxhits)
+
                     hits -= 1
 
                 if hits <= 0:
@@ -2437,10 +2442,13 @@ def battle_system(player_party,enemy_stats):
                             player_turn = ["turn0","turn0","turn0","turn0"]
                         else:
                             player_turn = battle_playerturn(player_turn,"move")
+                    elif "SPECIAL" in action[0]:
+                        player.stats["EG"] = 0
                     action = ["",""]
+                    player.status = "turn"
 
                     #Neutral cooldown
-                    cooldown = framesrate
+                    cooldown = int(framesrate*2)
                 
             elif battle_action == "enemy" and enemy.stats["HP"] > 0:
                 #Increases cooldown if action completed
@@ -2505,7 +2513,7 @@ def battle_system(player_party,enemy_stats):
                     player_turn = battle_playerturn(player_turn,"default")
 
 
-                cooldown = framesrate
+                cooldown = int(framesrate*2)
             
                 
             elif battle_action == "neutral":
@@ -2577,7 +2585,7 @@ def battle_system(player_party,enemy_stats):
                     
                 selected = ""
                 action=["",""]
-                cooldown = framesrate
+                cooldown = (framesrate*2)#This stops combatents from acting immediately, after being able to
      
 
 
@@ -2753,16 +2761,6 @@ def menu_levelup(name, exp,message):
             if player_characters[name]["LVL"] >= 40:
                 player_characters[name]["EXP"] = char_stats(BASE_MEXP,40)
                 exp = 0
-
-            #bonuses["MHP"] += 25
-            #for i in range(int(len(rates)/2)):
-            #    rng = random.randint(1,100)
-            #    for stat in rates:
-            #        if rng > rates[stat]:
-            #            rng = stat
-            #            break
-                    
-            #    bonuses[rng] += 2
             
             player_characters[name]["HP"] = char_stats(characters[name]["MHP"],player_characters[name]["LVL"])
 
@@ -2879,6 +2877,9 @@ def menu_party_character(member):
     for stat in characters[member]:
         #Base value
         value = characters[member][stat]
+        if type(value) == int:
+            value = char_stats(value,player_characters[member]["LVL"])
+        print(characters[member][stat])
         if stat == "STR":   value += battle_weaponslookup(characters[member]["weapon"])["str"]
         bonus = 0
 
