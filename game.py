@@ -10,7 +10,6 @@ import ast
 # •
  
 #---NOTES---
-#Fix fonts
 #Line 2283
 #Fix AGG
 #Add keybinds to all battle buttons
