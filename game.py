@@ -48,7 +48,7 @@ for member in player_characters:
 
 print(player_characters)
 
-#List of all the playable characters and their base stats. Needs reworking. First 3 already done
+#List of all the playable characters and their base stats
 characters = {
     'Byleth': {'name': 'Byleth', 'weapon': 'Catalyst', 'element': 'Wind', 'MHP': 200, 'STR': 100, 'RES': 5, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Wind Type 09', 'moves': ['Garudyne',"Cyclone","Debilitate", "SPECIAL: Eye of the Storm"], 'weakness': 'Fire', 'AGG': 100},
     'Morgan': {'name': 'Morgan', 'weapon': 'Resistance Blade', 'element': 'Water', 'MHP': 200, 'STR': 100, 'RES': 5, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Prototype: AQUA', 'moves': ['Bufudyne',"Striking Tide","Taunt", "SPECIAL: Thalassic Calamity"], 'weakness': 'Wind', 'AGG': 100},
@@ -64,32 +64,32 @@ characters = {
     'Knight': {'name': 'Knight', 'weapon': 'Blade', 'element': 'Water', 'MHP': 200, 'STR': 100, 'RES': 5, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Water Type 07', 'moves': ['Bufudyne',"Striking Tide", "SPECIAL: Thalassic Calamity"], 'weakness': 'Wind', 'AGG': 100},
     'Kris': {'name': 'Kris', 'weapon': 'Blade', 'element': 'Water', 'MHP': 200, 'STR': 100, 'RES': 5, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Water Type 06', 'moves': ['Bufudyne',"Striking Tide", "SPECIAL: Thalassic Calamity"], 'weakness': 'Wind', 'AGG': 100},
     'Lyn': {'name': 'Lyn', 'weapon': 'Blade', 'element': 'Wind', 'MHP': 200, 'STR': 100, 'RES': 5, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Wind Type 07', 'moves': ['Garudyne',"Cyclone", "SPECIAL: Eye of the Storm"], 'weakness': 'Fire', 'AGG': 100},
-    'Mia': {'name': 'Mia', 'weapon': 'Blade', 'element': 'Fire', 'MHP': 200, 'STR': 100, 'RES': 5, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Fire Type 05', 'moves': ['Agidyne', "Fire Dance","Diarama", "SPECIAL: Burning Hell"], 'weakness': 'Water', 'AGG': 100},
+    'Mia': {'name': 'Mia', 'weapon': 'Blade', 'element': 'Fire', 'MHP': 200, 'STR': 100, 'RES': 5, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Fire Type 05', 'moves': ['Agidyne',"Dia", "SPECIAL: Burning Hell"], 'weakness': 'Water', 'AGG': 100},
     'Reginn': {'name': 'Reginn', 'weapon': 'Blade', 'element': 'Wind', 'MHP': 200, 'STR': 100, 'RES': 5, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Wind Type 06', 'moves': ['Garudyne',"Cyclone", "SPECIAL: Eye of the Storm"], 'weakness': 'Fire', 'AGG': 100},
-    'Seliph': {'name': 'Seliph', 'weapon': 'Blade', 'element': 'Water', 'MHP': 200, 'STR': 100, 'RES': 5, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Water Type 05', 'moves': ['Bufudyne',"Striking Tide", "SPECIAL: Thalassic Calamity"], 'weakness': 'Wind', 'AGG': 100},
-    'Sothe': {'name': 'Sothe', 'weapon': 'Blade', 'element': 'Wind', 'MHP': 200, 'STR': 100, 'RES': 5, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Wind Type 05', 'moves': ['Garudyne',"Cyclone", "SPECIAL: Eye of the Storm"], 'weakness': 'Fire', 'AGG': 100},
+    'Seliph': {'name': 'Seliph', 'weapon': 'Blade', 'element': 'Water', 'MHP': 200, 'STR': 100, 'RES': 5, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Water Type 05', 'moves': ['Bufudyne',"Taunt", "SPECIAL: Thalassic Calamity"], 'weakness': 'Wind', 'AGG': 100},
+    'Sothe': {'name': 'Sothe', 'weapon': 'Blade', 'element': 'Wind', 'MHP': 200, 'STR': 100, 'RES': 5, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Wind Type 05', 'moves': ['Wind Blades',"Focus", "SPECIAL: Eye of the Storm"], 'weakness': 'Fire', 'AGG': 100},
     'Alear': {'name': 'Alear', 'weapon': 'Star Blade', 'element': 'Singularity', 'MHP': 200, 'STR': 100, 'RES': 5, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Prototype: STAR', 'moves': ['Garudyne',"Cyclone", "SPECIAL: March Forward"], 'weakness': 'None', 'AGG': 100,}
 }
 
 player_characters = {
-    #"Byleth" : {"name" : "Byleth", "LVL" : 1, "EXP" : 1,"HP" : 200,"EG" : 0, "charms" : []},
-    #"Claude" : {"name" : "Claude", "LVL" : 1, "EXP" : 1,"HP" : 200, "EG" : 0,"charms" : []},
-    #"Dimitri" : {"name" : "Dimitri", "LVL" : 1, "EXP" : 1,"HP" : 200, "EG" : 0,"charms" : []},
-    #"Lilina" : {"name" : "Lilina", "LVL" : 1, "EXP" : 1,"HP" : 200, "EG" : 0,"charms" : []},
-    #"Hilda" : {"name" : "Hilda", "LVL" : 1, "EXP" : 1,"HP" : 200, "EG" : 0,"charms" : []},
-    #"Lucina" : {"name" : "Lucina", "LVL" : 1, "EXP" : 1,"HP" : 200, "EG" : 0,"charms" : []},
-    #"Ninian" : {"name" : "Ninian", "LVL" : 1, "EXP" : 1,"HP" : 200, "EG" : 0,"charms" : []},
-    #"Shez" : {"name" : "Shez", "LVL" : 1, "EXP" : 1,"HP" : 200, "EG" : 0,"charms" : []},
-    #"Anna" : {"name" : "Anna", "LVL" : 1, "EXP" : 1,"HP" : 200, "EG" : 0,"charms" : []},
-    #"Knight" : {"name" : "Knight", "LVL" : 1, "EXP" : 1,"HP" : 200, "EG" : 0,"charms" : []},
-    #"Kris" : {"name" : "Kris", "LVL" : 1, "EXP" : 1,"HP" : 200, "EG" : 0,"charms" : []},
-    #"Lyn" : {"name" : "Lyn", "LVL" : 1, "EXP" : 1,"HP" : 200, "EG" : 0,"charms" : []},
-    "Mia" : {"name" : "Mia", "LVL" : 1, "EXP" : 1,"HP" : 200, "EG" : 0,"charms" : []},
-    #"Reginn" : {"name" : "Reginn", "LVL" : 1, "EXP" : 1,"HP" : 200, "EG" : 0,"charms" : []},
-    "Seliph" : {"name" : "Seliph", "LVL" : 1, "EXP" : 1,"HP" : 200, "EG" : 0,"charms" : []},
-    "Sothe" : {"name" : "Sothe", "LVL" : 1, "EXP" : 1,"HP" : 200, "EG" : 0,"charms" : []},
-    #"Alear" : {"name" : "Alear", "LVL" : 1, "EXP" : 1,"HP" : 200, "EG" : 0,"charms" : []},
-    #"Morgan" : {"name" : "Morgan", "LVL" : 1, "EXP" : 1,"HP" : 200, "EG" : 0,"charms" : []}
+    "Byleth" : {"unlock":False,"name" : "Byleth", "LVL" : 1, "EXP" : 1,"HP" : 200,"EG" : 0, "charms" : []},
+    "Claude" : {"unlock":False,"name" : "Claude", "LVL" : 1, "EXP" : 1,"HP" : 200, "EG" : 0,"charms" : []},
+    "Dimitri" : {"unlock":False,"name" : "Dimitri", "LVL" : 1, "EXP" : 1,"HP" : 200, "EG" : 0,"charms" : []},
+    "Lilina" : {"unlock":False,"name" : "Lilina", "LVL" : 1, "EXP" : 1,"HP" : 200, "EG" : 0,"charms" : []},
+    "Hilda" : {"unlock":False,"name" : "Hilda", "LVL" : 1, "EXP" : 1,"HP" : 200, "EG" : 0,"charms" : []},
+    "Lucina" : {"unlock":False,"name" : "Lucina", "LVL" : 1, "EXP" : 1,"HP" : 200, "EG" : 0,"charms" : []},
+    "Ninian" : {"unlock":False,"name" : "Ninian", "LVL" : 1, "EXP" : 1,"HP" : 200, "EG" : 0,"charms" : []},
+    "Shez" : {"unlock":False,"name" : "Shez", "LVL" : 1, "EXP" : 1,"HP" : 200, "EG" : 0,"charms" : []},
+    "Anna" : {"unlock":False,"name" : "Anna", "LVL" : 1, "EXP" : 1,"HP" : 200, "EG" : 0,"charms" : []},
+    "Knight" : {"unlock":False,"name" : "Knight", "LVL" : 1, "EXP" : 1,"HP" : 200, "EG" : 0,"charms" : []},
+    "Kris" : {"unlock":False,"name" : "Kris", "LVL" : 1, "EXP" : 1,"HP" : 200, "EG" : 0,"charms" : []},
+    "Lyn" : {"unlock":False,"name" : "Lyn", "LVL" : 1, "EXP" : 1,"HP" : 200, "EG" : 0,"charms" : []},
+    "Mia" : {"unlock":True,"name" : "Mia", "LVL" : 1, "EXP" : 1,"HP" : 200, "EG" : 0,"charms" : []},
+    "Reginn" : {"unlock":False,"name" : "Reginn", "LVL" : 1, "EXP" : 1,"HP" : 200, "EG" : 0,"charms" : []},
+    "Seliph" : {"unlock":True,"name" : "Seliph", "LVL" : 1, "EXP" : 1,"HP" : 200, "EG" : 0,"charms" : []},
+    "Sothe" : {"unlock":True,"name" : "Sothe", "LVL" : 1, "EXP" : 1,"HP" : 200, "EG" : 0,"charms" : []},
+    "Alear" : {"unlock":False,"name" : "Alear", "LVL" : 1, "EXP" : 1,"HP" : 200, "EG" : 0,"charms" : []},
+    "Morgan" : {"unlock":False,"name" : "Morgan", "LVL" : 1, "EXP" : 1,"HP" : 200, "EG" : 0,"charms" : []}
 }
 BASE_MEXP = 500
 
@@ -99,48 +99,49 @@ worlds = {
     "World 1" :
         {
         "Floor 1" :
-                     {"Enemies" : ["1"],"Rewards" : {"GOLD" : 2, "EXP" : 1000}},
+                     {"id" : "1","bgm" : "battle", "Enemies" : ["1"],"Rewards" : {"GOLD" : 2, "EXP" : 1000}},
         "Floor 2" :
-                     {"Enemies" : ["3"],"Rewards" : {"GOLD" : 3, "EXP" : 1500}},
+                     {"id" : "2","bgm" : "battle", "Enemies" : ["3"],"Rewards" : {"GOLD" : 3, "EXP" : 1500}},
         "Floor 3" :
-                     {"Enemies" : ["5"],"Rewards" : {"GOLD" : 4, "EXP" : 2000}},
+                     {"id" : "3","bgm" : "battle", "Enemies" : ["5"],"Rewards" : {"GOLD" : 4, "EXP" : 2000, "Character" : "Anna"}},
         "Floor 4" :
-                     {"Enemies" : ["7"],"Rewards" : {"GOLD" : 5, "EXP" : 2500}},
+                     {"id" : "4","bgm" : "boss", "Enemies" : ["7"],"Rewards" : {"GOLD" : 5, "EXP" : 2500}},
         "Floor 5" :
-                     {"Enemies" : ["9","9"],"Rewards" : {"GOLD" : 6, "EXP" : 3000}}
+                     {"id" : "5","bgm" : "boss_vocal", "Enemies" : ["9","9"],"Rewards" : {"GOLD" : 6, "EXP" : 3000}}
          },
     "World 2" :
         {
         "Floor 1" :
-                     {"Enemies" : ["11"],"Rewards" : {"GOLD" : 4, "EXP" : 2500}},
+                     {"id" : "6","bgm" : "battle_vocal", "Enemies" : ["11"],"Rewards" : {"GOLD" : 4, "EXP" : 2500}},
         "Floor 2" :
-                     {"Enemies" : ["13"],"Rewards" : {"GOLD" : 6, "EXP" : 3000}},
+                     {"id" : "7","bgm" : "battle_vocal", "Enemies" : ["13"],"Rewards" : {"GOLD" : 6, "EXP" : 3000, "Character" : "Kris"}},
         "Floor 3" :
-                     {"Enemies" : ["15"],"Rewards" : {"GOLD" : 8, "EXP" : 3500}},
+                     {"id" : "8","bgm" : "tears", "Enemies" : ["10"],"Rewards" : {"GOLD" : 8, "EXP" : 3500}},
         "Floor 4" :
-                     {"Enemies" : ["17"],"Rewards" : {"GOLD" : 10, "EXP" : 4000}},
+                     {"id" : "9","bgm" : "battle_vocal", "Enemies" : ["17"],"Rewards" : {"GOLD" : 10, "EXP" : 4000}},
         "Floor 5" :
-                     {"Enemies" : ["19","19"],"Rewards" : {"GOLD" : 12, "EXP" : 4500}}
+                     {"id" : "10","bgm" : "boss_vocal", "Enemies" : ["19","19"],"Rewards" : {"GOLD" : 12, "EXP" : 4500, "Character" : "Lilina"}}
          },
     "World 3" :
         {
         "Floor 1" :
-                     {"Enemies" : ["21"],"Rewards" : {"GOLD" : 8, "EXP" : 4000}},
+                     {"id" : "11","bgm" : "katamusubi", "Enemies" : ["21"],"Rewards" : {"GOLD" : 8, "EXP" : 4000, "Character" : "Byleth"}},
         "Floor 2" :
-                     {"Enemies" : ["23"],"Rewards" : {"GOLD" : 12, "EXP" : 4500}},
+                     {"id" : "12","bgm" : "katamusubi", "Enemies" : ["23"],"Rewards" : {"GOLD" : 12, "EXP" : 4500}},
         "Floor 3" :
-                     {"Enemies" : ["25"],"Rewards" : {"GOLD" : 16, "EXP" : 5000}},
+                     {"id" : "13","bgm" : "katamusubi", "Enemies" : ["25"],"Rewards" : {"GOLD" : 16, "EXP" : 5000}},
         "Floor 4" :
-                     {"Enemies" : ["27"],"Rewards" : {"GOLD" : 20, "EXP" : 5500}},
+                     {"id" : "14","bgm" : "katamusubi", "Enemies" : ["27"],"Rewards" : {"GOLD" : 20, "EXP" : 5500}},
         "Floor 5" :
-                     {"Enemies" : ["29","29"],"Rewards" : {"GOLD" : 24, "EXP" : 6000}}
+                     {"id" : "15","bgm" : "frenzy", "Enemies" : ["29","29"],"Rewards" : {"GOLD" : 24, "EXP" : 6000}}
          }
 }
 
 #Player progress
 player_worlds = {
     "World" : 1,
-    "Floor" : 1
+    "Floor" : 1,
+    "Available" : ["1"]#ids of available floors
 }
 
 pygame.mixer.pre_init(44100, -16, 2, 2048)
@@ -202,9 +203,12 @@ background = {
     "Battle_1" : pygame.image.load("img/Background/battle_1.png").convert_alpha(),
     "Battle_2" : pygame.image.load("img/Background/battle_2.png").convert_alpha(),
     "Battle_3" : pygame.image.load("img/Background/battle_3.png").convert_alpha(),
+    "Battle_1pre" : pygame.image.load("img/Background/battle_1pre.png").convert_alpha(),
+    "Battle_2pre" : pygame.image.load("img/Background/battle_2pre.png").convert_alpha(),
+    "Battle_3pre" : pygame.image.load("img/Background/battle_3pre.png").convert_alpha(),
     "Battle_4" : pygame.image.load("img/Background/battle_4.png").convert_alpha(),
     "Battle_5" : pygame.image.load("img/Background/battle_5.png").convert_alpha(),
-    "Battle_5_2" : pygame.image.load("img/Background/battle_5_2.png").convert_alpha(),
+    "Battle_5pre" : pygame.image.load("img/Background/battle_5pre.png").convert_alpha(),
     "Battle_spec" : pygame.image.load("img/Background/battle_5.png").convert_alpha(),
     "Battle_chall" : pygame.image.load("img/Background/battle_6.png").convert_alpha(),
     "Battle_final" : pygame.image.load("img/Background/battle_7.png").convert_alpha(),
@@ -485,18 +489,14 @@ def draw_text(text,font,textcolour,x,y, includebox,alpha=255):
     #img = font.render(text, True, colour)
     #screen.blit(img, (x ,y))
 
-def battle_music(hp1, hp2, startend):
-    if startend == "Start":
-        if hp2 >= 4500:
-            track = "streaked.wav"
-        elif hp2 >= hp1:
-            track = "streaked.wav"
-        else:
-            track = "streaked.wav"
-        pygame.mixer.music.load("snd/" + str(track))
-        pygame.mixer.music.set_volume(0.2)
-        pygame.mixer.music.play(loops=99)
-    elif startend == "End":   pygame.mixer.music.fadeout(3000)
+def battle_music(track="streaked"):
+    if track == "End":
+        pygame.mixer.music.fadeout(3000)
+        return
+
+    pygame.mixer.music.load("snd/" + str(track) + ".wav")
+    pygame.mixer.music.set_volume(0.2)
+    pygame.mixer.music.play(loops=99)
 
 def mouse_hovereffect(x,y,option):
     global inviscircle
@@ -1172,65 +1172,65 @@ def get_enemies(option):
   #Elemental, Fighter, Guardian, Sentinel
   enemies = [
 
-    {"name" : "Wind Elemental","id": "1", "LVL" : 1, "MHP" : 500, "HP" : 500, "STR" : 100, "RES" : 1, "CRIT" : 30, "CRIT DMG" : 50, "Fire DMG" : 0, "Water DMG" : 0, "Wind DMG" : 0, "All DMG" : 0, "buff" : {}, "debuff" : {}, "fusion" : "Wind Type 01", "moves" : {"Thousand Slaps":0, "Garu":0}, "drops" : {"EXP" : 250, "Skill Cards" : ["Garu", "Thousand Slaps"], "Fusion Cards" : ["Wind Type 01"], "Support Items" : ["Flashbang"]}, "weakness" : "Fire"},
+    {"name" : "Wind Elemental","id": "1", "LVL" : 1, "turns" : 2,"MHP" : 1000, "HP" : 500, "STR" : 100, "RES" : 1, "CRIT" : 30, "CRIT DMG" : 50, "fusion" : "Wind Type 01", "moves" : {"Thousand Slaps":0, "Garu":0}, "weakness" : "Fire"},
 
-    {"name" : "Wind Elemental","id": "2", "LVL" : 5, "MHP" : 1000, "HP" : 1000, "STR" : 100, "RES" : 2, "CRIT" : 30, "CRIT DMG" : 50, "Fire DMG" : 0, "Water DMG" : 0, "Wind DMG" : 0, "All DMG" : 0,"buff" : {}, "debuff" : {}, "fusion" : "Wind Type 02", "moves" : {"Thousand Slaps":0, "Focus":0}, "drops" : {"EXP" : 500, "Skill Cards" : ["Garu", "Focus"], "Fusion Cards" : ["Wind Type 02"], "Support Items" : ["Flashbang"]}, "weakness" : "Fire"},
+    {"name" : "Wind Elemental","id": "2", "LVL" : 5, "turns" : 2,"MHP" : 1500, "HP" : 1000, "STR" : 100, "RES" : 2, "CRIT" : 30, "CRIT DMG" : 50, "fusion" : "Wind Type 02", "moves" : {"Thousand Slaps":0, "Focus":0}, "weakness" : "Fire"},
 
-    {"name" : "Wind Elemental","id": "3", "LVL" : 10, "MHP" : 1500, "HP" : 1500, "STR" : 100, "RES" : 3, "CRIT" : 30,"CRIT DMG" : 50, "Fire DMG" : 0, "Water DMG" : 0, "Wind DMG" : 0, "All DMG" : 0, "buff" : {}, "debuff" : {}, "fusion" : "Wind Type 03", "moves" : {"Garu":0, "Wind Boost":0}, "drops" : {"EXP" : 750, "Skill Cards" : ["Garu", "Wind Boost"], "Fusion Cards" : ["Wind Type 03"], "Support Items" : ["Flashbang"]}, "weakness" : "Fire"},
+    {"name" : "Wind Elemental","id": "3", "LVL" : 10, "turns" : 2,"MHP" : 2000, "HP" : 1500, "STR" : 100, "RES" : 3, "CRIT" : 30,"CRIT DMG" : 50, "fusion" : "Wind Type 03", "moves" : {"Garu":0, "Wind Boost":0}, "weakness" : "Fire"},
 
-    {"name" : "Wind Fighter","id": "4", "LVL" : 15, "MHP" : 2000, "HP" : 2000, "STR" : 100, "RES" : 4, "CRIT" : 30,"CRIT DMG" : 50, "Fire DMG" : 0, "Water DMG" : 0, "Wind DMG" : 0, "All DMG" : 0, "buff" : {}, "debuff" : {}, "fusion" : "Wind Type 04", "moves" : {"Garula":0, "Overhype":0}, "drops" : {"EXP" : 1000, "Skill Cards" : ["Garula", "Overhype"], "Fusion Cards" : ["Wind Type 04"], "Support Items" : ["Flashbang"]}, "weakness" : "Fire"},
+    {"name" : "Wind Fighter","id": "4", "LVL" : 15, "turns" : 2,"MHP" : 2500, "HP" : 2000, "STR" : 100, "RES" : 4, "CRIT" : 30,"CRIT DMG" : 50, "fusion" : "Wind Type 04", "moves" : {"Garula":0, "Overhype":0}, "weakness" : "Fire"},
 
-    {"name" : "Wind Fighter","id": "5", "LVL" : 20, "MHP" : 2500, "HP" : 2500, "STR" : 100, "RES" : 5, "CRIT" : 30,"CRIT DMG" : 50, "Fire DMG" : 0, "Water DMG" : 0, "Wind DMG" : 0, "All DMG" : 0, "buff" : {}, "debuff" : {}, "fusion" : "Wind Type 05", "moves" : {"Focus":0, "Cyclone" : 0}, "drops" : {"EXP" : 1250, "Skill Cards" : ["Focus","Cyclone"], "Fusion Cards" : ["Wind Type 05"], "Support Items" : ["Flashbang"]}, "weakness" : "Fire"},
+    {"name" : "Wind Fighter","id": "5", "LVL" : 20, "turns" : 2,"MHP" : 3000, "HP" : 2500, "STR" : 100, "RES" : 5, "CRIT" : 30,"CRIT DMG" : 50, "fusion" : "Wind Type 05", "moves" : {"Focus":0, "Cyclone" : 0}, "weakness" : "Fire"},
 
-    {"name" : "Wind Fighter","id": "6", "LVL" : 25, "MHP" : 3000, "HP" : 3000, "STR" : 100, "RES" : 6, "CRIT" : 30,"CRIT DMG" : 50, "Fire DMG" : 0, "Water DMG" : 0, "Wind DMG" : 0, "All DMG" : 0,"buff" : {}, "debuff" : {}, "fusion" : "Wind Type 06", "moves" : {"Wrath Tempest":0}, "drops" : {"EXP" : 1500, "Skill Cards" : ["SPECIAL: Eye of the Storm"], "Fusion Cards" : ["Wind Type 06"], "Support Items" : ["Flashbang"]}, "weakness" : "Fire"},
+    {"name" : "Wind Fighter","id": "6", "LVL" : 25, "turns" : 2,"MHP" : 3500, "HP" : 3000, "STR" : 100, "RES" : 6, "CRIT" : 30,"CRIT DMG" : 50, "fusion" : "Wind Type 06", "moves" : {"Wrath Tempest":0}, "weakness" : "Fire"},
 
-    {"name" : "Wind Guardian","id": "7", "LVL" : 30, "MHP" : 3500, "HP" : 3500, "STR" : 100, "RES" : 7, "CRIT" : 30,"CRIT DMG" : 50, "Fire DMG" : 0, "Water DMG" : 0, "Wind DMG" : 0, "All DMG" : 0, "buff" : {},"debuff" : {}, "fusion" : "Wind Type 07", "moves" : {"Overhype":0, "Garudyne":0}, "drops" : {"EXP" : 1750, "Skill Cards" : ["Garudyne", "Overhype"], "Fusion Cards" : ["Wind Type 07"], "Support Items" : ["Flashbang"]}, "weakness" : "Fire"},
+    {"name" : "Wind Guardian","id": "7", "LVL" : 30, "turns" : 2,"MHP" : 4000, "HP" : 3500, "STR" : 100, "RES" : 7, "CRIT" : 30,"CRIT DMG" : 50, "fusion" : "Wind Type 07", "moves" : {"Overhype":0, "Garudyne":0}, "weakness" : "Fire"},
 
-    {"name" : "Wind Guardian","id": "8", "LVL" : 35, "MHP" : 4000, "HP" : 4000, "STR" : 100, "RES" : 8, "CRIT" : 30,"CRIT DMG" : 50, "Fire DMG" : 0, "Water DMG" : 0, "Wind DMG" : 0, "All DMG" : 0,  "buff" : {}, "debuff" : {}, "fusion" : "Wind Type 08", "moves" : {"Focus":0, "Garubarion":0}, "drops" : {"EXP" : 2000, "Skill Cards" : ["Garubarion", "Focus"], "Fusion Cards" : ["Wind Type 08"], "Support Items" : ["Flashbang"]}, "weakness" : "Fire"},
+    {"name" : "Wind Guardian","id": "8", "LVL" : 35, "turns" : 2,"MHP" : 4500, "HP" : 4000, "STR" : 100, "RES" : 8, "CRIT" : 30,"CRIT DMG" : 50, "fusion" : "Wind Type 08", "moves" : {"Focus":0, "Garubarion":0}, "weakness" : "Fire"},
 
-    {"name" : "Wind Sentinel","id": "9", "LVL" : 40, "MHP" : 4500, "HP" : 4500, "STR" : 100, "RES" : 9, "CRIT" : 30,"CRIT DMG" : 50, "Fire DMG" : 0, "Water DMG" : 0, "Wind DMG" : 0, "All DMG" : 0,   "buff" : {}, "debuff" : {}, "fusion" : "Wind Type 09", "moves" : {"Wrath Tempest":0, "Cyclone":0}, "drops" : {"EXP" : 2250, "Skill Cards" : ["Cyclone", "Wrath Tempest"], "Fusion Cards" : ["Wind Type 09"], "Support Items" : ["Flashbang"]}, "weakness" : "Fire"},
+    {"name" : "Wind Sentinel","id": "9", "LVL" : 40, "turns" : 3,"MHP" : 5000, "HP" : 4500, "STR" : 100, "RES" : 9, "CRIT" : 30,"CRIT DMG" : 50, "fusion" : "Wind Type 09", "moves" : {"Wrath Tempest":0, "Cyclone":0}, "weakness" : "Fire"},
 
-    {"name" : "Kaze","id": "10", "LVL" : 45, "MHP" : 10000, "HP" : 10000, "STR" : 100, "RES" : 10, "CRIT" : 30,"CRIT DMG" : 50,  "Fire DMG" : 0, "Water DMG" : 0, "Wind DMG" : 0, "All DMG" : 0, "buff" : {}, "debuff" : {}, "fusion" : "Prototype: GALE", "moves" : {"Wind Boost":0,"Wrath Tempest":0,"Cyclone":0}, "drops" : {"EXP" : 10000, "Skill Cards" : ["Cyclone","Wind Boost","Wrath Tempest"], "Fusion Cards" : ["Prototype: GALE"], "Support Items" : ["Flashbang"]}, "weakness" : "Fire"},
+    {"name" : "Kaze","id": "10", "LVL" : 45, "turns" : 3,"MHP" : 10000, "HP" : 10000, "STR" : 50, "RES" : 100, "CRIT" : 30,"CRIT DMG" : 50,  "fusion" : "Prototype: GALE", "moves" : {"Wind Boost":0,"Wrath Tempest":0,"Cyclone":0}, "weakness" : "Fire"},
 
-    {"name" : "Fire Elemental","id": "11", "LVL" : 1, "MHP" : 500, "HP" : 500, "STR" : 100, "RES" : 1, "CRIT" : 2,"CRIT DMG" : 50, "Fire DMG" : 0, "Water DMG" : 0, "Wind DMG" : 0, "All DMG" : 0,  "buff" : {}, "debuff" : {}, "fusion" : "Fire Type 01", "moves" : {"Agi":0, "Overgrow":0}, "drops" : {"EXP" : 250, "Skill Cards" : ["Agi", "Overgrow"], "Fusion Cards" : ["Fire Type 01"], "Support Items" : ["Molotov"]}, "weakness" : "Water"},
+    {"name" : "Fire Elemental","id": "11", "LVL" : 1,"turns" : 2, "MHP" : 1000, "HP" : 500, "STR" : 100, "RES" : 1, "CRIT" : 2,"CRIT DMG" : 50, "fusion" : "Fire Type 01", "moves" : {"Agi":0, "Overgrow":0}, "weakness" : "Water"},
 
-    {"name" : "Fire Elemental","id": "12", "LVL" : 5, "MHP" : 1000, "HP" : 1000, "STR" : 100, "RES" : 2, "CRIT" : 4,"CRIT DMG" : 50, "Fire DMG" : 0, "Water DMG" : 0, "Wind DMG" : 0, "All DMG" : 0,"buff" : {}, "debuff" : {}, "fusion" : "Fire Type 02", "moves" : {"Agi":0, "Concentrate":0}, "drops" : {"EXP" : 500, "Skill Cards" : ["Agi", "Concentrate"], "Fusion Cards" : ["Fire Type 02"], "Support Items" : ["Molotov"]}, "weakness" : "Water"},
+    {"name" : "Fire Elemental","id": "12", "LVL" : 5,"turns" : 2, "MHP" : 1500, "HP" : 1000, "STR" : 100, "RES" : 2, "CRIT" : 4,"CRIT DMG" : 50, "fusion" : "Fire Type 02", "moves" : {"Agi":0, "Concentrate":0}, "weakness" : "Water"},
 
-    {"name" : "Fire Elemental","id": "13", "LVL" : 10, "MHP" : 1500, "HP" : 1500, "STR" : 100, "RES" : 3, "CRIT" : 6,"CRIT DMG" : 50, "Fire DMG" : 0, "Water DMG" : 0, "Wind DMG" : 0, "All DMG" : 0,   "buff" : {}, "debuff" : {}, "fusion" : "Fire Type 03", "moves" : {"Fire Boost":0, "Agi":0}, "drops" : {"EXP" : 750, "Skill Cards" : ["Agi", "Fire Boost"], "Fusion Cards" : ["Fire Type 03"], "Support Items" : ["Molotov"]}, "weakness" : "Water"},
+    {"name" : "Fire Elemental","id": "13", "LVL" : 10,"turns" : 2, "MHP" : 2000, "HP" : 1500, "STR" : 100, "RES" : 3, "CRIT" : 6,"CRIT DMG" : 50, "fusion" : "Fire Type 03", "moves" : {"Fire Boost":0, "Agi":0}, "weakness" : "Water"},
 
-    {"name" : "Fire Fighter","id": "14", "LVL" : 15, "MHP" : 2000, "HP" : 2000, "STR" : 100, "RES" : 4, "CRIT" : 8,"CRIT DMG" : 50, "Fire DMG" : 0, "Water DMG" : 0, "Wind DMG" : 0, "All DMG" : 0, "buff" : {}, "debuff" : {}, "fusion" : "Fire Type 04", "moves" : {"Agilao":0, "Overgrow":0, "Diarama" : 0}, "drops" : {"EXP" : 1000, "Skill Cards" : ["Agilao","Diarama"], "Fusion Cards" : ["Fire Type 04"], "Support Items" : ["Molotov"]}, "weakness" : "Water"},
+    {"name" : "Fire Fighter","id": "14", "LVL" : 15,"turns" : 2, "MHP" : 2500, "HP" : 2000, "STR" : 100, "RES" : 4, "CRIT" : 8,"CRIT DMG" : 50, "fusion" : "Fire Type 04", "moves" : {"Agilao":0, "Overgrow":0, "Diarama" : 0}, "weakness" : "Water"},
 
-    {"name" : "Fire Fighter","id": "15", "LVL" : 20, "MHP" : 2500, "HP" : 2500, "STR" : 100, "RES" : 5, "CRIT" : 10,"CRIT DMG" : 50, "Fire DMG" : 0, "Water DMG" : 0, "Wind DMG" : 0, "All DMG" : 0,   "buff" : {}, "debuff" : {}, "fusion" : "Fire Type 05", "moves" : {"Concentrate":0, "Fire Dance" : 0}, "drops" : {"EXP" : 1250, "Skill Cards" : ["Concentrate", "Agilao"], "Support Items" : ["Molotov"], "Fusion Cards" : ["Fire Type 05"]}, "weakness" : "Water"},
+    {"name" : "Fire Fighter","id": "15", "LVL" : 20,"turns" : 2, "MHP" : 3000, "HP" : 2500, "STR" : 100, "RES" : 5, "CRIT" : 10,"CRIT DMG" : 50, "fusion" : "Fire Type 05", "moves" : {"Concentrate":0, "Fire Dance" : 0}, "weakness" : "Water"},
 
-    {"name" : "Fire Fighter","id": "16", "LVL" : 25, "MHP" : 3000, "HP" : 3000, "STR" : 100, "RES" : 6, "CRIT" : 12,"CRIT DMG" : 50, "Fire DMG" : 0, "Water DMG" : 0, "Wind DMG" : 0, "All DMG" : 0,   "buff" : {}, "debuff" : {}, "fusion" : "Fire Type 06", "moves" : {"Burning Hell":0}, "drops" : {"EXP" : 1500, "Skill Cards" : ["SPECIAL: Cataclysm", "Agilao"], "Fusion Cards" : ["Fire Type 06"], "Support Items" : ["Molotov"]}, "weakness" : "Water"},
+    {"name" : "Fire Fighter","id": "16", "LVL" : 25,"turns" : 2, "MHP" : 3500, "HP" : 3000, "STR" : 100, "RES" : 6, "CRIT" : 12,"CRIT DMG" : 50, "fusion" : "Fire Type 06", "moves" : {"Burning Hell":0}, "weakness" : "Water"},
 
-    {"name" : "Fire Guardian","id": "17", "LVL" : 30, "MHP" : 3500, "HP" : 3500, "STR" : 100, "RES" : 7, "CRIT" : 14,"CRIT DMG" : 50, "Fire DMG" : 0, "Water DMG" : 0, "Wind DMG" : 0, "All DMG" : 0,  "buff" : {}, "debuff" : {}, "fusion" : "Fire Type 07", "moves" : {"Diarama":0, "Agidyne" : 0}, "drops" : {"EXP" : 1750, "Skill Cards" : ["Diarama", "Agidyne"], "Fusion Cards" : ["Fire Type 07"], "Support Items" : ["Molotov"]}, "weakness" : "Water"},
+    {"name" : "Fire Guardian","id": "17", "LVL" : 30,"turns" : 2, "MHP" : 4000, "HP" : 3500, "STR" : 100, "RES" : 7, "CRIT" : 14,"CRIT DMG" : 50,"fusion" : "Fire Type 07", "moves" : {"Diarama":0, "Agidyne" : 0}, "weakness" : "Water"},
 
-    {"name" : "Fire Guardian","id": "18", "LVL" : 35, "MHP" : 4000, "HP" : 4000, "STR" : 100, "RES" : 8, "CRIT" : 16,"CRIT DMG" : 50, "Fire DMG" : 0, "Water DMG" : 0, "Wind DMG" : 0, "All DMG" : 0,   "buff" : {}, "debuff" : {}, "fusion" : "Fire Type 08", "moves" : {"Fire Boost":0, "Agibarion":0}, "drops" : {"EXP" : 2000, "Skill Cards" : ["Agibarion","Fire Boost"], "Fusion Cards" : ["Fire Type 08"], "Support Items" : ["Molotov"]}, "weakness" : "Water"},
+    {"name" : "Fire Guardian","id": "18", "LVL" : 35,"turns" : 2, "MHP" : 4500, "HP" : 4000, "STR" : 100, "RES" : 8, "CRIT" : 16,"CRIT DMG" : 50, "fusion" : "Fire Type 08", "moves" : {"Fire Boost":0, "Agibarion":0}, "weakness" : "Water"},
 
-    {"name" : "Fire Sentinel","id": "19", "LVL" : 40, "MHP" : 4500, "HP" : 4500, "STR" : 100, "RES" : 9, "CRIT" : 18,"CRIT DMG" : 50, "Fire DMG" : 0, "Water DMG" : 0, "Wind DMG" : 0, "All DMG" : 0, "buff" : {}, "debuff" : {}, "fusion" : "Fire Type 09", "moves" : {"Burning Hell":0, "Fire Dance":0}, "drops" : {"EXP" : 2250, "Skill Cards" : ["Burning Hell", "Fire Dance"], "Fusion Cards" : ["Fire Type 09"], "Support Items" : ["Molotov"]}, "weakness" : "Water"},
+    {"name" : "Fire Sentinel","id": "19", "LVL" : 40,"turns" : 3, "MHP" : 5000, "HP" : 4500, "STR" : 100, "RES" : 9, "CRIT" : 18,"CRIT DMG" : 50, "fusion" : "Fire Type 09", "moves" : {"Burning Hell":0, "Fire Dance":0}, "weakness" : "Water"},
 
-    {"name" : "Hi", "LVL" : 45,"id": "20", "MHP" : 10000, "HP" : 10000, "STR" : 100, "RES" : 10, "CRIT" : 20,"CRIT DMG" : 50, "Fire DMG" : 0, "Water DMG" : 0, "Wind DMG" : 0, "All DMG" : 0,   "buff" : {}, "debuff" : {}, "fusion" : "Prototype: BLZE", "moves" : {"Fire Boost":0,'Debilitate': 0, "Burning Hell" : 0}, "drops" : {"EXP" : 10000, "Skill Cards" : ["Burning Hell", "Fire Dance"], "Fusion Cards" : ["Prototype: BLZE"], "Support Items" : ["Molotov"]}, "weakness" : "Water"},
+    {"name" : "Hi", "LVL" : 45,"id": "20", "MHP" : 10000,"turns" : 3, "HP" : 10000, "STR" : 100, "RES" : 10, "CRIT" : 20,"CRIT DMG" : 50, "fusion" : "Prototype: BLZE", "moves" : {"Fire Boost":0,'Debilitate': 0, "Burning Hell" : 0}, "weakness" : "Water"},
 
-    {"name" : "Water Elemental","id": "21", "LVL" : 1, "MHP" : 500, "HP" : 500, "STR" : 100, "RES" : 10, "CRIT" : 2,"CRIT DMG" : 50, "Fire DMG" : 0, "Water DMG" : 0, "Wind DMG" : 0, "All DMG" : 0,  "buff" : {}, "debuff" : {}, "fusion" :"Water Type 01", "moves" : {"Resist":0, "Bufu":0}, "drops" : {"EXP" : 250, "Skill Cards" : ["Resist","Bufu"], "Fusion Cards" : ["Water Type 01"], "Support Items" : ["Hydro Bomb"]}, "weakness" : "Wind"},
+    {"name" : "Water Elemental","id": "21", "LVL" : 1,"turns" : 2, "MHP" : 1000, "HP" : 500, "STR" : 100, "RES" : 10, "CRIT" : 2,"CRIT DMG" : 50, "fusion" :"Water Type 01", "moves" : {"Resist":0, "Bufu":0}, "weakness" : "Wind"},
 
-    {"name" : "Water Elemental","id": "22", "LVL" : 5, "MHP" : 1000, "HP" : 1000, "STR" : 100, "RES" : 2, "CRIT" : 4,"CRIT DMG" : 50, "Fire DMG" : 0, "Water DMG" : 0, "Wind DMG" : 0, "All DMG" : 0,  "buff" : {}, "debuff" : {}, "fusion" : "Water Type 02", "moves" : {"Charge" : 0,"Megi":0}, "drops" : {"EXP" : 500, "Skill Cards" : ["Charge", "Megido"], "Fusion Cards" : ["Water Type 02"], "Support Items" : ["Hydro Bomb"]}, "weakness" : "Wind"},
+    {"name" : "Water Elemental","id": "22", "LVL" : 5,"turns" : 2, "MHP" : 1500, "HP" : 1000, "STR" : 100, "RES" : 2, "CRIT" : 4,"CRIT DMG" : 50, "fusion" : "Water Type 02", "moves" : {"Charge" : 0,"Megi":0}, "weakness" : "Wind"},
 
-    {"name" : "Water Elemental","id": "23", "LVL" : 10, "MHP" : 1500, "HP" : 1500, "STR" : 100, "RES" : 3, "CRIT" : 6,"CRIT DMG" : 50, "Fire DMG" : 0, "Water DMG" : 0, "Wind DMG" : 0, "All DMG" : 0,   "buff" : {}, "debuff" : {}, "fusion" : "Water Type 03", "moves" : {"Water Boost":0, "Rush":0}, "drops" : {"EXP" : 750, "Skill Cards" : ["Water Boost","Rush"], "Fusion Cards" : ["Water Type 03"], "Support Items" : ["Hydro Bomb"]}, "weakness" : "Wind"},
+    {"name" : "Water Elemental","id": "23", "LVL" : 10,"turns" : 2, "MHP" : 2000, "HP" : 1500, "STR" : 100, "RES" : 3, "CRIT" : 6,"CRIT DMG" : 50, "fusion" : "Water Type 03", "moves" : {"Water Boost":0, "Rush":0}, "weakness" : "Wind"},
 
-    {"name" : "Water Fighter","id": "24", "LVL" : 15, "MHP" : 2000, "HP" : 2000, "STR" : 100, "RES" : 4, "CRIT" : 8,"CRIT DMG" : 50,"Fire DMG" : 0, "Water DMG" : 0, "Wind DMG" : 0, "All DMG" : 0,  "buff" : {}, "debuff" : {}, "fusion" : "Water Type 04", "moves" : {"Bufula":0, "Resist":0}, "drops" : {"EXP" : 1000, "Skill Cards" : ["Bufula","Resist"], "Fusion Cards" : ["Water Type 04"], "Support Items" : ["Hydro Bomb"]}, "weakness" : "Wind"},
+    {"name" : "Water Fighter","id": "24", "LVL" : 15,"turns" : 2, "MHP" : 2500, "HP" : 2000, "STR" : 100, "RES" : 4, "CRIT" : 8,"CRIT DMG" : 50, "fusion" : "Water Type 04", "moves" : {"Bufula":0, "Resist":0}, "weakness" : "Wind"},
 
-    {"name" : "Water Fighter","id": "25", "LVL" : 20, "MHP" : 2500, "HP" : 2500, "STR" : 100, "RES" : 5, "CRIT" : 10,"CRIT DMG" : 50, "Fire DMG" : 0, "Water DMG" : 0, "Wind DMG" : 0, "All DMG" : 0,  "buff" : {}, "debuff" : {}, "fusion" : "Water Type 05", "moves" : {"Megido":0, "Charge":0}, "drops" : {"EXP" : 1250, "Skill Cards" : ["Charge"], "Fusion Cards" : ["Water Type 05"], "Support Items" : ["Hydro Bomb"]}, "weakness" : "Wind"},
+    {"name" : "Water Fighter","id": "25", "LVL" : 20,"turns" : 2, "MHP" : 3000, "HP" : 2500, "STR" : 100, "RES" : 5, "CRIT" : 10,"CRIT DMG" : 50, "fusion" : "Water Type 05", "moves" : {"Megido":0, "Charge":0}, "weakness" : "Wind"},
 
-    {"name" : "Water Fighter","id": "26", "LVL" : 25, "MHP" : 3000, "HP" : 3000, "STR" : 100, "RES" : 6, "CRIT" : 12,"CRIT DMG" : 50, "Fire DMG" : 0, "Water DMG" : 0, "Wind DMG" : 0, "All DMG" : 0,   "buff" : {}, "debuff" : {}, "fusion" : "Water Type 06", "moves" : {"Thalassic Calamity":0, "Concentrate":0}, "drops" : {"EXP" : 1500, "Skill Cards" : ["SPECIAL: Hyperflood Abrasion"], "Fusion Cards" : ["Water Type 06"], "Support Items" : ["Hydro Bomb"]}, "weakness" : "Wind"},
+    {"name" : "Water Fighter","id": "26", "LVL" : 25,"turns" : 2, "MHP" : 3500, "HP" : 3000, "STR" : 100, "RES" : 6, "CRIT" : 12,"CRIT DMG" : 50, "fusion" : "Water Type 06", "moves" : {"Thalassic Calamity":0, "Concentrate":0}, "weakness" : "Wind"},
 
-    {"name" : "Water Guardian","id": "27", "LVL" : 30, "MHP" : 3500, "HP" : 3500, "STR" : 100, "RES" : 7, "CRIT" : 14,"CRIT DMG" : 50, "Fire DMG" : 0, "Water DMG" : 0, "Wind DMG" : 0, "All DMG" : 0,   "buff" : {}, "debuff" : {}, "fusion" : "Water Type 07", "moves" : {"Thalassic Calamity":0, "Inspire":0}, "drops" : {"EXP" : 1750, "Skill Cards" : ["Thalassic Calamity","Inspire"], "Fusion Cards" : ["Water Type 07"], "Support Items" : ["Hydro Bomb"]}, "weakness" : "Wind"},
+    {"name" : "Water Guardian","id": "27", "LVL" : 30,"turns" : 2, "MHP" : 4000, "HP" : 3500, "STR" : 100, "RES" : 7, "CRIT" : 14,"CRIT DMG" : 50, "fusion" : "Water Type 07", "moves" : {"Thalassic Calamity":0, "Inspire":0}, "weakness" : "Wind"},
 
-    {"name" : "Water Guardian","id": "28", "LVL" : 35, "MHP" : 4000, "HP" : 4000, "STR" : 100, "RES" : 8, "CRIT" : 16,"CRIT DMG" : 50, "Fire DMG" : 0, "Water DMG" : 0, "Wind DMG" : 0, "All DMG" : 0,  "buff" : {}, "debuff" : {}, "fusion" : "Water Type 08", "moves" : {"Bufudyne":0, "Megidola":0}, "drops" : {"EXP" : 2000, "Skill Cards" : ["Megidola","Bufudyne"], "Fusion Cards" : ["Water Type 08"], "Support Items" : ["Hydro Bomb"]}, "weakness" : "Wind"},
+    {"name" : "Water Guardian","id": "28", "LVL" : 35,"turns" : 2, "MHP" : 4500, "HP" : 4000, "STR" : 100, "RES" : 8, "CRIT" : 16,"CRIT DMG" : 50, "fusion" : "Water Type 08", "moves" : {"Bufudyne":0, "Megidola":0},"weakness" : "Wind"},
 
-    {"name" : "Water Sentinel","id": "29", "LVL" : 40, "MHP" : 4500, "HP" : 4500, "STR" : 100, "RES" : 9, "CRIT" : 18,"CRIT DMG" : 50, "Fire DMG" : 0, "Water DMG" : 0, "Wind DMG" : 0, "All DMG" : 0,  "buff" : {}, "debuff" : {}, "fusion" : "Water Type 09", "moves" : {"Bufubarion":0, "Water Boost":0,"Debilitate":0}, "drops" : {"EXP" : 2250, "Skill Cards" : ["Debilitate","Bufubarion"], "Fusion Cards" : ["Water Type 09"], "Support Items" : ["Hydro Bomb"]}, "weakness" : "Wind"},
+    {"name" : "Water Sentinel","id": "29", "LVL" : 40,"turns" : 3, "MHP" : 5000, "HP" : 4500, "STR" : 100, "RES" : 9, "CRIT" : 18,"CRIT DMG" : 50, "fusion" : "Water Type 09", "moves" : {"Bufubarion":0, "Water Boost":0,"Debilitate":0}, "weakness" : "Wind"},
 
-    {"name" : "Mizu", "LVL" : 45,"id": "30", "MHP" : 10000, "HP" : 10000, "STR" : 100, "RES" : 10, "CRIT" : 20, "CRIT DMG" : 50,"Fire DMG" : 0, "Water DMG" : 0, "Wind DMG" : 0, "All DMG" : 0, "buff" : {}, "debuff" : {}, "fusion" : "Prototype: AQUA", "moves" : {"Water Boost":0, "Thalassic Calamity":0, "Bufubarion" : 0}, "drops" : {"EXP" : 10000, "Skill Cards" : ["Thalassic Calamity","Bufubarion"], "Fusion Cards" : ["Prototype: AQUA"], "Support Items" : ["Hydro Bomb"]}, "weakness" : "Wind"}
+    {"name" : "Mizu", "LVL" : 45,"id": "30", "MHP" : 10000,"turns" : 3, "HP" : 10000, "STR" : 100, "RES" : 10, "CRIT" : 20, "CRIT DMG" : 50, "fusion" : "Prototype: AQUA", "moves" : {"Water Boost":0, "Thalassic Calamity":0, "Bufubarion" : 0},"weakness" : "Wind"}
      ]
 
   if option == "all":#all enemies
@@ -1435,31 +1435,37 @@ def battle_moveslookup(move, lvl=1):
       "Skip" : {"prop" : ["Defence"], "img" : "skip","cost" : 0},
       "SPECIAL: March Forward" : {"prop" : ["Party", "Buff", "SPECIAL"], "img" : "special", "inflict" : "March!","cost" : 0},
       "Taunt" : {"prop" : ["Defence", "Buff", "Skill"], "img" : "buff", "inflict" : "Taunt","cost" : 40},
+      "Focus" : {"prop" : ["Defence", "Buff", "Skill"], "img" : "buff", "inflict" : "Focused","cost" : 40},
       "Debilitate" : {"prop" : ["Offence", "Debuff", "Skill"], "img" : "debuff", "inflict" : "Vulnerable","cost" : 40},
-      "Diarama" : {"prop" : ["Defence", "Heal", "Skill"], "img" : "heal", "heal" : 20,"cost" : 40},#Healing scales off Max HP
+      "Diarama" : {"prop" : ["Defence", "Heal", "Skill"], "img" : "heal", "heal" : 40,"cost" : 40},#Healing scales off Max HP
+      "Dia" : {"prop" : ["Defence", "Heal", "Basic"], "img" : "heal", "heal" : 15,"cost" : 20},#Healing scales off Max HP
 
-      "Garudyne" : {"prop" : ["Offence", "Wind", "Basic"], "img" : "wind_1s", "dmg" : 100,"cost" : 20},#Damage scales off STR
-      "Cyclone": {"prop" : ["Offence", "Wind", "Skill"], "img" : "wind_mg", "dmg" : 30, "hits" : 8,"cost" : 40},
-      "Garubarion": {"prop" : ["Offence", "Wind", "Skill"], "img" : "wind_mg", "dmg" : 120, "hits" : 2,"cost" : 40},
-      "SPECIAL: Eye of the Storm": {"prop" : ["Offence", "Wind", "SPECIAL"], "img" : "special", "dmg" : 50, "hits" : 8,"cost" : 0},
-      "Bufudyne": {"prop" : ["Offence", "Water", "Basic"], "img" : "water_1s", "dmg" : 100,"cost" : 20},
-      "Striking Tide": {"prop" : ["Offence", "Water", "Skill"], "img" : "water_mg", "dmg" : 24, "hits" : 10,"cost" : 40},
-      "Bufubarion": {"prop" : ["Offence", "Water", "Skill"], "img" : "water_1g", "dmg" : 240,"cost" : 40},
-      "SPECIAL: Thalassic Calamity": {"prop" : ["Offence", "Water", "SPECIAL"], "img" : "special", "dmg" : 40, "hits" : 10,"cost" : 0},
-      "Agidyne": {"prop" : ["Offence", "Fire", "Basic"], "img" : "fire_1s", "dmg" : 100,"cost" : 20},
-      "Fire Dance": {"prop" : ["Offence", "Fire", "Skill"], "img" : "fire_mg", "dmg" : 80, "hits" : 3,"cost" : 40},
-      "Agibarion": {"prop" : ["Offence", "Fire", "Skill"], "img" : "fire_1g", "dmg" : 240,"cost" : 40},
-      "SPECIAL: Burning Hell": {"prop" : ["Offence", "Fire", "SPECIAL"], "img" : "special", "dmg" : 400,"cost" : 0}
+      "Garudyne" : {"prop" : ["Offence", "Wind", "Basic"], "img" : "wind_1s", "dmg" : 50,"cost" : 20},#Damage scales off STR
+      "Cyclone": {"prop" : ["Offence", "Wind", "Skill"], "img" : "wind_mg", "dmg" : 25, "hits" : 8,"cost" : 40},
+      "Wind Blades": {"prop" : ["Offence", "Wind", "Basic"], "img" : "wind_mg", "dmg" : 10, "hits" : 8,"cost" : 20},
+      "Garubarion": {"prop" : ["Offence", "Wind", "Skill"], "img" : "wind_mg", "dmg" : 100, "hits" : 2,"cost" : 40},
+      "SPECIAL: Eye of the Storm": {"prop" : ["Offence", "Wind", "SPECIAL"], "img" : "special", "dmg" : 40, "hits" : 8,"cost" : 0},
+      "Bufudyne": {"prop" : ["Offence", "Water", "Basic"], "img" : "water_1s", "dmg" : 50,"cost" : 20},
+      "Striking Tide": {"prop" : ["Offence", "Water", "Skill"], "img" : "water_mg", "dmg" : 20, "hits" : 10,"cost" : 40},
+      "Bufubarion": {"prop" : ["Offence", "Water", "Skill"], "img" : "water_1g", "dmg" : 200,"cost" : 40},
+      "SPECIAL: Thalassic Calamity": {"prop" : ["Offence", "Water", "SPECIAL"], "img" : "special", "dmg" : 32, "hits" : 10,"cost" : 0},
+      "Agidyne": {"prop" : ["Offence", "Fire", "Basic"], "img" : "fire_1s", "dmg" : 50,"cost" : 20},
+      "Fire Dance": {"prop" : ["Offence", "Fire", "Skill"], "img" : "fire_mg", "dmg" : 66, "hits" : 3,"cost" : 40},
+      "Agibarion": {"prop" : ["Offence", "Fire", "Skill"], "img" : "fire_1g", "dmg" : 200,"cost" : 40},
+      "SPECIAL: Burning Hell": {"prop" : ["Offence", "Fire", "SPECIAL"], "img" : "special", "dmg" : 320,"cost" : 0}
   }
   all_moves_desc = { #s = Small desc. b = Big desc0
       "Skip" : {"s" : "End this turn", "b" : "End this turn"},
       "Taunt" : {"s" : "Draws opponent's attention", "b" : "Draws enemy attention by increasing AGG"},
+      "Focus" : {"s" : "Increases CRIT", "b" : "Increases CRIT Rate"},
       "SPECIAL: March Forward" : {"s" : "All out attack", "b" : "Increases all party members' STR"},
       "Debilitate" : {"s" : "Reduce opponent's RES", "b" : "Make the opponent take more DMG by reducing their RES"},
       "Diarama" : {"s" : "Heals medium HP", "b" : "Heals " + str(move_stats(all_moves["Diarama"]["heal"],lvl)) + "% of one's Max HP to target ally"},
+      "Dia" : {"s" : "Heals some HP", "b" : "Heals " + str(move_stats(all_moves["Dia"]["heal"],lvl)) + "% of one's Max HP to target ally"},
 
       "Garudyne" : {"s":"Deals medium Wind DMG", "b" : "Deals " + str(move_stats(all_moves["Garudyne"]["dmg"],lvl)) + "% Wind DMG to a single target enemy"},
       "Cyclone" : {"s":"Deals minor Wind DMG x8", "b" : "Deals " + str(move_stats(all_moves["Cyclone"]["dmg"],lvl)) + "% Wind DMG to a single target enemy 8 times"},
+      "Wind Blades" : {"s":"Deals minor Wind DMG x10", "b" : "Deals " + str(move_stats(all_moves["Wind Blades"]["dmg"],lvl)) + "% Wind DMG to a single target enemy 10 times"},
       "Garubarion" : {"s":"Deals medium Wind DMG x2", "b" : "Deals " + str(move_stats(all_moves["Garubarion"]["dmg"],lvl)) + "% Wind DMG to a single target enemy 2 times"},
       "SPECIAL: Eye of the Storm" : {"s":"The storm consumes", "b" : "Deals " + str(move_stats(all_moves["SPECIAL: Eye of the Storm"]["dmg"],lvl)) + "% Wind DMG to a single target enemy 8 times"},
 
@@ -1792,7 +1798,7 @@ def battle_viewmember(member,background): # Not in use
 def char_stats(stat,lvl):
     return int(stat+(((stat*0.1)*lvl)-stat*0.1))
 
-def battle_system(player_party,enemy_stats):
+def battle_system(player_party,enemy_stats,bg,bgm):
     global player
     global enemy
     global player_characters
@@ -1808,8 +1814,6 @@ def battle_system(player_party,enemy_stats):
     global img_bonus
     global battle_characters
     #Classes must be declared outside of main function
-
-    bg = "Battle_" + str(random.randint(1,4))
 
     #AGG target
     icon_target = pygame.transform.scale(pygame.image.load("img/Other/target.png"),(screen_mult(screen_width,30),screen_mult(screen_height,30))).convert_alpha()
@@ -1881,6 +1885,10 @@ def battle_system(player_party,enemy_stats):
         for move in characters[member]["moves"]:
             newdict[move] = True
         battle_characters[member]["moves"] = newdict
+
+
+    enemy_stats["buff"] = {}
+    enemy_stats["debuff"] = {}
     
     #Damage text
     damage_text_group = pygame.sprite.Group()
@@ -1893,6 +1901,7 @@ def battle_system(player_party,enemy_stats):
     #Create fighter classes
     player = Fighter(screen_width/4, int(screen_height/2),battle_characters[player_party[0]])
     enemy = Fighter(screen_width-(screen_width/4), int(screen_height/2),enemy_stats)
+    enemy_turns = 0
     
 
     #Create progressbars. Arguements are width and height
@@ -1982,10 +1991,7 @@ def battle_system(player_party,enemy_stats):
         }
 
     #Calculating total party MHP to determine music to play
-    hp = 0
-    for member in player_party:
-        hp += battle_characters[member]["MHP"]
-    battle_music(hp, enemy.stats["MHP"], "Start")
+    battle_music(bgm)
     
     #Running loop. 1 Loop = 1 Frame
     running = ""
@@ -2363,6 +2369,15 @@ def battle_system(player_party,enemy_stats):
                         enemy_moves.append(move)
                 if len(enemy_moves) > 0:
                         selected = random.choice(enemy_moves)
+                        #Target member with highest aggro.
+                        if random.randint(1,100) > 50+(battle_characters[highest_agg]["AGG"]-100) and battle_characters[highest_agg]["HP"] > 0:
+                            action[1] = battle_characters[highest_agg]
+                        else:
+                            while True:
+                                chosen = random.choice(player_party)
+                                action[1] = battle_characters[chosen]
+                                if action[1]["HP"] > 0:
+                                    break
                         #Check if move has multiple hits
 
                         hits = battle_moveslookup(selected)
@@ -2447,6 +2462,9 @@ def battle_system(player_party,enemy_stats):
                         vigour["current"] -= battle_moveslookup(action[0])["cost"]
                     elif "SPECIAL" in action[0]:
                         player.stats["EG"] = 0
+                    #Restore enemy turns
+                    if vigour["current"] <= 0:
+                        enemy_turns = enemy.stats["turns"]
                     action = ["",""]
                     player.status = "turn"
 
@@ -2463,15 +2481,6 @@ def battle_system(player_party,enemy_stats):
                 if "Offence" in battle_moveslookup(selected)["prop"]:
                     #Targets random alive party member
                     action[0] = selected
-
-                    #Target member with highest aggro. 20% chance to ignore this rule
-                    if random.randint(1,10) > 2 and battle_characters[highest_agg]["HP"] > 0:
-                        action[1] = battle_characters[highest_agg]
-                    else:
-                        while True:
-                            action[1] = battle_characters[random.choice(player_party)]
-                            if action[1]["HP"] > 0:
-                                break
                         
                     if action[1]["name"] == player.stats["name"]:
                         battle_turndata,player.stats = enemy.move(action[0], action[1],player_party)
@@ -2506,9 +2515,6 @@ def battle_system(player_party,enemy_stats):
                     if int((battle_turndata["totaldmg"]/battle_turndata["target"]["MHP"])*100) >= 10:
                         player.status = "hurt"
 
-                #Restores vigour to player
-                vigour["current"] = vigour["max"]
-
 
                 cooldown = int(framesrate*2)
             
@@ -2535,7 +2541,7 @@ def battle_system(player_party,enemy_stats):
                         end = "Defeat!"
                 elif battle_turndata["actor"].stats["HP"] <= 0 and battle_turndata["actor"].stats["name"] == enemy.stats["name"] or battle_turndata["target"]["HP"] <= 0 and battle_turndata["target"]["name"] == enemy.stats["name"]:
                     end = "Victory!"
-                    battle_music(hp, enemy.stats["MHP"], "End")
+                    battle_music("End")
 
                 if end != "":
                     battle_action = end
@@ -2543,7 +2549,7 @@ def battle_system(player_party,enemy_stats):
                         player.status = "dead"
                     elif end == "Victory!":
                         player.status = "turn"
-                    battle_music(hp, enemy.stats["MHP"], "End")
+                    battle_music("End")
                     battle_action = end
 
                     
@@ -2564,7 +2570,8 @@ def battle_system(player_party,enemy_stats):
                     enemy.status = "idle"
                     battle_action = "player"
                 #Enemy turn
-                elif vigour["current"] <= 0:
+                elif enemy_turns > 0:
+                    enemy_turns -= 1
                     #Removes Player move CD
                     for member in player_party:
                         if player.stats["name"] != member:
@@ -2578,10 +2585,14 @@ def battle_system(player_party,enemy_stats):
                     player.status = "idle"
                     enemy.status = "turn"
                     battle_action = "enemy"
-                    buttonshift_party["point"] = buttonshift_party["max"]
-                    buttonshift_moves["point"] = buttonshift_moves["max"]
-                    vigour["transition"] = 0
-                    combo = {"hits" : 0, "dmg" : 0}
+
+                    if enemy_turns <= 0:
+                        #Restores vigour to player
+                        vigour["current"] = vigour["max"]
+                        buttonshift_party["point"] = buttonshift_party["max"]
+                        buttonshift_moves["point"] = buttonshift_moves["max"]
+                        vigour["transition"] = 0
+                        combo = {"hits" : 0, "dmg" : 0}
                     
                 selected = ""
                 action=["",""]
@@ -2791,23 +2802,21 @@ def menu_levelup(name, exp,message):
   myMixer("menu_enter.wav",0)
 
 
-def battle_startend(player_party,enemy_stats="any"):
+def battle_startend(player_party,enemy_stats="any",bg="Battle_1",bgm="streaked"):
     global player_characters
     global difficulty
     enemy_stats = get_enemies(enemy_stats)
     #Adjust to difficulty
-    modes = {"Normal" : 2, "Hard" : 3,"Maddening" : 5}
+    modes = {"Normal" : 1, "Hard" : 2,"Maddening" : 3}
     enemy_stats["MHP"] = int(enemy_stats["MHP"]*modes[difficulty])
     enemy_stats["HP"] = enemy_stats["MHP"]
     enemy_stats["STR"] = int(enemy_stats["STR"]*modes[difficulty])
     enemy_stats["RES"] = int(enemy_stats["RES"]*modes[difficulty])
     enemy_stats["CRIT"] = int(enemy_stats["CRIT"]*modes[difficulty])
-    enemy_stats["drops"]["EXP"] = int(enemy_stats["drops"]["EXP"]*(modes[difficulty]+0.1))
-    enemy_stats["drops"]["Gold"] = int(1*(modes[difficulty]+0.1))
-    enemy_stats["moves"] = {"Agidyne" : 1, "Garudyne" : 1,"Bufudyne" : 1, "Debilitate" : 1}
+    enemy_stats["moves"] = {"Agidyne" : 1, "Garudyne" : 1,"Bufudyne" : 1,"Focus" :1}
 
     #Initiate battle
-    result = battle_system(player_party,enemy_stats)
+    result = battle_system(player_party,enemy_stats,bg,bgm)
 
     #Reformatting stats after battle
     for member in player_party:
@@ -2894,14 +2903,15 @@ def menu_party_buttons():
     #Party member buttons
     x, y_value = screen_mult(screen_width,30), screen_height/(len(player_party)+1)
     for member in player_party:
-        button_party[member] = {
-            "button" : button.Button(display,x+offset,y_value+offset,pygame.image.load("img/Char/" + str(member) + "/icon_spec.png").convert_alpha(),button_width-int(offset*1.5),button_height-int(offset*1.5)),
-            "bg" : pygame.image.load("img/UI/party_" + str(characters[member]["element"]).lower() + "_bg.png").convert_alpha(),
-            "border" : pygame.image.load("img/UI/party_" + str(characters[member]["element"]).lower() + ".png").convert_alpha()}
-        button_party[member]["bg"] = pygame.transform.scale(button_party[member]["bg"],(button_width-int(offset/5),button_height-int(offset/5)))
-        button_party[member]["border"] = pygame.transform.scale(button_party[member]["border"],(button_width,button_height))
+        if player_characters[member]["unlock"] == True:
+            button_party[member] = {
+                "button" : button.Button(display,x+offset,y_value+offset,pygame.image.load("img/Char/" + str(member) + "/icon_spec.png").convert_alpha(),button_width-int(offset*1.5),button_height-int(offset*1.5)),
+                "bg" : pygame.image.load("img/UI/party_" + str(characters[member]["element"]).lower() + "_bg.png").convert_alpha(),
+                "border" : pygame.image.load("img/UI/party_" + str(characters[member]["element"]).lower() + ".png").convert_alpha()}
+            button_party[member]["bg"] = pygame.transform.scale(button_party[member]["bg"],(button_width-int(offset/5),button_height-int(offset/5)))
+            button_party[member]["border"] = pygame.transform.scale(button_party[member]["border"],(button_width,button_height))
 
-        y_value += (screen_height/(len(player_party)+1)) - button_height/2
+            y_value += (screen_height/(len(player_party)+1)) - button_height/2
 
     #All character buttons
     x_value = x+button_width+x
@@ -2909,7 +2919,7 @@ def menu_party_buttons():
     y_value = screen_height/((len(player_characters)+1/basecount))
     count = basecount+1
     for member in player_characters:
-        if member in player_party:
+        if member in player_party or player_characters[member]["unlock"] == False:
             continue
         if count > basecount:
             count = 1
@@ -3706,6 +3716,7 @@ def menu_main(message):
     #Available options
     options = {
         "Fight" : {"desc" : "Start a battle!"},
+        "Endless" : {"desc" : "Test your might. (Coming soon)"},
         #"Train" : {"desc" : "Earn EXP (Cost: " + str(exp_cost) + " GOLD)"},#Turned off for now
         "Party" : {"desc" : "Organise party"},
         "Save" : {"desc" : "Save the game"},
@@ -3943,12 +3954,18 @@ def menu_world(message):
 
     #Available options
     options = {
-        "World 1" : {"desc" : "Enter World 1"},
-        "World 2" : {"desc" : "Enter World 2"},
-        "World 3" : {"desc" : "Enter World 3"},
-        "World 4" : {"desc" : "Enter World 4"},
-        "World 5" : {"desc" : "Enter World 5"},
-        "Return" : {"desc" : "Return to Main Menu"}}
+        "World 1" : {"desc" : "Enter World 1", "bg" : "Battle_2"},
+        "World 2" : {"desc" : "Enter World 2", "bg" : "Battle_3"},
+        "World 3" : {"desc" : "Enter World 3", "bg" : "Battle_1"}
+    }
+    for world in options:
+        options[world]["unlock"] = False
+        for floor in worlds[world]:
+            if worlds[world][floor]["id"] in player_worlds["Available"]:
+                options[world]["unlock"] = True
+                break
+    options["Return"] = {"desc" : "Return to Main Menu", "unlock" : True}
+
 
     #Create buttons from options
     y_value = screen_height/(len(options)+1)
@@ -3984,7 +4001,17 @@ def menu_world(message):
         #Update invis circle
         inviscircle.update("")
         #Display images
-        draw_background("Battle_5","circle")
+        flag = False
+        for world in options:
+            if options[world]["hovering"] and world != "Return":
+                draw_background("Battle_5pre","circle")
+                x,y = screen_width/3,screen_height/4
+                w,h = screen_mult(screen_width,1000),screen_mult(screen_height,562)
+                display.blit(pygame.transform.scale(background[str(options[world]["bg"])+"pre"],(w,h)),(x,y))
+                pygame.draw.rect(display, colour["white"], (x-5, y-5, w+5, h+5), 5)
+                flag = True
+                break
+        if flag == False:   draw_background("Battle_5","circle")
 
         #Top and bottom borders for effect
         #Black
@@ -4002,22 +4029,19 @@ def menu_world(message):
         #Display buttons
         y_value = screen_height/(len(options)+1)+button_height/1.5
         message = base_message
-        unlock = 0#Value increases in loop for every world displayed.
         for option in options:
-            if option != "Return":  unlock += 1
             x,y = -screen_mult(screen_width,50),y_value
             clicked = options[option]["button"].draw(x,y,"")
-            print(unlock)
 
             #Draw outline if hovering
-            if options[option]["button"].hover() and (player_worlds["World"] >= unlock or option == "Return"):#Can hover if level high enough or return button
+            if options[option]["button"].hover() and (options[option]["unlock"] == True or option == "Return"):#Can hover if level high enough or return button
                 myColour = colour["white"]
                 x_value = screen_mult(screen_width,100)
                 message = options[option]["desc"]
                 if options[option]["hovering"] == False:
                     options[option]["hovering"] = True
                     myMixer("menu_tap.wav",-0.5)
-            elif player_worlds["World"] < unlock and option != "Return":
+            elif options[option]["unlock"] == False and option != "Return":
                 myColour = colour["grey"]
                 x_value = screen_mult(screen_width,80)
                 options[option]["hovering"] = False
@@ -4026,7 +4050,7 @@ def menu_world(message):
                 x_value = screen_mult(screen_width,80)
                 options[option]["hovering"] = False
 
-            if clicked and controls["left_click"] and (player_worlds["World"] >= unlock or option=="Return"):
+            if clicked and controls["left_click"] and (options[option]["unlock"] == True or option=="Return"):
                 running = option
                 x_value = screen_mult(screen_width,120)
 
@@ -4052,9 +4076,9 @@ def menu_world(message):
         #clock tick
         clock.tick(framesrate)
 
-    if running in worlds:
+    if running in worlds and options[running]["unlock"] == True:
         myMixer("menu_text.wav",-0.5)
-        menu_floor("Select a Floor",running)#Enter world
+        menu_floor("Select a Floor",running,options[running]["bg"])#Enter world
         myMixer("menu_back.wav",0)
     elif running == "Return":
         myMixer("menu_text.wav",-0.5)
@@ -4064,7 +4088,7 @@ def menu_world(message):
 
     menu_world(message)
 
-def menu_floor(message,world_num):
+def menu_floor(message,world_num,bg):
     global old_player_characters
     global player_characters
     global player_party
@@ -4077,7 +4101,13 @@ def menu_floor(message,world_num):
     options = {}
     for floor in worlds[world_num]:
         options[floor] = {"desc" : "Enter Battle (" + str(floor) + ")"}
-    options["Return"] =  {"desc" : "Return to Main Menu"}
+    for floor in options:
+        if worlds[world_num][floor]["id"] in player_worlds["Available"]:
+            options[floor]["unlock"] = True
+        else:
+            options[floor]["unlock"] = False
+
+    options["Return"] =  {"desc" : "Return to Main Menu", "unlock" : True}
 
     #Create buttons from options
     y_value = screen_height/(len(options)+1)
@@ -4110,7 +4140,7 @@ def menu_floor(message,world_num):
         #Update invis circle
         inviscircle.update("")
         #Display images
-        draw_background("Battle_5_2","circle")
+        draw_background(str(bg)+"pre","circle")
 
         #Top and bottom borders for effect
         #Black
@@ -4128,22 +4158,19 @@ def menu_floor(message,world_num):
         #Display buttons
         y_value = screen_height/(len(options)+1)+button_height/1.5
         message = base_message
-        if player_worlds["World"] <= int(world_num[-1]):
-            unlock = 0#Value increases in loop for every world displayed.
         for option in options:
-            if option != "Return":  unlock += 1
             x,y = -screen_mult(screen_width,50),y_value
             clicked = options[option]["button"].draw(x,y,"")
 
             #Draw outline if hovering
-            if options[option]["button"].hover() and (player_worlds["Floor"] >= unlock or option == "Return"):#FIX
+            if options[option]["button"].hover() and (options[option]["unlock"] == True or option == "Return"):#FIX
                 myColour = colour["white"]
                 x_value = screen_mult(screen_width,100)
                 message = options[option]["desc"]
                 if options[option]["hovering"] == False:
                     options[option]["hovering"] = True
                     myMixer("menu_tap.wav",-0.5)
-            elif player_worlds["Floor"] < unlock and option != "Return":
+            elif options[option]["unlock"] == False and option != "Return":
                 myColour = colour["grey"]
                 x_value = screen_mult(screen_width,80)
                 options[option]["hovering"] = False
@@ -4152,7 +4179,7 @@ def menu_floor(message,world_num):
                 x_value = screen_mult(screen_width,80)
                 options[option]["hovering"] = False
 
-            if clicked and controls["left_click"] and (player_worlds["Floor"] >= unlock or option=="Return"):
+            if clicked and controls["left_click"] and (options[option]["unlock"] == True or option=="Return"):
                 running = option
                 x_value = screen_mult(screen_width,120)
 
@@ -4177,7 +4204,7 @@ def menu_floor(message,world_num):
         pygame.mixer.music.fadeout(300)
         time.sleep(2)
         for e in worlds[world_num][running]["Enemies"]:
-            result = battle_startend(player_party,e)
+            result = battle_startend(player_party,e,bg,worlds[world_num][running]["bgm"])
             pygame.mixer.music.load("snd/radar.wav")
             pygame.mixer.music.set_volume(0.2)
             pygame.mixer.music.play(loops=99)
@@ -4191,7 +4218,8 @@ def menu_floor(message,world_num):
             rewards = worlds[world_num][running]["Rewards"]
             if "GOLD" in worlds[world_num][running]["Rewards"]:
                 player_inventory["Gold"] += rewards["GOLD"]
-
+            if "Character" in worlds[world_num][running]["Rewards"]:
+                player_characters[worlds[world_num][running]["Rewards"]["Character"]]["unlock"] = True
             #EXP
             for member in player_party:
                 menu_levelup(member, int(rewards["EXP"]/len(player_party)), "Victory!")
@@ -4200,6 +4228,8 @@ def menu_floor(message,world_num):
             if player_worlds["Floor"] >= len(worlds[world_num]):
                 player_worlds["Floor"] = 1
                 player_worlds["World"] += 1#Risky. Inconsistent data can occur
+            if str(int(worlds[world_num][running]["id"])+1) not in player_worlds["Available"]:#If floor above is locked then unlock it
+                player_worlds["Available"].append(str(int(worlds[world_num][running]["id"])+1))
             message += " Ez clap."
     elif running == "Return":
         myMixer("menu_text.wav",-0.5)
@@ -4207,7 +4237,7 @@ def menu_floor(message,world_num):
         return
 
 
-    menu_floor(message,world_num)
+    menu_floor(message,world_num,bg)
 
 def terminate():
     #Terminate
@@ -4221,7 +4251,7 @@ global fonts
 fonts = init_font(screen_diag)
     
 global player_party
-player_party = ["Mia"]
+player_party = ["Seliph"]
 
 global player_weapons
 player_weapons = {}
