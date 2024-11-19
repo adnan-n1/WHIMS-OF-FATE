@@ -1307,18 +1307,20 @@ def battle_charmslookup(request):
                  "CRIT DMG" : 10,
                  "CRIT" : 5,
                  "MHP" : 10,
-                 "ER" : 10,
                  "STR" : 10,
-                 "RES" : 3,
-                 "AGG" : 3}
+                 "RES" : 3}
         
         rarities = {"1" : "common", "2" : "rare", "3" : "legend"}
 
         while count > 0:
             stat = random.choice(list(stats))
             stat_num = stats[stat]
-            rarity = random.randint(1,3)
-            set_type = random.choice(["Power", "Fire", "Wind", "Water", "Star", "Focus", "Hyper", "Blaze", "Energy", "Strength", "Shield"])
+            #rarity = random.randint(1,3)
+            rarity = 3
+            set_type = random.choice(
+                ["Power"#, "Fire", "Wind", "Water", "Star", "Focus", "Hyper", "Blaze", "Strength", "Shield"
+                 ]
+            )
             
             new_charm = {
                 "set" : set_type + " Emblem",
@@ -2817,7 +2819,6 @@ def menu_party_buttons():
 
 def menu_party_equipment(character,option):
     global player_characters
-    global player_weapons
     global player_charms
     
     button_width, button_height = screen_mult(screen_width,100),screen_mult(screen_height,100)
@@ -2900,7 +2901,6 @@ def menu_party_equipment(character,option):
 def menu_party(message):
     global player_characters
     global player_party
-    global player_weapons
     global inviscircle
 
     base_message = message
@@ -3593,13 +3593,13 @@ def menu_main(message):
     
     #Available options
     options = {
-        "Fight" : {"desc" : "Start a battle!"},
+        "Fight" : {"desc" : "Start a battle!", "unlock" : True},
         #"Endless" : {"desc" : "Test your might. (Coming soon)"},
-        "Train" : {"desc" : "Earn EXP (Cost: " + str(exp_cost) + " GOLD)"},#Turned off for now
-        "Party" : {"desc" : "Organise party"},
-        "Save" : {"desc" : "Save the game"},
-        "Options" : {"desc" : "Change preferences"},
-        "Quit" : {"desc" : "Leave the game"}}
+        "Train" : {"desc" : "Earn EXP (Cost: " + str(exp_cost) + " GOLD)", "unlock": (player_inventory["Gold"] >= exp_cost)},#Turned off for now
+        "Party" : {"desc" : "Organise party", "unlock" : True},
+        "Save" : {"desc" : "Save the game", "unlock" : False},
+        "Options" : {"desc" : "Change preferences", "unlock" : True},
+        "Quit" : {"desc" : "Leave the game", "unlock" : True}}
 
     #Create buttons from options
     y_value = screen_height/(len(options)+1)
@@ -3671,19 +3671,23 @@ def menu_main(message):
             clicked = options[option]["button"].draw(x,y,"")
 
             #Draw outline if hovering
-            if options[option]["button"].hover():
+            if options[option]["button"].hover() and options[option]["unlock"] == True:
                 myColour = colour["white"]
                 x_value = screen_mult(screen_width,100)
                 message = options[option]["desc"]
                 if options[option]["hovering"] == False:
                     options[option]["hovering"] = True
                     myMixer("menu_tap.wav",-0.5)
+            elif options[option]["unlock"] == False:
+                myColour = colour["grey"]
+                x_value = screen_mult(screen_width,80)
+                options[option]["hovering"] = False
             else:
                 myColour = colour["menu"]
                 x_value = screen_mult(screen_width,80)
                 options[option]["hovering"] = False
     
-            if clicked and controls["left_click"]:
+            if clicked and controls["left_click"] and options[option]["unlock"]:
                 running = option
                 x_value = screen_mult(screen_width,120)
                 if option == "Save":    message = "Saving..."
@@ -3755,7 +3759,10 @@ def menu_main(message):
         myMixer("menu_text.wav",-0.5)
         pygame.mixer.music.fadeout(300)
         exp = int(BASE_MEXP*5)*3
-        battle_result("Training Results", {"EXP" : exp})
+        distribution = {}
+        for member in player_party:
+            distribution[member] = 100
+        battle_result("Training Results", {"EXP" : exp},distribution)
         myMixer("menu_back.wav",0)
         pygame.mixer.music.load("snd/radar.wav")
         pygame.mixer.music.set_volume(0.2)
@@ -4099,14 +4106,25 @@ def menu_floor(message,world_num,bg):
         if "Defeat!" in result:
             message += " That was rough."
         elif "Victory!" in result:
+            eg = {}
+            highest_eg = ["",0]#Record highest generated energy to choose mvp
+
             distribution = {}#Distributing EXP according to performance
             for member in player_party:
                 distribution[member] = 0
+                eg[member] = 0
             for r in results:
                 for member in player_party:
                     distribution[member] += r["vigour"][member] + r["energy"][member]
+                    eg[member] += r["energy"][member]
 
-            battle_result("Battle Results",worlds[world_num][running]["Rewards"],distribution)
+            #Choose mvp
+            for member in eg:
+                if eg[member] > highest_eg[1]:
+                    highest_eg = [member,eg[member]]
+
+            rewards = worlds[world_num][running]["Rewards"]
+            battle_result("Battle Results",rewards,distribution,{"mvp":highest_eg[0]})
 
             player_inventory["Wins"] += 1
             player_worlds["Floor"] += 1
@@ -4124,16 +4142,20 @@ def menu_floor(message,world_num,bg):
 
     menu_floor(message,world_num,bg)
 
-def battle_result_character(player_party):
+def battle_result_character(player_party,mvp):
     output = {}
     x_value = 0
     for member in player_party:
-        output[str(member)] = {"img" : "","x" : 0,"rect" : "","bar" : {"current" : player_characters[member]["EXP"],"max" : char_stats(BASE_MEXP,player_characters[member]["LVL"]), "obj" : ""}}
-        img = pygame.image.load("img/Char/" + str(member) + "/icon.png").convert_alpha()
+        output[str(member)] = {"img" : "","x" : 0,"rect" : "","bar" : "","mvp" : False}
+        if mvp != "" and mvp == member:
+            img = pygame.image.load("img/Char/" + str(member) + "/icon_spec.png").convert_alpha()
+            output[str(member)]["mvp"] = True
+        else:
+            img = pygame.image.load("img/Char/" + str(member) + "/icon.png").convert_alpha()
         img_rect = img.get_rect()
         img_scale = screen_mult(screen_diag,200)
         img = pygame.transform.scale(img, (img_scale,img_scale))
-        output[str(member)]["bar"]["obj"] = ProgressBar(img_scale,img_scale/10,"horizontal")
+        output[str(member)]["bar"] = ProgressBar(img_scale,img_scale/10,"horizontal")
         output[str(member)]["img"] = img
         output[str(member)]["rect"] = output[str(member)]["img"].get_rect()
         output[str(member)]["x"] = x_value
@@ -4144,7 +4166,7 @@ def battle_result_character(player_party):
 
 
 
-def battle_result(message,rewards={},distribution={},data={}):
+def battle_result(message,rewards,distribution,data={}):
     global player_characters
     global worlds
     global player_party
@@ -4154,10 +4176,6 @@ def battle_result(message,rewards={},distribution={},data={}):
         player_inventory["Gold"] += rewards["GOLD"]
     if "Character" in rewards:
         player_characters[rewards["Character"]]["unlock"] = True
-    if len(distribution) == 0:
-        for member in player_party:
-            if member not in distribution:
-                distribution[member] = 100
 
     #Creating average for distribution
     total = 0
@@ -4172,8 +4190,13 @@ def battle_result(message,rewards={},distribution={},data={}):
     size = screen_mult(screen_diag,100)
     inviscircle = Battle_invisCircle(int(screen_width/2), int(screen_height/2), int(screen_height/2))
     button_continue = button.Button(display, screen_width-size-screen_mult(screen_width,50), screen_height-size-screen_mult(screen_height,50), img_skip, size,size)
+    mvp_size = screen_mult(screen_diag,50)
+    mvp_star = pygame.transform.scale(pygame.image.load("img/UI/star.png").convert_alpha(),(mvp_size,mvp_size))
+    mvp = ""
+    if "mvp" in data:
+        mvp = data["mvp"]
 
-    char_ui = battle_result_character(player_party)
+    char_ui = battle_result_character(player_party,mvp)
     char_count = 0
     char_exp = {"name" : player_party[char_count],"exp" : distribution[player_party[char_count]]}
     lvl_font_size = screen_mult(screen_diag,80)
@@ -4240,6 +4263,9 @@ def battle_result(message,rewards={},distribution={},data={}):
             pygame.draw.rect(display, colour["grey"], (x+char_ui[member]["x"], y, char_ui[member]["rect"].width, char_ui[member]["rect"].height))#Box
             display.blit(char_ui[member]["img"],(x+char_ui[member]["x"],y))#Character image
             pygame.draw.rect(display, colour[characters[member]["element"]], (x+char_ui[member]["x"]-10, y-10, char_ui[member]["rect"].width+10, char_ui[member]["rect"].height+10), 10)#Box Outline
+            if char_ui[member]["mvp"]:
+                display.blit(mvp_star,(x+char_ui[member]["x"]-screen_mult(screen_width,10),y-screen_mult(screen_height,10)))#MVP Star
+
             draw_text(str(player_characters[member]["LVL"]), lvl_font, colour["black"],x+char_ui[member]["x"]+8+s,y+char_ui[member]["rect"].height-lvl_font_size+2, False)#LVL text
             draw_text(str(player_characters[member]["LVL"]), lvl_font, colour["white"],x+char_ui[member]["x"]+5+s,y+char_ui[member]["rect"].height-lvl_font_size+2, False)
             if player_party.index(member) <= char_count:
@@ -4247,10 +4273,9 @@ def battle_result(message,rewards={},distribution={},data={}):
                 if member == char_exp["name"]:
                     num -= char_exp["exp"]
                 draw_text("+" + str(num) + " EXP", lvl_sfont, colour["white"],x+char_ui[member]["x"]+5,y+char_ui[member]["rect"].height+screen_mult(screen_height,30), False)#EXP Text
-            char_ui[member]["bar"]["obj"].draw(x+char_ui[member]["x"],y+char_ui[member]["rect"].height+5,player_characters[member]["EXP"],char_stats(BASE_MEXP,player_characters[member]["LVL"]),mouse_pos,"white",False)#Progress bar
+            char_ui[member]["bar"].draw(x+char_ui[member]["x"],y+char_ui[member]["rect"].height+5,player_characters[member]["EXP"],char_stats(BASE_MEXP,player_characters[member]["LVL"]),mouse_pos,"white",False)#Progress bar
 
         if char_exp["exp"] > 0 and player_characters[char_exp["name"]]["LVL"] < 40:
-
             #Add exp
             if char_exp["exp"] > (int(distribution[player_party[char_count]] * spd)):
                 #earning exp
@@ -4262,7 +4287,7 @@ def battle_result(message,rewards={},distribution={},data={}):
                 player_characters[char_exp["name"]]["EXP"] += char_exp["exp"]
                 char_exp["exp"] = 0
                 myMixer("exp_final.wav",0)
-            if char_exp["exp"] == 0 and char_count < 2:
+            if char_exp["exp"] == 0 and char_count < len(player_party)-1:
                 char_count+=1
                 char_exp = {"name" : player_party[char_count],"exp" : distribution[player_party[char_count]]}
                 spd = 1/framesrate
@@ -4310,16 +4335,7 @@ global fonts
 fonts = init_font(screen_diag)
     
 global player_party
-player_party = ["Seliph","Mia","Sothe"]
-
-global player_weapons
-player_weapons = {}
-for weapon in battle_weaponslookup("all"):
-    if weapon in player_weapons:
-        player_weapons[weapon] += 1
-    else:
-        player_weapons[weapon] = 1
-
+player_party = ["Seliph"]
 
 global player_charms
 player_charms = {}
