@@ -49,6 +49,12 @@ for member in player_characters:
 
 #List of all the playable characters and their base stats
 characters = {
+    'Seliph': {"specialty" : "Sustain",'name': 'Seliph', 'weapon': 'Blade', 'element': 'Water', 'MHP': 200, 'STR': 100, 'RES': 5, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Water Type 05', 'moves': ['Bufudyne',"Taunt", "SPECIAL: Thalassic Calamity"], 'weakness': 'Wind', 'AGG': 100},
+    'Mia': {"specialty" : "Healing",'name': 'Mia', 'weapon': 'Blade', 'element': 'Fire', 'MHP': 220, 'STR': 100, 'RES': 1, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Fire Type 05', 'moves': ['Agidyne',"Dia", "SPECIAL: Life's Garden"], 'weakness': 'Water', 'AGG': 100},
+    'Sothe': {"specialty" : "Damage (Critical)",'name': 'Sothe', 'weapon': 'Blade', 'element': 'Wind', 'MHP': 200, 'STR': 100, 'RES': 1, 'CRIT': 10, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Wind Type 05', 'moves': ['Wind Blades',"Focus", "SPECIAL: Eye of the Storm"], 'weakness': 'Fire', 'AGG': 100},
+    'Anna': {"specialty" : "Damage (Weakness)",'name': 'Anna', 'weapon': 'Bow', 'element': 'Fire', 'MHP': 200, 'STR': 110, 'RES': 1, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Fire Type 06', 'moves': ['Agidyne', "Fire Dance", "SPECIAL: Burning Hell"], 'weakness': 'Water', 'AGG': 100},
+    'Kris': {"specialty" : "Damage (Critical)",'name': 'Kris', 'weapon': 'Blade', 'element': 'Water', 'MHP': 200, 'STR': 110, 'RES': 1, 'CRIT': 10, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Water Type 06', 'moves': ['Bufudyne',"Striking Tide", "SPECIAL: Thalassic Calamity"], 'weakness': 'Wind', 'AGG': 100},
+
     'Byleth': {'name': 'Byleth', 'weapon': 'Catalyst', 'element': 'Wind', 'MHP': 200, 'STR': 100, 'RES': 5, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Wind Type 09', 'moves': ['Garudyne',"Cyclone","Debilitate", "SPECIAL: Eye of the Storm"], 'weakness': 'Fire', 'AGG': 100},
     'Morgan': {'name': 'Morgan', 'weapon': 'Resistance Blade', 'element': 'Water', 'MHP': 200, 'STR': 100, 'RES': 5, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Prototype: AQUA', 'moves': ['Bufudyne',"Striking Tide","Taunt", "SPECIAL: Thalassic Calamity"], 'weakness': 'Wind', 'AGG': 100},
     'Claude': {'name': 'Claude', 'weapon': 'Bow', 'element': 'Fire', 'MHP': 200, 'STR': 100, 'RES': 5, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Fire Type 07', 'moves': ['Agidyne', "Fire Dance", "SPECIAL: Burning Hell"], 'weakness': 'Water', 'AGG': 100},
@@ -59,18 +65,18 @@ characters = {
     'Lucina': {'name': 'Lucina', 'weapon': 'Blade', 'element': 'Water', 'MHP': 200, 'STR': 100, 'RES': 5, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Water Type 09', 'moves': ['Bufudyne',"Striking Tide", "SPECIAL: Thalassic Calamity"], 'weakness': 'Wind', 'AGG': 100},
     'Ninian': {'name': 'Ninian', 'weapon': 'Focus Catalyst', 'element': 'Wind', 'MHP': 200, 'STR': 100, 'RES': 5, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Prototype: GALE', 'moves': ['Garudyne',"Garubarion", "SPECIAL: Eye of the Storm"], 'weakness': 'Fire', 'AGG': 100},
     'Shez': {'name': 'Shez', 'weapon': 'Health Blade', 'element': 'Fire', 'MHP': 200, 'STR': 100, 'RES': 5, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Prototype: BLZE', 'moves': ['Agidyne', "Fire Dance", "SPECIAL: Burning Hell"], 'weakness': 'Water', 'AGG': 100},
-    'Anna': {'name': 'Anna', 'weapon': 'Bow', 'element': 'Fire', 'MHP': 200, 'STR': 100, 'RES': 5, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Fire Type 06', 'moves': ['Agidyne', "Fire Dance", "SPECIAL: Burning Hell"], 'weakness': 'Water', 'AGG': 100},
     'Knight': {'name': 'Knight', 'weapon': 'Blade', 'element': 'Water', 'MHP': 200, 'STR': 100, 'RES': 5, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Water Type 07', 'moves': ['Bufudyne',"Striking Tide", "SPECIAL: Thalassic Calamity"], 'weakness': 'Wind', 'AGG': 100},
-    'Kris': {'name': 'Kris', 'weapon': 'Blade', 'element': 'Water', 'MHP': 200, 'STR': 100, 'RES': 5, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Water Type 06', 'moves': ['Bufudyne',"Striking Tide", "SPECIAL: Thalassic Calamity"], 'weakness': 'Wind', 'AGG': 100},
     'Lyn': {'name': 'Lyn', 'weapon': 'Blade', 'element': 'Wind', 'MHP': 200, 'STR': 100, 'RES': 5, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Wind Type 07', 'moves': ['Garudyne',"Cyclone", "SPECIAL: Eye of the Storm"], 'weakness': 'Fire', 'AGG': 100},
-    'Mia': {'name': 'Mia', 'weapon': 'Blade', 'element': 'Fire', 'MHP': 200, 'STR': 100, 'RES': 5, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Fire Type 05', 'moves': ['Agidyne',"Dia", "SPECIAL: Burning Hell"], 'weakness': 'Water', 'AGG': 100},
     'Reginn': {'name': 'Reginn', 'weapon': 'Blade', 'element': 'Wind', 'MHP': 200, 'STR': 100, 'RES': 5, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Wind Type 06', 'moves': ['Garudyne',"Cyclone", "SPECIAL: Eye of the Storm"], 'weakness': 'Fire', 'AGG': 100},
-    'Seliph': {'name': 'Seliph', 'weapon': 'Blade', 'element': 'Water', 'MHP': 200, 'STR': 100, 'RES': 5, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Water Type 05', 'moves': ['Bufudyne',"Taunt", "SPECIAL: Thalassic Calamity"], 'weakness': 'Wind', 'AGG': 100},
-    'Sothe': {'name': 'Sothe', 'weapon': 'Blade', 'element': 'Wind', 'MHP': 200, 'STR': 100, 'RES': 5, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Wind Type 05', 'moves': ['Wind Blades',"Focus", "SPECIAL: Eye of the Storm"], 'weakness': 'Fire', 'AGG': 100},
     'Alear': {'name': 'Alear', 'weapon': 'Star Blade', 'element': 'Singularity', 'MHP': 200, 'STR': 100, 'RES': 5, 'CRIT': 5, 'CRIT DMG': 50, 'MEG': 100, 'fusion': 'Prototype: STAR', 'moves': ['Garudyne',"Cyclone", "SPECIAL: March Forward"], 'weakness': 'None', 'AGG': 100,}
 }
 
 player_characters = {
+    #Starting characters
+    "Seliph" : {"unlock":True,"name" : "Seliph", "LVL" : 1, "EXP" : 1,"HP" : 200, "EG" : 0,"charms" : []},
+    "Mia" : {"unlock":True,"name" : "Mia", "LVL" : 1, "EXP" : 1,"HP" : 200, "EG" : 0,"charms" : []},
+    "Sothe" : {"unlock":True,"name" : "Sothe", "LVL" : 1, "EXP" : 1,"HP" : 200, "EG" : 0,"charms" : []},
+    #Unlockable characters
     "Byleth" : {"unlock":False,"name" : "Byleth", "LVL" : 1, "EXP" : 1,"HP" : 200,"EG" : 0, "charms" : []},
     "Claude" : {"unlock":False,"name" : "Claude", "LVL" : 1, "EXP" : 1,"HP" : 200, "EG" : 0,"charms" : []},
     "Dimitri" : {"unlock":False,"name" : "Dimitri", "LVL" : 1, "EXP" : 1,"HP" : 200, "EG" : 0,"charms" : []},
@@ -83,10 +89,7 @@ player_characters = {
     "Knight" : {"unlock":False,"name" : "Knight", "LVL" : 1, "EXP" : 1,"HP" : 200, "EG" : 0,"charms" : []},
     "Kris" : {"unlock":False,"name" : "Kris", "LVL" : 1, "EXP" : 1,"HP" : 200, "EG" : 0,"charms" : []},
     "Lyn" : {"unlock":False,"name" : "Lyn", "LVL" : 1, "EXP" : 1,"HP" : 200, "EG" : 0,"charms" : []},
-    "Mia" : {"unlock":True,"name" : "Mia", "LVL" : 1, "EXP" : 1,"HP" : 200, "EG" : 0,"charms" : []},
     "Reginn" : {"unlock":False,"name" : "Reginn", "LVL" : 1, "EXP" : 1,"HP" : 200, "EG" : 0,"charms" : []},
-    "Seliph" : {"unlock":True,"name" : "Seliph", "LVL" : 1, "EXP" : 1,"HP" : 200, "EG" : 0,"charms" : []},
-    "Sothe" : {"unlock":True,"name" : "Sothe", "LVL" : 1, "EXP" : 1,"HP" : 200, "EG" : 0,"charms" : []},
     "Alear" : {"unlock":False,"name" : "Alear", "LVL" : 1, "EXP" : 1,"HP" : 200, "EG" : 0,"charms" : []},
     "Morgan" : {"unlock":False,"name" : "Morgan", "LVL" : 1, "EXP" : 1,"HP" : 200, "EG" : 0,"charms" : []}
 }
@@ -1164,65 +1167,38 @@ def get_enemies(option):
   #Elemental, Fighter, Guardian, Sentinel
   enemies = [
 
-    {"name" : "Wind Elemental","id": "1", "LVL" : 1, "turns" : 2,"MHP" : 1000, "HP" : 500, "STR" : 100, "RES" : 1, "CRIT" : 30, "CRIT DMG" : 50, "fusion" : "Wind Type 01", "moves" : {"Thousand Slaps":0, "Garu":0}, "weakness" : "Fire"},
+    {"name" : "Wind Elemental","id": "1", "LVL" : 1, "turns" : 2,"MHP" : 1000, "HP" : 1000, "STR" : 100, "RES" : 1, "CRIT" : 30, "CRIT DMG" : 50, "fusion" : "Wind Type 01", "moves" : {"Garudyne":0}, "weakness" : "Fire"},
+    {"name" : "Wind Elemental","id": "2", "LVL" : 5, "turns" : 2,"MHP" : 1100, "HP" : 1200, "STR" : 100, "RES" : 2, "CRIT" : 30, "CRIT DMG" : 50, "fusion" : "Wind Type 02", "moves" : {"Garudyne":0, "Focus":0}, "weakness" : "Fire"},
+    {"name" : "Wind Elemental","id": "3", "LVL" : 10, "turns" : 2,"MHP" : 1200, "HP" : 1400, "STR" : 100, "RES" : 3, "CRIT" : 30,"CRIT DMG" : 50, "fusion" : "Wind Type 03", "moves" : {"Garudyne":0, "Wind Boost":0}, "weakness" : "Fire"},
+    {"name" : "Wind Fighter","id": "4", "LVL" : 15, "turns" : 2,"MHP" : 1300, "HP" : 1600, "STR" : 100, "RES" : 4, "CRIT" : 30,"CRIT DMG" : 50, "fusion" : "Wind Type 04", "moves" : {"Garudyne":0, "Overhype":0}, "weakness" : "Fire"},
+    {"name" : "Wind Fighter","id": "5", "LVL" : 20, "turns" : 2,"MHP" : 1400, "HP" : 1800, "STR" : 100, "RES" : 5, "CRIT" : 30,"CRIT DMG" : 50, "fusion" : "Wind Type 05", "moves" : {"Focus":0, "Garudyne" : 0}, "weakness" : "Fire"},
+    {"name" : "Wind Fighter","id": "6", "LVL" : 25, "turns" : 2,"MHP" : 1500, "HP" : 2000, "STR" : 100, "RES" : 6, "CRIT" : 30,"CRIT DMG" : 50, "fusion" : "Wind Type 06", "moves" : {"Wrath Tempest":0}, "weakness" : "Fire"},
+    {"name" : "Wind Guardian","id": "7", "LVL" : 30, "turns" : 2,"MHP" : 1600, "HP" : 2200, "STR" : 100, "RES" : 7, "CRIT" : 30,"CRIT DMG" : 50, "fusion" : "Wind Type 07", "moves" : {"Overhype":0, "Garudyne":0}, "weakness" : "Fire"},
+    {"name" : "Wind Guardian","id": "8", "LVL" : 35, "turns" : 2,"MHP" : 1800, "HP" : 2400, "STR" : 100, "RES" : 8, "CRIT" : 30,"CRIT DMG" : 50, "fusion" : "Wind Type 08", "moves" : {"Focus":0, "Garudyne":0}, "weakness" : "Fire"},
+    {"name" : "Wind Sentinel","id": "9", "LVL" : 40, "turns" : 3,"MHP" : 2000, "HP" : 2600, "STR" : 100, "RES" : 9, "CRIT" : 30,"CRIT DMG" : 50, "fusion" : "Wind Type 09", "moves" : {"Wrath Tempest":0, "Garudyne":0}, "weakness" : "Fire"},
+    {"name" : "Kaze","id": "10", "LVL" : 45, "turns" : 3,"MHP" : 2500, "HP" : 2500, "STR" : 100, "RES" : 10, "CRIT" : 30,"CRIT DMG" : 50,  "fusion" : "Prototype: GALE", "moves" : {"Wind Boost":0,"Wrath Tempest":0,"Cyclone":0}, "weakness" : "Fire"},
 
-    {"name" : "Wind Elemental","id": "2", "LVL" : 5, "turns" : 2,"MHP" : 1500, "HP" : 1000, "STR" : 100, "RES" : 2, "CRIT" : 30, "CRIT DMG" : 50, "fusion" : "Wind Type 02", "moves" : {"Thousand Slaps":0, "Focus":0}, "weakness" : "Fire"},
+    {"name" : "Fire Elemental","id": "11", "LVL" : 1,"turns" : 2, "MHP" : 1000, "HP" : 1000, "STR" : 100, "RES" : 1, "CRIT" : 2,"CRIT DMG" : 50, "fusion" : "Fire Type 01", "moves" : {"Agi":0, "Overgrow":0}, "weakness" : "Water"},
+    {"name" : "Fire Elemental","id": "12", "LVL" : 5,"turns" : 2, "MHP" : 1100, "HP" : 1100, "STR" : 100, "RES" : 2, "CRIT" : 4,"CRIT DMG" : 50, "fusion" : "Fire Type 02", "moves" : {"Agi":0, "Concentrate":0}, "weakness" : "Water"},
+    {"name" : "Fire Elemental","id": "13", "LVL" : 10,"turns" : 2, "MHP" : 1200, "HP" : 1200, "STR" : 100, "RES" : 3, "CRIT" : 6,"CRIT DMG" : 50, "fusion" : "Fire Type 03", "moves" : {"Fire Boost":0, "Agi":0}, "weakness" : "Water"},
+    {"name" : "Fire Fighter","id": "14", "LVL" : 15,"turns" : 2, "MHP" : 1300, "HP" : 1300, "STR" : 100, "RES" : 4, "CRIT" : 8,"CRIT DMG" : 50, "fusion" : "Fire Type 04", "moves" : {"Agilao":0, "Overgrow":0, "Diarama" : 0}, "weakness" : "Water"},
+    {"name" : "Fire Fighter","id": "15", "LVL" : 20,"turns" : 2, "MHP" : 1400, "HP" : 1400, "STR" : 100, "RES" : 5, "CRIT" : 10,"CRIT DMG" : 50, "fusion" : "Fire Type 05", "moves" : {"Concentrate":0, "Fire Dance" : 0}, "weakness" : "Water"},
+    {"name" : "Fire Fighter","id": "16", "LVL" : 25,"turns" : 2, "MHP" : 1500, "HP" : 1500, "STR" : 100, "RES" : 6, "CRIT" : 12,"CRIT DMG" : 50, "fusion" : "Fire Type 06", "moves" : {"Burning Hell":0}, "weakness" : "Water"},
+    {"name" : "Fire Guardian","id": "17", "LVL" : 30,"turns" : 2, "MHP" : 1600, "HP" : 1600, "STR" : 100, "RES" : 7, "CRIT" : 14,"CRIT DMG" : 50,"fusion" : "Fire Type 07", "moves" : {"Diarama":0, "Agidyne" : 0}, "weakness" : "Water"},
+    {"name" : "Fire Guardian","id": "18", "LVL" : 35,"turns" : 2, "MHP" : 1800, "HP" : 1800, "STR" : 100, "RES" : 8, "CRIT" : 16,"CRIT DMG" : 50, "fusion" : "Fire Type 08", "moves" : {"Fire Boost":0, "Agibarion":0}, "weakness" : "Water"},
+    {"name" : "Fire Sentinel","id": "19", "LVL" : 40,"turns" : 3, "MHP" : 2000, "HP" : 2000, "STR" : 100, "RES" : 9, "CRIT" : 18,"CRIT DMG" : 50, "fusion" : "Fire Type 09", "moves" : {"Burning Hell":0, "Fire Dance":0}, "weakness" : "Water"},
+    {"name" : "Hi", "LVL" : 45,"id": "20", "MHP" : 3000,"turns" : 3, "HP" : 2500, "STR" : 2500, "RES" : 10, "CRIT" : 20,"CRIT DMG" : 50, "fusion" : "Prototype: BLZE", "moves" : {"Fire Boost":0,'Debilitate': 0, "Burning Hell" : 0}, "weakness" : "Water"},
 
-    {"name" : "Wind Elemental","id": "3", "LVL" : 10, "turns" : 2,"MHP" : 2000, "HP" : 1500, "STR" : 100, "RES" : 3, "CRIT" : 30,"CRIT DMG" : 50, "fusion" : "Wind Type 03", "moves" : {"Garu":0, "Wind Boost":0}, "weakness" : "Fire"},
-
-    {"name" : "Wind Fighter","id": "4", "LVL" : 15, "turns" : 2,"MHP" : 2500, "HP" : 2000, "STR" : 100, "RES" : 4, "CRIT" : 30,"CRIT DMG" : 50, "fusion" : "Wind Type 04", "moves" : {"Garula":0, "Overhype":0}, "weakness" : "Fire"},
-
-    {"name" : "Wind Fighter","id": "5", "LVL" : 20, "turns" : 2,"MHP" : 3000, "HP" : 2500, "STR" : 100, "RES" : 5, "CRIT" : 30,"CRIT DMG" : 50, "fusion" : "Wind Type 05", "moves" : {"Focus":0, "Cyclone" : 0}, "weakness" : "Fire"},
-
-    {"name" : "Wind Fighter","id": "6", "LVL" : 25, "turns" : 2,"MHP" : 3500, "HP" : 3000, "STR" : 100, "RES" : 6, "CRIT" : 30,"CRIT DMG" : 50, "fusion" : "Wind Type 06", "moves" : {"Wrath Tempest":0}, "weakness" : "Fire"},
-
-    {"name" : "Wind Guardian","id": "7", "LVL" : 30, "turns" : 2,"MHP" : 4000, "HP" : 3500, "STR" : 100, "RES" : 7, "CRIT" : 30,"CRIT DMG" : 50, "fusion" : "Wind Type 07", "moves" : {"Overhype":0, "Garudyne":0}, "weakness" : "Fire"},
-
-    {"name" : "Wind Guardian","id": "8", "LVL" : 35, "turns" : 2,"MHP" : 4500, "HP" : 4000, "STR" : 100, "RES" : 8, "CRIT" : 30,"CRIT DMG" : 50, "fusion" : "Wind Type 08", "moves" : {"Focus":0, "Garubarion":0}, "weakness" : "Fire"},
-
-    {"name" : "Wind Sentinel","id": "9", "LVL" : 40, "turns" : 3,"MHP" : 5000, "HP" : 4500, "STR" : 100, "RES" : 9, "CRIT" : 30,"CRIT DMG" : 50, "fusion" : "Wind Type 09", "moves" : {"Wrath Tempest":0, "Cyclone":0}, "weakness" : "Fire"},
-
-    {"name" : "Kaze","id": "10", "LVL" : 45, "turns" : 3,"MHP" : 10000, "HP" : 10000, "STR" : 50, "RES" : 100, "CRIT" : 30,"CRIT DMG" : 50,  "fusion" : "Prototype: GALE", "moves" : {"Wind Boost":0,"Wrath Tempest":0,"Cyclone":0}, "weakness" : "Fire"},
-
-    {"name" : "Fire Elemental","id": "11", "LVL" : 1,"turns" : 2, "MHP" : 1000, "HP" : 500, "STR" : 100, "RES" : 1, "CRIT" : 2,"CRIT DMG" : 50, "fusion" : "Fire Type 01", "moves" : {"Agi":0, "Overgrow":0}, "weakness" : "Water"},
-
-    {"name" : "Fire Elemental","id": "12", "LVL" : 5,"turns" : 2, "MHP" : 1500, "HP" : 1000, "STR" : 100, "RES" : 2, "CRIT" : 4,"CRIT DMG" : 50, "fusion" : "Fire Type 02", "moves" : {"Agi":0, "Concentrate":0}, "weakness" : "Water"},
-
-    {"name" : "Fire Elemental","id": "13", "LVL" : 10,"turns" : 2, "MHP" : 2000, "HP" : 1500, "STR" : 100, "RES" : 3, "CRIT" : 6,"CRIT DMG" : 50, "fusion" : "Fire Type 03", "moves" : {"Fire Boost":0, "Agi":0}, "weakness" : "Water"},
-
-    {"name" : "Fire Fighter","id": "14", "LVL" : 15,"turns" : 2, "MHP" : 2500, "HP" : 2000, "STR" : 100, "RES" : 4, "CRIT" : 8,"CRIT DMG" : 50, "fusion" : "Fire Type 04", "moves" : {"Agilao":0, "Overgrow":0, "Diarama" : 0}, "weakness" : "Water"},
-
-    {"name" : "Fire Fighter","id": "15", "LVL" : 20,"turns" : 2, "MHP" : 3000, "HP" : 2500, "STR" : 100, "RES" : 5, "CRIT" : 10,"CRIT DMG" : 50, "fusion" : "Fire Type 05", "moves" : {"Concentrate":0, "Fire Dance" : 0}, "weakness" : "Water"},
-
-    {"name" : "Fire Fighter","id": "16", "LVL" : 25,"turns" : 2, "MHP" : 3500, "HP" : 3000, "STR" : 100, "RES" : 6, "CRIT" : 12,"CRIT DMG" : 50, "fusion" : "Fire Type 06", "moves" : {"Burning Hell":0}, "weakness" : "Water"},
-
-    {"name" : "Fire Guardian","id": "17", "LVL" : 30,"turns" : 2, "MHP" : 4000, "HP" : 3500, "STR" : 100, "RES" : 7, "CRIT" : 14,"CRIT DMG" : 50,"fusion" : "Fire Type 07", "moves" : {"Diarama":0, "Agidyne" : 0}, "weakness" : "Water"},
-
-    {"name" : "Fire Guardian","id": "18", "LVL" : 35,"turns" : 2, "MHP" : 4500, "HP" : 4000, "STR" : 100, "RES" : 8, "CRIT" : 16,"CRIT DMG" : 50, "fusion" : "Fire Type 08", "moves" : {"Fire Boost":0, "Agibarion":0}, "weakness" : "Water"},
-
-    {"name" : "Fire Sentinel","id": "19", "LVL" : 40,"turns" : 3, "MHP" : 5000, "HP" : 4500, "STR" : 100, "RES" : 9, "CRIT" : 18,"CRIT DMG" : 50, "fusion" : "Fire Type 09", "moves" : {"Burning Hell":0, "Fire Dance":0}, "weakness" : "Water"},
-
-    {"name" : "Hi", "LVL" : 45,"id": "20", "MHP" : 10000,"turns" : 3, "HP" : 10000, "STR" : 100, "RES" : 10, "CRIT" : 20,"CRIT DMG" : 50, "fusion" : "Prototype: BLZE", "moves" : {"Fire Boost":0,'Debilitate': 0, "Burning Hell" : 0}, "weakness" : "Water"},
-
-    {"name" : "Water Elemental","id": "21", "LVL" : 1,"turns" : 2, "MHP" : 1000, "HP" : 500, "STR" : 100, "RES" : 10, "CRIT" : 2,"CRIT DMG" : 50, "fusion" :"Water Type 01", "moves" : {"Resist":0, "Bufu":0}, "weakness" : "Wind"},
-
-    {"name" : "Water Elemental","id": "22", "LVL" : 5,"turns" : 2, "MHP" : 1500, "HP" : 1000, "STR" : 100, "RES" : 2, "CRIT" : 4,"CRIT DMG" : 50, "fusion" : "Water Type 02", "moves" : {"Charge" : 0,"Megi":0}, "weakness" : "Wind"},
-
-    {"name" : "Water Elemental","id": "23", "LVL" : 10,"turns" : 2, "MHP" : 2000, "HP" : 1500, "STR" : 100, "RES" : 3, "CRIT" : 6,"CRIT DMG" : 50, "fusion" : "Water Type 03", "moves" : {"Water Boost":0, "Rush":0}, "weakness" : "Wind"},
-
-    {"name" : "Water Fighter","id": "24", "LVL" : 15,"turns" : 2, "MHP" : 2500, "HP" : 2000, "STR" : 100, "RES" : 4, "CRIT" : 8,"CRIT DMG" : 50, "fusion" : "Water Type 04", "moves" : {"Bufula":0, "Resist":0}, "weakness" : "Wind"},
-
-    {"name" : "Water Fighter","id": "25", "LVL" : 20,"turns" : 2, "MHP" : 3000, "HP" : 2500, "STR" : 100, "RES" : 5, "CRIT" : 10,"CRIT DMG" : 50, "fusion" : "Water Type 05", "moves" : {"Megido":0, "Charge":0}, "weakness" : "Wind"},
-
-    {"name" : "Water Fighter","id": "26", "LVL" : 25,"turns" : 2, "MHP" : 3500, "HP" : 3000, "STR" : 100, "RES" : 6, "CRIT" : 12,"CRIT DMG" : 50, "fusion" : "Water Type 06", "moves" : {"Thalassic Calamity":0, "Concentrate":0}, "weakness" : "Wind"},
-
-    {"name" : "Water Guardian","id": "27", "LVL" : 30,"turns" : 2, "MHP" : 4000, "HP" : 3500, "STR" : 100, "RES" : 7, "CRIT" : 14,"CRIT DMG" : 50, "fusion" : "Water Type 07", "moves" : {"Thalassic Calamity":0, "Inspire":0}, "weakness" : "Wind"},
-
-    {"name" : "Water Guardian","id": "28", "LVL" : 35,"turns" : 2, "MHP" : 4500, "HP" : 4000, "STR" : 100, "RES" : 8, "CRIT" : 16,"CRIT DMG" : 50, "fusion" : "Water Type 08", "moves" : {"Bufudyne":0, "Megidola":0},"weakness" : "Wind"},
-
-    {"name" : "Water Sentinel","id": "29", "LVL" : 40,"turns" : 3, "MHP" : 5000, "HP" : 4500, "STR" : 100, "RES" : 9, "CRIT" : 18,"CRIT DMG" : 50, "fusion" : "Water Type 09", "moves" : {"Bufubarion":0, "Water Boost":0,"Debilitate":0}, "weakness" : "Wind"},
-
-    {"name" : "Mizu", "LVL" : 45,"id": "30", "MHP" : 10000,"turns" : 3, "HP" : 10000, "STR" : 100, "RES" : 10, "CRIT" : 20, "CRIT DMG" : 50, "fusion" : "Prototype: AQUA", "moves" : {"Water Boost":0, "Thalassic Calamity":0, "Bufubarion" : 0},"weakness" : "Wind"}
+    {"name" : "Water Elemental","id": "21", "LVL" : 1,"turns" : 2, "MHP" : 1000, "HP" : 1000, "STR" : 100, "RES" : 10, "CRIT" : 2,"CRIT DMG" : 50, "fusion" :"Water Type 01", "moves" : {"Resist":0, "Bufu":0}, "weakness" : "Wind"},
+    {"name" : "Water Elemental","id": "22", "LVL" : 5,"turns" : 2, "MHP" : 1100, "HP" : 1100, "STR" : 100, "RES" : 2, "CRIT" : 4,"CRIT DMG" : 50, "fusion" : "Water Type 02", "moves" : {"Charge" : 0,"Megi":0}, "weakness" : "Wind"},
+    {"name" : "Water Elemental","id": "23", "LVL" : 10,"turns" : 2, "MHP" : 1200, "HP" : 1200, "STR" : 100, "RES" : 3, "CRIT" : 6,"CRIT DMG" : 50, "fusion" : "Water Type 03", "moves" : {"Water Boost":0, "Rush":0}, "weakness" : "Wind"},
+    {"name" : "Water Fighter","id": "24", "LVL" : 15,"turns" : 2, "MHP" : 1300, "HP" : 1300, "STR" : 100, "RES" : 4, "CRIT" : 8,"CRIT DMG" : 50, "fusion" : "Water Type 04", "moves" : {"Bufula":0, "Resist":0}, "weakness" : "Wind"},
+    {"name" : "Water Fighter","id": "25", "LVL" : 20,"turns" : 2, "MHP" : 1400, "HP" : 1400, "STR" : 100, "RES" : 5, "CRIT" : 10,"CRIT DMG" : 50, "fusion" : "Water Type 05", "moves" : {"Megido":0, "Charge":0}, "weakness" : "Wind"},
+    {"name" : "Water Fighter","id": "26", "LVL" : 25,"turns" : 2, "MHP" : 1500, "HP" : 1500, "STR" : 100, "RES" : 6, "CRIT" : 12,"CRIT DMG" : 50, "fusion" : "Water Type 06", "moves" : {"Thalassic Calamity":0, "Concentrate":0}, "weakness" : "Wind"},
+    {"name" : "Water Guardian","id": "27", "LVL" : 30,"turns" : 2, "MHP" : 1600, "HP" : 1600, "STR" : 100, "RES" : 7, "CRIT" : 14,"CRIT DMG" : 50, "fusion" : "Water Type 07", "moves" : {"Thalassic Calamity":0, "Inspire":0}, "weakness" : "Wind"},
+    {"name" : "Water Guardian","id": "28", "LVL" : 35,"turns" : 2, "MHP" : 1800, "HP" : 1800, "STR" : 100, "RES" : 8, "CRIT" : 16,"CRIT DMG" : 50, "fusion" : "Water Type 08", "moves" : {"Bufudyne":0, "Megidola":0},"weakness" : "Wind"},
+    {"name" : "Water Sentinel","id": "29", "LVL" : 40,"turns" : 3, "MHP" : 2000, "HP" : 2000, "STR" : 100, "RES" : 9, "CRIT" : 18,"CRIT DMG" : 50, "fusion" : "Water Type 09", "moves" : {"Bufubarion":0, "Water Boost":0,"Debilitate":0}, "weakness" : "Wind"},
+    {"name" : "Mizu", "LVL" : 45,"id": "30", "MHP" : 2500,"turns" : 3, "HP" : 2500, "STR" : 100, "RES" : 10, "CRIT" : 20, "CRIT DMG" : 50, "fusion" : "Prototype: AQUA", "moves" : {"Water Boost":0, "Thalassic Calamity":0, "Bufubarion" : 0},"weakness" : "Wind"}
      ]
 
   if option == "all":#all enemies
@@ -1430,12 +1406,16 @@ def battle_moveslookup(move, lvl=1):
       "SPECIAL: March Forward" : {"prop" : ["Party", "Buff", "SPECIAL"], "img" : "special", "inflict" : "March!","cost" : 0},
       "Taunt" : {"prop" : ["Defence", "Buff", "Skill"], "img" : "buff", "inflict" : "Taunt","cost" : 40},
       "Focus" : {"prop" : ["Defence", "Buff", "Skill"], "img" : "buff", "inflict" : "Focused","cost" : 40},
+      "Overhype" : {"prop" : ["Defence", "Buff", "Skill"], "img" : "buff", "inflict" : "Hyped","cost" : 40},
+      "Wind Boost" : {"prop" : ["Defence", "Buff", "Skill"], "img" : "buff", "inflict" : "Wind Boost","cost" : 40},
       "Debilitate" : {"prop" : ["Offence", "Debuff", "Skill"], "img" : "debuff", "inflict" : "Vulnerable","cost" : 40},
-      "Diarama" : {"prop" : ["Defence", "Heal", "Skill"], "img" : "heal", "heal" : 40,"cost" : 40},#Healing scales off Max HP
+      "SPECIAL: Life's Garden" : {"prop" : ["Party", "Heal", "SPECIAL"], "img" : "heal", "heal" : 60,"cost" : 0},#Healing scales off Max HP
+      "Diarama" : {"prop" : ["Defence", "Heal", "Skill"], "img" : "heal", "heal" : 35,"cost" : 40},#Healing scales off Max HP
       "Dia" : {"prop" : ["Defence", "Heal", "Basic"], "img" : "heal", "heal" : 15,"cost" : 20},#Healing scales off Max HP
 
       "Garudyne" : {"prop" : ["Offence", "Wind", "Basic"], "img" : "wind_1s", "dmg" : 50,"cost" : 20},#Damage scales off STR
       "Cyclone": {"prop" : ["Offence", "Wind", "Skill"], "img" : "wind_mg", "dmg" : 25, "hits" : 8,"cost" : 40},
+      "Wrath Tempest": {"prop" : ["Offence", "Wind", "Skill"], "img" : "wind_mg", "dmg" : 70, "hits" : 3,"cost" : 40},
       "Wind Blades": {"prop" : ["Offence", "Wind", "Basic"], "img" : "wind_mg", "dmg" : 10, "hits" : 8,"cost" : 20},
       "Garubarion": {"prop" : ["Offence", "Wind", "Skill"], "img" : "wind_mg", "dmg" : 100, "hits" : 2,"cost" : 40},
       "SPECIAL: Eye of the Storm": {"prop" : ["Offence", "Wind", "SPECIAL"], "img" : "special", "dmg" : 40, "hits" : 8,"cost" : 0},
@@ -1452,26 +1432,30 @@ def battle_moveslookup(move, lvl=1):
       "Skip" : {"s" : "End this turn", "b" : "End this turn"},
       "Taunt" : {"s" : "Draws opponent's attention", "b" : "Draws enemy attention by increasing AGG"},
       "Focus" : {"s" : "Increases CRIT", "b" : "Increases CRIT Rate"},
+      "Overhype" : {"s" : "Increases CRIT DMG", "b" : "Increases CRIT DMG"},
+      "Wind Boost" : {"s" : "Increases Wind DMG", "b" : "Increases Wind DMG"},
       "SPECIAL: March Forward" : {"s" : "All out attack", "b" : "Increases all party members' STR"},
       "Debilitate" : {"s" : "Reduce opponent's RES", "b" : "Make the opponent take more DMG by reducing their RES"},
+      "SPECIAL: Life's Garden" : {"s" : "Suffer no more", "b" : "Heals " + str(move_stats(all_moves["SPECIAL: Life's Garden"]["heal"],lvl)) + "% of one's Max HP to all allies"},
       "Diarama" : {"s" : "Heals medium HP", "b" : "Heals " + str(move_stats(all_moves["Diarama"]["heal"],lvl)) + "% of one's Max HP to target ally"},
       "Dia" : {"s" : "Heals some HP", "b" : "Heals " + str(move_stats(all_moves["Dia"]["heal"],lvl)) + "% of one's Max HP to target ally"},
 
       "Garudyne" : {"s":"Deals medium Wind DMG", "b" : "Deals " + str(move_stats(all_moves["Garudyne"]["dmg"],lvl)) + "% Wind DMG to a single target enemy"},
       "Cyclone" : {"s":"Deals minor Wind DMG x8", "b" : "Deals " + str(move_stats(all_moves["Cyclone"]["dmg"],lvl)) + "% Wind DMG to a single target enemy 8 times"},
+      "Wrath Tempest" : {"s":"Deals medium Wind DMG x3", "b" : "Deals " + str(move_stats(all_moves["Wrath Tempest"]["dmg"],lvl)) + "% Wind DMG to a single target enemy 3 times"},
       "Wind Blades" : {"s":"Deals minor Wind DMG x10", "b" : "Deals " + str(move_stats(all_moves["Wind Blades"]["dmg"],lvl)) + "% Wind DMG to a single target enemy 10 times"},
       "Garubarion" : {"s":"Deals medium Wind DMG x2", "b" : "Deals " + str(move_stats(all_moves["Garubarion"]["dmg"],lvl)) + "% Wind DMG to a single target enemy 2 times"},
-      "SPECIAL: Eye of the Storm" : {"s":"The storm consumes", "b" : "Deals " + str(move_stats(all_moves["SPECIAL: Eye of the Storm"]["dmg"],lvl)) + "% Wind DMG to a single target enemy 8 times"},
+      "SPECIAL: Eye of the Storm" : {"s":"'I venture forth to hunt'", "b" : "Deals " + str(move_stats(all_moves["SPECIAL: Eye of the Storm"]["dmg"],lvl)) + "% Wind DMG to a single target enemy 8 times"},
 
       "Bufudyne" : {"s":"Deals medium Water DMG", "b" : "Deals " + str(move_stats(all_moves["Bufudyne"]["dmg"],lvl)) + "% Water DMG to a single target enemy"},
       "Striking Tide" : {"s":"Deals minor Water DMG x10", "b" : "Deals " + str(move_stats(all_moves["Striking Tide"]["dmg"],lvl)) + "% Water DMG to a single target enemy across multiple hits"},
       "Bufubarion" : {"s":"Deals major Water DMG", "b" : "Deals " + str(move_stats(all_moves["Bufubarion"]["dmg"],lvl)) + "% Water DMG to a single target enemy"},
-      "SPECIAL: Thalassic Calamity" : {"s":"Drown them all", "b" : "Deals " + str(move_stats(all_moves["SPECIAL: Thalassic Calamity"]["dmg"],lvl)) + "% Water DMG to a single target enemy across multiple hits"},
+      "SPECIAL: Thalassic Calamity" : {"s":"The seas are ablaze", "b" : "Deals " + str(move_stats(all_moves["SPECIAL: Thalassic Calamity"]["dmg"],lvl)) + "% Water DMG to a single target enemy across multiple hits"},
 
       "Agidyne" : {"s":"Deals medium Fire DMG", "b" : "Deals " + str(move_stats(all_moves["Agidyne"]["dmg"],lvl)) + "% Fire DMG to a single target enemy"},
       "Fire Dance" : {"s":"Deals medium Fire DMG x3", "b" : "Deals " + str(move_stats(all_moves["Fire Dance"]["dmg"],lvl)) + "% Fire DMG to a single target enemy across multiple hits"},
       "Agibarion" : {"s":"Deals major Fire DMG", "b" : "Deals " + str(move_stats(all_moves["Agibarion"]["dmg"],lvl)) + "% Fire DMG to a single target enemy"},
-      "SPECIAL: Burning Hell" : {"s":"Only ashes remain", "b" : "Deals " + str(move_stats(all_moves["SPECIAL: Burning Hell"]["dmg"],lvl)) + "% Fire DMG to a single target enemy"},
+      "SPECIAL: Burning Hell" : {"s":"Until everything burns to ashes!", "b" : "Deals " + str(move_stats(all_moves["SPECIAL: Burning Hell"]["dmg"],lvl)) + "% Fire DMG to a single target enemy"},
   }
 
   #Finds move and adds the desc to output
@@ -1789,8 +1773,9 @@ def battle_viewmember(member,background): # Not in use
         screen.blit(display,(0,0))
         pygame.display.update()
         
-def char_stats(stat,lvl):
-    return int(stat+(((stat*0.1)*lvl)-stat*0.1))
+def char_stats(stat,lvl):#Increases by 10%
+    multiplier = 0.1
+    return int(stat+(((stat*multiplier)*lvl)-stat*multiplier))
 
 def battle_system(player_party,enemy_stats,bg,bgm):
     global player
@@ -1880,9 +1865,32 @@ def battle_system(player_party,enemy_stats,bg,bgm):
             newdict[move] = True
         battle_characters[member]["moves"] = newdict
 
-
-    enemy_stats["buff"] = {}
-    enemy_stats["debuff"] = {}
+    enemy_stats = {
+            "name" : enemy_stats["name"],
+            "LVL" : enemy_stats["LVL"],
+            "id" : enemy_stats["id"],
+            "turns" : enemy_stats["turns"],
+            "weakness" : enemy_stats["weakness"],
+            "fusion" : enemy_stats["fusion"],
+            "MHP" : char_stats(enemy_stats["MHP"],enemy_stats["LVL"]),
+            "HP" : 0,
+            "STR" : char_stats(enemy_stats["STR"],enemy_stats["LVL"]),
+            "RES" : char_stats(enemy_stats["RES"],enemy_stats["LVL"]),
+            "CRIT" : char_stats(enemy_stats["CRIT"],enemy_stats["LVL"]),
+            "CRIT DMG" : char_stats(enemy_stats["CRIT DMG"],enemy_stats["LVL"]),
+            "moves" : enemy_stats["moves"],
+            "buff" : {},
+            "debuff" : {},
+        }
+    #Adjust to difficulty
+    modes = {"Normal" : 1, "Hard" : 1.5,"Maddening" : 2}
+    enemy_stats["turns"] = int(enemy_stats["turns"]*modes[difficulty])
+    enemy_stats["MHP"] = int(enemy_stats["MHP"]*modes[difficulty])
+    enemy_stats["HP"] = enemy_stats["MHP"]
+    enemy_stats["STR"] = int(enemy_stats["STR"]*modes[difficulty])
+    enemy_stats["RES"] = int(enemy_stats["RES"]*modes[difficulty])
+    enemy_stats["CRIT"] = int(enemy_stats["CRIT"]*modes[difficulty])
+    enemy_stats["HP"] = enemy_stats["MHP"]
     
     #Damage text
     damage_text_group = pygame.sprite.Group()
@@ -2454,6 +2462,7 @@ def battle_system(player_party,enemy_stats,bg,bgm):
                         battle_data["energy"][player.stats["name"]] += e - battle_characters[player.stats["name"]]["EG"]
                         battle_characters[player.stats["name"]]["EG"] = e
                         for member in player_party:
+                            if player.stats["name"] == member:  continue
                             e = battle_energy(energy,battle_characters[member]["ER"]+battle_characters[member]["bonuses"]["ER"],battle_characters[member]["EG"],battle_characters[member]["MEG"])
                             battle_data["energy"][member] += e - battle_characters[member]["EG"]
                             battle_characters[member]["EG"] = e
@@ -2493,7 +2502,7 @@ def battle_system(player_party,enemy_stats,bg,bgm):
                         battle_turndata,battle_characters[action[1]["name"]] = enemy.move(action[0], action[1],player_party)
 
                     #Enemy lands hit: character hit gets energy
-                    energy = 10
+                    energy = 5
                     if action[1]["weakness"] in battle_moveslookup(action[0])["prop"]: energy = energy * 2
                     e = battle_energy(energy,battle_characters[action[1]["name"]]["ER"]+battle_characters[action[1]["name"]]["bonuses"]["ER"],battle_characters[action[1]["name"]]["EG"],battle_characters[action[1]["name"]]["MEG"])
                     battle_data["energy"][action[1]["name"]] += e - battle_characters[action[1]["name"]]["EG"]
@@ -2571,8 +2580,13 @@ def battle_system(player_party,enemy_stats,bg,bgm):
                     enemy.stats["moves"] = battle_movecd(enemy.stats["moves"])
 
                     if battle_turndata["actor"].stats["name"] == enemy.stats["name"]:
-                        player.stats["buff"] = battle_removebuffs(player.stats["buff"])
-                        player.stats["debuff"] = battle_removebuffs(player.stats["debuff"])
+                        for member in player_party:
+                            if member != player.stats["name"]:
+                                battle_characters[member]["buff"] = battle_removebuffs(battle_characters[member]["buff"])
+                                battle_characters[member]["debuff"] = battle_removebuffs(battle_characters[member]["debuff"])
+                            else:
+                                player.stats["buff"] = battle_removebuffs(player.stats["buff"])
+                                player.stats["debuff"] = battle_removebuffs(player.stats["debuff"])
                         
                     if battle_turndata["critamount"] > 0 or battle_turndata["weakamount"] > 0:
                         myMixer("menu_1more.wav",0)
@@ -2584,12 +2598,7 @@ def battle_system(player_party,enemy_stats,bg,bgm):
                 #Enemy turn
                 elif enemy_turns > 0:
                     enemy_turns -= 1
-                    #Removes Player move CD
-                    for member in player_party:
-                        if player.stats["name"] != member:
-                            battle_characters[member]["moves"] = battle_movecd(battle_characters[member]["moves"])
-                        else:
-                            player.stats["moves"] = battle_movecd(player.stats["moves"])
+
                     if battle_turndata["actor"].stats["name"] in player_party:
                         enemy.stats["buff"] = battle_removebuffs(enemy.stats["buff"])
                         enemy.stats["debuff"] = battle_removebuffs(enemy.stats["debuff"])
@@ -2605,7 +2614,10 @@ def battle_system(player_party,enemy_stats,bg,bgm):
                         buttonshift_moves["point"] = buttonshift_moves["max"]
                         vigour["transition"] = 0
                         combo = {"hits" : 0, "dmg" : 0}
-                    
+
+                for member in player_party:
+                    print(battle_characters[member]["buff"],battle_characters[member]["debuff"])
+                print(enemy.stats["buff"],enemy.stats["debuff"])
                 selected = ""
                 action=["",""]
                 cooldown = (framesrate*2)#This stops combatents from acting immediately, after being able to
@@ -2687,14 +2699,6 @@ def battle_startend(player_party,enemy_stats="any",bg="Battle_1",bgm="streaked")
     global player_characters
     global difficulty
     enemy_stats = get_enemies(enemy_stats)
-    #Adjust to difficulty
-    modes = {"Normal" : 1, "Hard" : 2,"Maddening" : 3}
-    enemy_stats["MHP"] = int(enemy_stats["MHP"]*modes[difficulty])
-    enemy_stats["HP"] = enemy_stats["MHP"]
-    enemy_stats["STR"] = int(enemy_stats["STR"]*modes[difficulty])
-    enemy_stats["RES"] = int(enemy_stats["RES"]*modes[difficulty])
-    enemy_stats["CRIT"] = int(enemy_stats["CRIT"]*modes[difficulty])
-    enemy_stats["moves"] = {"Agidyne" : 1, "Garudyne" : 1,"Bufudyne" : 1,"Focus" :1}
 
     #Initiate battle
     result = battle_system(player_party,enemy_stats,bg,bgm)
@@ -3758,7 +3762,7 @@ def menu_main(message):
         player_inventory["Gold"] -= exp_cost
         myMixer("menu_text.wav",-0.5)
         pygame.mixer.music.fadeout(300)
-        exp = int(BASE_MEXP*5)*3
+        exp = 3000
         distribution = {}
         for member in player_party:
             distribution[member] = 100
@@ -4098,7 +4102,7 @@ def menu_floor(message,world_num,bg):
 
         result = "Victory!"
         for r in results:
-            if r["result"] == "Defeat":
+            if r["result"] == "Defeat!":
                 result = "Defeat!"
                 break
 
@@ -4190,7 +4194,7 @@ def battle_result(message,rewards,distribution,data={}):
     size = screen_mult(screen_diag,100)
     inviscircle = Battle_invisCircle(int(screen_width/2), int(screen_height/2), int(screen_height/2))
     button_continue = button.Button(display, screen_width-size-screen_mult(screen_width,50), screen_height-size-screen_mult(screen_height,50), img_skip, size,size)
-    mvp_size = screen_mult(screen_diag,50)
+    mvp_size = screen_mult(screen_diag,80)
     mvp_star = pygame.transform.scale(pygame.image.load("img/UI/star.png").convert_alpha(),(mvp_size,mvp_size))
     mvp = ""
     if "mvp" in data:
@@ -4264,7 +4268,7 @@ def battle_result(message,rewards,distribution,data={}):
             display.blit(char_ui[member]["img"],(x+char_ui[member]["x"],y))#Character image
             pygame.draw.rect(display, colour[characters[member]["element"]], (x+char_ui[member]["x"]-10, y-10, char_ui[member]["rect"].width+10, char_ui[member]["rect"].height+10), 10)#Box Outline
             if char_ui[member]["mvp"]:
-                display.blit(mvp_star,(x+char_ui[member]["x"]-screen_mult(screen_width,10),y-screen_mult(screen_height,10)))#MVP Star
+                display.blit(mvp_star,(x+char_ui[member]["x"]-screen_mult(screen_width,30),y-screen_mult(screen_height,30)))#MVP Star
 
             draw_text(str(player_characters[member]["LVL"]), lvl_font, colour["black"],x+char_ui[member]["x"]+8+s,y+char_ui[member]["rect"].height-lvl_font_size+2, False)#LVL text
             draw_text(str(player_characters[member]["LVL"]), lvl_font, colour["white"],x+char_ui[member]["x"]+5+s,y+char_ui[member]["rect"].height-lvl_font_size+2, False)
@@ -4287,7 +4291,7 @@ def battle_result(message,rewards,distribution,data={}):
                 player_characters[char_exp["name"]]["EXP"] += char_exp["exp"]
                 char_exp["exp"] = 0
                 myMixer("exp_final.wav",0)
-            if char_exp["exp"] == 0 and char_count < len(player_party)-1:
+            if char_exp["exp"] == 0 and char_count != len(player_party)-1:
                 char_count+=1
                 char_exp = {"name" : player_party[char_count],"exp" : distribution[player_party[char_count]]}
                 spd = 1/framesrate
@@ -4346,7 +4350,7 @@ for i in charms:
     ID += 1
 
 global player_inventory
-player_inventory = {"Gold" : 10, "Wins" : 0}
+player_inventory = {"Gold" : 0, "Wins" : 0}
 
 global difficulty
 difficulty = "Normal"
