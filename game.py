@@ -143,7 +143,7 @@ worlds = {
 player_worlds = {
     "World" : 1,
     "Floor" : 1,
-    "Available" : ["1"]#ids of available floors
+    "Available" : {"1" : "rank_0"}#Keys are available floors. Ids are the ranking for that floor
 }
 
 pygame.mixer.pre_init(44100, -16, 2, 2048)
@@ -3836,10 +3836,6 @@ def menu_world(message):
 
     base_message = message
 
-    #Black box
-    black_box_alpha = 255
-    black_box = pygame.Surface((screen_width, screen_height),pygame.SRCALPHA) #SRCALPHA enables transparency
-
     #Available options
     options = {
         "World 1" : {"desc" : "Enter World 1", "bg" : "Battle_2"},
@@ -3950,13 +3946,6 @@ def menu_world(message):
         x,y = screen_mult(screen_width,30),screen_height-screen_mult(screen_height,170)
         draw_text(str(message), fonts["medium"], colour["menu"], x, y, False)
 
-        #Initial fade in
-        if black_box_alpha > 0:
-            black_box.fill((0, 0, 0, black_box_alpha))
-            display.blit(black_box, (0,0))
-
-            black_box_alpha -= int(255/(framesrate/2))
-
 
         screen.blit(display,(0,0))
         pygame.display.update()
@@ -3988,14 +3977,24 @@ def menu_floor(message,world_num,bg):
     #Available options
     options = {}
     for floor in worlds[world_num]:
-        options[floor] = {"desc" : "Enter Battle (" + str(floor) + ")"}
+        options[floor] = {"desc" : "Enter Battle (" + str(floor) + ")", "Enemies" : worlds[world_num][floor]["Enemies"], "rank" : ""}
     for floor in options:
         if worlds[world_num][floor]["id"] in player_worlds["Available"]:
             options[floor]["unlock"] = True
+            e = {}#Dict full of enemy info such as Lvl, img
+            for enemy in options[floor]["Enemies"]:
+                info = get_enemies(str(enemy))
+                e[str(enemy)] = {"LVL" : info["LVL"],"img" : pygame.image.load("img/Char/"+str(info["name"])+"/idle.png")}
+                e[str(enemy)]["rect"] = e[str(enemy)]["img"].get_rect()
+                scale = screen_mult(screen_diag,100)#percentage
+                e[str(enemy)]["img"] = pygame.transform.scale(e[str(enemy)]["img"],((int(e[str(enemy)]["rect"].width*scale)/100),int((e[str(enemy)]["rect"].height*scale)/100)))
+                e[str(enemy)]["rect"] = e[str(enemy)]["img"].get_rect()
+
+            options[floor]["Enemies"] = e
         else:
             options[floor]["unlock"] = False
+    options["Return"] =  {"desc" : "Return to Main Menu", "unlock" : False, "rank" : ""}
 
-    options["Return"] =  {"desc" : "Return to Main Menu", "unlock" : True}
 
     #Create buttons from options
     y_value = screen_height/(len(options)+1)
@@ -4005,8 +4004,27 @@ def menu_floor(message,world_num,bg):
         options[option]["button"] = button.Button(display,0,y_value,pygame.image.load("img/UI/mainmenu_button.png"),button_width,button_height)
         y_value += (screen_height/(len(options)+1)) - button_height/2
         options[option]["hovering"] = False
+
+    for floor in options:
+        if floor != "Return":
+            if worlds[world_num][floor]["id"] in player_worlds["Available"]:
+                options[floor]["rank"] = pygame.transform.scale(pygame.image.load("img/UI/"+str(player_worlds["Available"][worlds[world_num][floor]["id"]])+".png"),(screen_mult(screen_width,button_height),screen_mult(screen_height,button_height))).convert_alpha()
+
+
     #Create invisible circle effect object
     inviscircle = Battle_invisCircle(int(screen_width/2), int(screen_height/2), int(screen_height/2))
+
+    #Character images
+    party_members = {}
+    scale = screen_mult(screen_diag,100)#percentage
+    for member in player_party:
+        rect1 = pygame.image.load("img/Char/"+str(member)+"/idle.png").get_rect()
+        rect2 = pygame.image.load("img/Char/"+str(member)+"/turn.png").get_rect()
+        party_members[member] = {
+            "1" : pygame.transform.scale(pygame.image.load("img/Char/"+str(member)+"/idle.png"),(int((rect1.width*scale)/100),int((rect1.height*scale)/100))),
+            "2" : pygame.transform.scale(pygame.image.load("img/Char/"+str(member)+"/turn.png"),(int((rect2.width*scale)/100),int((rect2.height*scale)/100))),
+            "rect1" : rect1,
+            "rect2" : rect2}
 
     running = ""
     while running == "":
@@ -4028,7 +4046,8 @@ def menu_floor(message,world_num,bg):
         #Update invis circle
         inviscircle.update("")
         #Display images
-        draw_background(str(bg)+"pre","circle")
+        draw_background("Battle_5pre","circle")
+
 
         #Top and bottom borders for effect
         #Black
@@ -4040,8 +4059,8 @@ def menu_floor(message,world_num,bg):
 
         #Title text
         x,y = screen_mult(screen_width,30), screen_mult(screen_height,30)
-        draw_text(str(world_num), fonts["title"], colour["grey"], x+2, y+2, False)
-        draw_text(str(world_num), fonts["title"], colour["menu"], x, y, False)
+        draw_text("LEVEL SELECT", fonts["title"], colour["grey"], x+2, y+2, False)
+        draw_text("LEVEL SELECT", fonts["title"], colour["menu"], x, y, False)
 
         #Display buttons
         y_value = screen_height/(len(options)+1)+button_height/1.5
@@ -4049,6 +4068,8 @@ def menu_floor(message,world_num,bg):
         for option in options:
             x,y = -screen_mult(screen_width,50),y_value
             clicked = options[option]["button"].draw(x,y,"")
+            if options[option]["rank"] != "":
+                display.blit(options[option]["rank"], (x+options[option]["button"].rect.width-(options[option]["button"].rect.height),y-(options[option]["button"].rect.height*0.3)))
 
             #Draw outline if hovering
             if options[option]["button"].hover() and (options[option]["unlock"] == True or option == "Return"):#FIX
@@ -4074,6 +4095,39 @@ def menu_floor(message,world_num,bg):
             #Button text
             draw_text(str(option).upper(), fonts["medium"], myColour, x+x_value, y+screen_mult(screen_height,5), False)
             y_value += (screen_height/(len(options)+1)) - button_height/2
+
+        #Display smaller screen with floor info
+        text = str(world_num)
+        for option in options:
+            if options[option]["hovering"]:
+                text = option
+                break
+        x,y = screen_width/3-screen_mult(screen_width,25),screen_height/4-screen_mult(screen_height,14)
+        w,h = screen_mult(screen_width,1050),screen_mult(screen_height,590)
+        display.blit(pygame.transform.scale(background[bg+"pre"],(w,h)),(x,y))
+        pygame.draw.rect(display, colour["white"], (x-5, y-5, w+5, h+5), 5)
+        draw_text(str(text).upper(), fonts["large"], colour["grey"], x+2+(w*0.33), y+2+(h*0.1), False)
+        draw_text(str(text).upper(), fonts["large"], colour["white"], x+(w*0.33), y+(h*0.1), False)
+        for option in options:#Display enemies for the floor
+            if options[option]["hovering"] == True and options[option]["unlock"] == True:
+                x_value = 0
+                for e in options[option]["Enemies"]:
+                    display.blit(options[option]["Enemies"][e]["img"],(x+x_value+(w*0.6),y+(h*0.8)-options[option]["Enemies"][e]["rect"].height))
+                    draw_text(str(options[option]["Enemies"][e]["LVL"]), fonts["medium"], colour["grey"], x+x_value+(w*0.6)+2, y+(h*0.8)+2-(options[option]["Enemies"][e]["rect"].height/2), False)
+                    draw_text(str(options[option]["Enemies"][e]["LVL"]), fonts["medium"], colour["red"], x+x_value+(w*0.6), y+(h*0.8)-(options[option]["Enemies"][e]["rect"].height/2), False)
+                    x_value += options[option]["Enemies"][e]["rect"].width*0.8
+        #Display party characters
+        x_value = 0
+        for member in party_members:
+
+            if running in worlds[world_num]:#Change pose is battle starts
+                num = "2"
+            else:
+                num = "1"
+            display.blit(party_members[member][num],(x+x_value+(w*0.1),y+(h*0.8)-party_members[member]["rect" + str(num)].height))
+            draw_text(str(player_characters[member]["LVL"]), fonts["medium"], colour["grey"], x+x_value+(w*0.1)+2, y+(h*0.8)+2-(party_members[member]["rect" + str(num)].height/2), False)
+            draw_text(str(player_characters[member]["LVL"]), fonts["medium"], colour["white"], x+x_value+(w*0.1), y+(h*0.8)-(party_members[member]["rect" + str(num)].height/2), False)
+            x_value += party_members[member]["rect1"].width*0.8
 
         #Message text
         x,y = screen_mult(screen_width,30),screen_height-screen_mult(screen_height,170)
@@ -4112,8 +4166,9 @@ def menu_floor(message,world_num,bg):
         elif "Victory!" in result:
             eg = {}
             highest_eg = ["",0]#Record highest generated energy to choose mvp
-
             distribution = {}#Distributing EXP according to performance
+            vigour = 0#To choose rank for this level. 400vigour ~ 100%enemy hp for S+
+
             for member in player_party:
                 distribution[member] = 0
                 eg[member] = 0
@@ -4121,6 +4176,19 @@ def menu_floor(message,world_num,bg):
                 for member in player_party:
                     distribution[member] += r["vigour"][member] + r["energy"][member]
                     eg[member] += r["energy"][member]
+                    vigour += r["vigour"][member]
+
+            #Rank calculation
+            score = vigour/len(results)#average per battle
+            levels = 0
+            for e in options[running]["Enemies"]:
+                levels += options[running]["Enemies"][e]["LVL"]
+            ranking = {"rank_4" : char_stats(100,levels),"rank_3" : char_stats(300,levels),"rank_2" : char_stats(500,levels)}#S+,S,A,B
+            rank = "rank_1"#B by default
+            for r in ranking:
+                if score <= ranking[r]:
+                    rank = r
+                    break
 
             #Choose mvp
             for member in eg:
@@ -4128,15 +4196,16 @@ def menu_floor(message,world_num,bg):
                     highest_eg = [member,eg[member]]
 
             rewards = worlds[world_num][running]["Rewards"]
-            battle_result("Battle Results",rewards,distribution,{"mvp":highest_eg[0]})
+            battle_result("Battle Results",rewards,distribution,{"mvp":highest_eg[0]},rank)
 
             player_inventory["Wins"] += 1
             player_worlds["Floor"] += 1
+            player_worlds["Available"][worlds[world_num][running]["id"]] = str(rank)
             if player_worlds["Floor"] >= len(worlds[world_num]):
                 player_worlds["Floor"] = 1
                 player_worlds["World"] += 1#Risky. Inconsistent data can occur
             if str(int(worlds[world_num][running]["id"])+1) not in player_worlds["Available"]:#If floor above is locked then unlock it
-                player_worlds["Available"].append(str(int(worlds[world_num][running]["id"])+1))
+                player_worlds["Available"][str(int(worlds[world_num][running]["id"])+1)] = "rank_0"
             message += " Ez clap."
     elif running == "Return":
         myMixer("menu_text.wav",-0.5)
@@ -4170,7 +4239,7 @@ def battle_result_character(player_party,mvp):
 
 
 
-def battle_result(message,rewards,distribution,data={}):
+def battle_result(message,rewards,distribution,data={},rank=""):
     global player_characters
     global worlds
     global player_party
@@ -4199,6 +4268,8 @@ def battle_result(message,rewards,distribution,data={}):
     mvp = ""
     if "mvp" in data:
         mvp = data["mvp"]
+    if rank != "":
+        rank = pygame.transform.scale(pygame.image.load("img/UI/" + str(rank) + ".png").convert_alpha(),(screen_mult(screen_diag,200),screen_mult(screen_diag,200)))
 
     char_ui = battle_result_character(player_party,mvp)
     char_count = 0
@@ -4255,6 +4326,9 @@ def battle_result(message,rewards,distribution,data={}):
 
 
         x,y = int(screen_width*0.1),int(screen_height/3)
+        if rank != "":#Display rank
+            display.blit(rank,(int(screen_width*0.5),y))
+
         for member in char_ui:#BACKGROUND BOX
             offset = screen_mult(screen_diag,20)
             pygame.draw.rect(display, colour["black"], (x-offset, y-offset, (char_ui[member]["rect"].width+offset)*len(player_party)+screen_mult(screen_width,10), char_ui[member]["rect"].height+screen_mult(screen_height,100)))#Box
