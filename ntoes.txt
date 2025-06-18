@@ -7,8 +7,19 @@ VIGOUR - Player "SP"
 	-Ends player turn when vigour is 0
 	-Resets back to 100 when enemy turn finished
 
-GRIT - Enemy "toughness"
-	-Multiple stacks
-	-Reduces GRIT when player hits their weakness
-	-Losing a stack deals additional damage and refunds half move cost
-	-Losing all stacks gives the party max vigour and reduces cost of all moves by half for 	 that turn
+Advantage State - Team state
+	- Max points is total energy on the team
+	- Energy generated contributes to buildup
+	- When full, team enters Advantage state, which activates different buffs depending on the character and increases VIGOUR to max
+	- State lasts for 2 turns
+
+	- Display
+	- Bar on top of screen. Text below is transparent when charging, blinking when activated.
+	
+
+CRIT
+	- Chance for attacks to deal Critical damage.
+	- Chance and Critical damage dealt can be improved via CRIT Rate and CRIT DMG
+WEAK
+	- Hits on weakness produces another instance of damage
+	- This instance can be improved via various means e.g based on Max HP
