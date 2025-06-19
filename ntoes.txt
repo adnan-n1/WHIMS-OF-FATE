@@ -1,3 +1,4 @@
+Environment
 VIGOUR - Player "SP"
 	-MAX 100. Shared across team
 	-Basic moves consumes 20
@@ -15,11 +16,103 @@ Advantage State - Team state
 
 	- Display
 	- Bar on top of screen. Text below is transparent when charging, blinking when activated.
-	
 
+TURN COUNT - Team state
+	-Some conditions under various things may require an ODD/EVEN turn count
+	-Things may include buffs/debuffs, fusion, charm
+
+FUSION REWORK - Character passives
+	-Characters gain stat bonuses as part of their kit
+
+	-Some moves may automatically trigger outside player control when certain conditions are met.
+	-E.g:
+		-Start of odd/even/any turn
+		-End of odd/even/any turn
+		-Health reaches certain point
+		-Enemy attacks character
+	
+General notes
+BASIC moves
+	-Standard moves which cost 20 vigour
+	-Simple functions
+	-Damage type can be increased through buffs
+SKILL moves
+	-Strong moves which cost 40 vigour
+	-Strong functions
+	-Damage type can be increased through buffs
+SPECIAL moves
+	-Require full energy to perform and no vigour
+	-Powerful functions
+	-Damage type can be increased through buffs
+BUFFS
+	-Increase stats of a combatant
+	-Can scale off specific stats
+	-May have restrictions on who it can be performed on:
+		-Self only
+		-Allies only
+		-All party members only
 CRIT
 	- Chance for attacks to deal Critical damage.
 	- Chance and Critical damage dealt can be improved via CRIT Rate and CRIT DMG
 WEAK
 	- Hits on weakness produces another instance of damage
-	- This instance can be improved via various means e.g based on Max HP
+	- Damage type can be increased through buffs
+
+
+
+Playstyles
+Damage
+	-Crit based
+	-Deals damage by maximising critical hits
+		-Gain stacks using multi-hit attacks?
+		-HP/STR scaling
+
+	-Weakness based
+	-Deals damage by accumulating extra damage from striking weaknesses
+		-HP/STR scaling
+
+Support
+	-Buff based
+	-Grants allies positive effects to enhance combat
+		-Increase CRIT
+		-Increase Extra damage
+		-Restore energy
+		-Restore VIGOUR
+
+	-Debuff based
+	-Inflicts opponents with negative effects to weaken them
+		-Reduce STR
+		-Reduce RES
+
+Sustain
+	-HP based
+	-Heals allies, some can revive
+		-Increase MHP
+		-Increase healing received
+
+	-RES/Aggro based
+	-Takes damage for the team and sustain themselves in different ways
+		-Increase own/all allies RES
+		-Increase own/selected ally AGG
+
+	-Shield based?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
